@@ -4,7 +4,7 @@ import WebKit
 public class HelpHubViewController: UIViewController {
     var helpHubView: HelpHubWebView!
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         configureHelpHubView()
     }
@@ -31,7 +31,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
     private var userId: String = "1234"
     private var debug: Bool = true
 
-    override init(frame: CGRect, configuration: WKWebViewConfiguration) {
+    public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
         navigationDelegate = self
     }
@@ -92,13 +92,13 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
 
     // MARK: - WKNavigationDelegate
 
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         loadSnippet()
     }
 
     // MARK: - WKScriptMessageHandler
 
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print(message)
         guard let dict = message.body as? [String: Any] else {
             return

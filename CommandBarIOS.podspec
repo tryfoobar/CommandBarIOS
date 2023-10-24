@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CommandBarIOS'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'CommandBarIOS: Open the HelpHub/Copilot from your iOS app.'
   s.homepage         = 'https://github.com/tryfoobar/CommandBarIOS'
   s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
