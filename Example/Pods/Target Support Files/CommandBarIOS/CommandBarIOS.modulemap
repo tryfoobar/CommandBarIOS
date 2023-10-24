@@ -1,0 +1,6 @@
+framework module CommandBarIOS {
+  umbrella header "CommandBarIOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
