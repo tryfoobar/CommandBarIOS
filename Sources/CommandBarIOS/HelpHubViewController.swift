@@ -1,7 +1,7 @@
 import UIKit
 import WebKit
 
-class HelpHubViewController: UIViewController {
+public class HelpHubViewController: UIViewController {
     var helpHubView: HelpHubWebView!
 
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class HelpHubViewController: UIViewController {
     }
 }
 
-class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHandler {
+public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHandler {
     // TODO: Make these configurable
     private var orgId: String = "foocorp"
     private var launchCode: String = "local-dev"
