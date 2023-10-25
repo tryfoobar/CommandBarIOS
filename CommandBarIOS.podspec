@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CommandBarIOS'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'HelpHub and Copilot Command Bar for iOS. '
 
 # This description is used to generate tags and improve search results.
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.author           = { 'CommandBar Engineering' => 'eng@commandbar.com' }
   s.source           = { :git => 'https://github.com/tryfoobar/CommandBarIOS.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '12.4'
 
   s.source_files = 'CommandBarIOS/Classes/**/*'
   
