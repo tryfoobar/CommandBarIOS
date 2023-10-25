@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
 # This description is used to generate tags and improve search results.
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/tryfoobar/CommandBarIOS'
@@ -26,6 +26,8 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'CommandBarIOS/Classes/**/*'
   
+  s.swift_versions = '5.0'
+
   # s.resource_bundles = {
   #   'CommandBarIOS' => ['CommandBarIOS/Assets/*.png']
   # }
