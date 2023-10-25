@@ -1,5 +1,5 @@
 PODS:
-  - CommandBarIOS (0.0.2)
+  - CommandBarIOS (0.0.4)
 
 DEPENDENCIES:
   - CommandBarIOS (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CommandBarIOS: 34b660293cdfcda692622e8e76b689926ea5debf
+  CommandBarIOS: 9cc22637960352099b7dbfa0c5b74b0602187771
 
 PODFILE CHECKSUM: 13cf988196f1bb9641ef0a3d0f0262421b74eb85
 
