@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  CommandBarIOS
-//
-//  Created by Cavallando on 10/24/2023.
-//  Copyright (c) 2023 Cavallando. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

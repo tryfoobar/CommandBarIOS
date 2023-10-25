@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01BBA07A941F390650B676E1 /* Pods_CommandBarIOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2CBEB0333B4A8234FAE07AE /* Pods_CommandBarIOS_Example.framework */; };
-		05F79A2D3F3DF97323F4BE0C /* Pods_CommandBarIOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6C7D647870C9FA1B4B4DEC /* Pods_CommandBarIOS_Tests.framework */; };
+		4843AA191A2DED0CA2F52040 /* Pods_CommandBarIOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07272DC8996BCC77417C4BC6 /* Pods_CommandBarIOS_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		DA41BFB8BED6A51CE50A6D1A /* Pods_CommandBarIOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6A6D4D4FA9BF47C33B8F1B /* Pods_CommandBarIOS_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,8 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2294DE227C32C92532FD8B4F /* Pods-CommandBarIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommandBarIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
-		5BD0853CB2A640C2C92B4ABB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		07272DC8996BCC77417C4BC6 /* Pods_CommandBarIOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommandBarIOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1716B1D54620EDFE703901A8 /* Pods-CommandBarIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommandBarIOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		376AD8D38D8602E4FE382B85 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		393BC94F95AF3FB0C807FEBB /* CommandBarIOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CommandBarIOS.podspec; path = ../CommandBarIOS.podspec; sourceTree = "<group>"; };
+		4E6A6D4D4FA9BF47C33B8F1B /* Pods_CommandBarIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommandBarIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* CommandBarIOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommandBarIOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,13 +43,10 @@
 		607FACE51AFB9204008FA782 /* CommandBarIOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommandBarIOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6762AAAE952170BDC1EC1458 /* Pods-CommandBarIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommandBarIOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6F324802294A8D798D296C10 /* Pods-CommandBarIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommandBarIOS_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A2CBEB0333B4A8234FAE07AE /* Pods_CommandBarIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommandBarIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF7F0C02A2033FDB45A76E9C /* CommandBarIOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = CommandBarIOS.podspec; path = ../CommandBarIOS.podspec; sourceTree = "<group>"; };
-		DA6C7D647870C9FA1B4B4DEC /* Pods_CommandBarIOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommandBarIOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC4496A43C9AD8D34ABB4630 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		DF37E8741D8BD752C6537338 /* Pods-CommandBarIOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommandBarIOS_Tests.release.xcconfig"; path = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		61A5743D5A822C83EA13BBBF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		92163EE95FB1EE50D8179ED0 /* Pods-CommandBarIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommandBarIOS_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B070E6A9FC190A106848CE72 /* Pods-CommandBarIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommandBarIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
+		F13A7F09F23D0ED81552C380 /* Pods-CommandBarIOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommandBarIOS_Tests.release.xcconfig"; path = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01BBA07A941F390650B676E1 /* Pods_CommandBarIOS_Example.framework in Frameworks */,
+				DA41BFB8BED6A51CE50A6D1A /* Pods_CommandBarIOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,31 +62,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05F79A2D3F3DF97323F4BE0C /* Pods_CommandBarIOS_Tests.framework in Frameworks */,
+				4843AA191A2DED0CA2F52040 /* Pods_CommandBarIOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		077062A93DE1072613F41D3B /* Frameworks */ = {
+		2A2F7541DCFAED35BB7F3A73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A2CBEB0333B4A8234FAE07AE /* Pods_CommandBarIOS_Example.framework */,
-				DA6C7D647870C9FA1B4B4DEC /* Pods_CommandBarIOS_Tests.framework */,
+				4E6A6D4D4FA9BF47C33B8F1B /* Pods_CommandBarIOS_Example.framework */,
+				07272DC8996BCC77417C4BC6 /* Pods_CommandBarIOS_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		36B0A91E71A27515F22B0AE4 /* Pods */ = {
+		5B7479EE93398255F3B327A2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6762AAAE952170BDC1EC1458 /* Pods-CommandBarIOS_Example.debug.xcconfig */,
-				2294DE227C32C92532FD8B4F /* Pods-CommandBarIOS_Example.release.xcconfig */,
-				6F324802294A8D798D296C10 /* Pods-CommandBarIOS_Tests.debug.xcconfig */,
-				DF37E8741D8BD752C6537338 /* Pods-CommandBarIOS_Tests.release.xcconfig */,
+				1716B1D54620EDFE703901A8 /* Pods-CommandBarIOS_Example.debug.xcconfig */,
+				B070E6A9FC190A106848CE72 /* Pods-CommandBarIOS_Example.release.xcconfig */,
+				92163EE95FB1EE50D8179ED0 /* Pods-CommandBarIOS_Tests.debug.xcconfig */,
+				F13A7F09F23D0ED81552C380 /* Pods-CommandBarIOS_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -97,8 +96,8 @@
 				607FACD21AFB9204008FA782 /* Example for CommandBarIOS */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				36B0A91E71A27515F22B0AE4 /* Pods */,
-				077062A93DE1072613F41D3B /* Frameworks */,
+				5B7479EE93398255F3B327A2 /* Pods */,
+				2A2F7541DCFAED35BB7F3A73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,9 +152,9 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				CF7F0C02A2033FDB45A76E9C /* CommandBarIOS.podspec */,
-				5BD0853CB2A640C2C92B4ABB /* README.md */,
-				DC4496A43C9AD8D34ABB4630 /* LICENSE */,
+				393BC94F95AF3FB0C807FEBB /* CommandBarIOS.podspec */,
+				61A5743D5A822C83EA13BBBF /* README.md */,
+				376AD8D38D8602E4FE382B85 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -167,11 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "CommandBarIOS_Example" */;
 			buildPhases = (
-				AC0B6D4E43AC51C2218AD1FA /* [CP] Check Pods Manifest.lock */,
+				59DABB40DBCCEF6B3A6962DB /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				6E00F2A6CA0D08E9FF13E5E6 /* [CP] Embed Pods Frameworks */,
+				C38C8490BE605ED33912C0C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,11 +185,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "CommandBarIOS_Tests" */;
 			buildPhases = (
-				7A026EE39BA54CC86185E428 /* [CP] Check Pods Manifest.lock */,
+				ED6F4455153A7A9224E6F887 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				2DF879FD4EE70C04512DB1A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -263,32 +262,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2DF879FD4EE70C04512DB1A7 /* [CP] Embed Pods Frameworks */ = {
+		59DABB40DBCCEF6B3A6962DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-				"${BUILT_PRODUCTS_DIR}/iOSSnapshotTestCase/FBSnapshotTestCase.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"$(DERIVED_FILE_DIR)/Pods-CommandBarIOS_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6E00F2A6CA0D08E9FF13E5E6 /* [CP] Embed Pods Frameworks */ = {
+		C38C8490BE605ED33912C0C2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,7 +302,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7A026EE39BA54CC86185E428 /* [CP] Check Pods Manifest.lock */ = {
+		ED6F4455153A7A9224E6F887 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,28 +318,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-CommandBarIOS_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AC0B6D4E43AC51C2218AD1FA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CommandBarIOS_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -501,10 +475,11 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6762AAAE952170BDC1EC1458 /* Pods-CommandBarIOS_Example.debug.xcconfig */;
+			baseConfigurationReference = 1716B1D54620EDFE703901A8 /* Pods-CommandBarIOS_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CommandBarIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -516,10 +491,11 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2294DE227C32C92532FD8B4F /* Pods-CommandBarIOS_Example.release.xcconfig */;
+			baseConfigurationReference = B070E6A9FC190A106848CE72 /* Pods-CommandBarIOS_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CommandBarIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -531,7 +507,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F324802294A8D798D296C10 /* Pods-CommandBarIOS_Tests.debug.xcconfig */;
+			baseConfigurationReference = 92163EE95FB1EE50D8179ED0 /* Pods-CommandBarIOS_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -542,6 +518,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,13 +530,14 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF37E8741D8BD752C6537338 /* Pods-CommandBarIOS_Tests.release.xcconfig */;
+			baseConfigurationReference = F13A7F09F23D0ED81552C380 /* Pods-CommandBarIOS_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
