@@ -444,38 +444,6 @@
 			};
 			name = Release;
 		};
-		18BED7F212E81A2B95E8D83F15C2615D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC784A3A578B368F8136855F81A7F8F0 /* CommandBarIOS.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CommandBarIOS/CommandBarIOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS.modulemap";
-				PRODUCT_MODULE_NAME = CommandBarIOS;
-				PRODUCT_NAME = CommandBarIOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -538,9 +506,9 @@
 			};
 			name = Release;
 		};
-		829590C526F6FE341B7E5E3928C6B4CA /* Debug */ = {
+		C9AC736936B4DEF5E966511BC726A522 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 315FD83FA5A66A96842D259014047848 /* CommandBarIOS.debug.xcconfig */;
+			baseConfigurationReference = BC784A3A578B368F8136855F81A7F8F0 /* CommandBarIOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -562,12 +530,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -735,14 +704,45 @@
 			};
 			name = Debug;
 		};
+		FA3B301A9BB57BBE21B2466A494E1274 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 315FD83FA5A66A96842D259014047848 /* CommandBarIOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CommandBarIOS/CommandBarIOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS.modulemap";
+				PRODUCT_MODULE_NAME = CommandBarIOS;
+				PRODUCT_NAME = CommandBarIOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		0E03319CDA201B3AD70A669D43A2F32F /* Build configuration list for PBXNativeTarget "CommandBarIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				829590C526F6FE341B7E5E3928C6B4CA /* Debug */,
-				18BED7F212E81A2B95E8D83F15C2615D /* Release */,
+				FA3B301A9BB57BBE21B2466A494E1274 /* Debug */,
+				C9AC736936B4DEF5E966511BC726A522 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
