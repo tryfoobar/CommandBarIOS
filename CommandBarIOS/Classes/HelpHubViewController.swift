@@ -20,7 +20,7 @@ public class HelpHubViewController: UIViewController {
     }
 
     private func configureHelpHubView() {
-        helpHubView = HelpHubWebView(orgId: self.orgId)
+        helpHubView = HelpHubWebView(orgId: self.orgId, frame: CGRect.zero)
         view.addSubview(helpHubView)
         helpHubView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

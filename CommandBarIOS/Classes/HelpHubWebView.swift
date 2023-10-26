@@ -8,9 +8,9 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
     private var userId: String = "1234"
     private var debug: Bool = true
 
-    public init(orgId: String) {
+    public init(orgId: String, frame: CGRect) {
         self.orgId = orgId
-        super.init(frame: CGRect.zero, configuration: WKWebViewConfiguration())
+        super.init(frame: frame, configuration: WKWebViewConfiguration())
         navigationDelegate = self
     }
 
