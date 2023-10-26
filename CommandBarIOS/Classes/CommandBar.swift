@@ -1,7 +1,7 @@
 import WebKit
 
 public struct CommandBar {
-    public static func openHelpHub(orgId: String, resolve: (() -> Void)? = nil, reject: (() -> Void)? = nil) {
+    public static func openHelpHub(orgId: String, resolve: ((Any?) -> Void)? = nil, reject: ((Any?) -> Void)? = nil) {
       DispatchQueue.main.async {
           let viewController = HelpHubViewController(orgId: orgId)
           let navigationController = UINavigationController(rootViewController: viewController)
