@@ -4,12 +4,13 @@ import WebKit
 public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHandler {
     // TODO: Make these configurable
     private var orgId: String = "foocorp"
-    private var launchCode: String = "local-dev"
+    private var launchCode: String = "prod"
     private var userId: String = "1234"
     private var debug: Bool = true
 
-    public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
-        super.init(frame: frame, configuration: configuration)
+    public init(orgId: String) {
+        self.orgId = orgId
+        super.init(frame: CGRect.zero, configuration: WKWebViewConfiguration())
         navigationDelegate = self
     }
 

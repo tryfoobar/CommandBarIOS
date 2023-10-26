@@ -1,9 +1,9 @@
 import WebKit
 
 public struct CommandBar {
-    public static func openHelpHub(resolve: (() -> Void)? = nil, reject: (() -> Void)? = nil) {
+    public static func openHelpHub(orgId: String, resolve: (() -> Void)? = nil, reject: (() -> Void)? = nil) {
       DispatchQueue.main.async {
-          let viewController = HelpHubViewController()
+          let viewController = HelpHubViewController(orgId: orgId)
           let navigationController = UINavigationController(rootViewController: viewController)
               navigationController.modalPresentationStyle = .pageSheet
               navigationController.toolbar.isHidden = true

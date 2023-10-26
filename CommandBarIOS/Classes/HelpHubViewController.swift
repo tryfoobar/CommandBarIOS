@@ -3,14 +3,24 @@ import WebKit
 
 public class HelpHubViewController: UIViewController {
     var helpHubView: HelpHubWebView!
-
+    var orgId: String
+    
+    public init(orgId: String) {
+        self.orgId = orgId
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         configureHelpHubView()
     }
 
     private func configureHelpHubView() {
-        helpHubView = HelpHubWebView()
+        helpHubView = HelpHubWebView(orgId: self.orgId)
         view.addSubview(helpHubView)
         helpHubView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

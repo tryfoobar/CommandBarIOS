@@ -35,6 +35,6 @@ class ViewController: UIViewController {
     }
     
     @objc func openHelpHub() {
-        CommandBar.openHelpHub()
+        CommandBar.openHelpHub(orgId: "your_org_id")
     }
 }
