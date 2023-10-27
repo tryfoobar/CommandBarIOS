@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.4'
 
-  s.source_files = 'CommandBarIOS/Classes/**/*'
+  s.source_files = 'Sources/CommandBarIOS/**/*'
   
   s.swift_versions = '5.0'
 

@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		262A5B4D418E2E459061E4AE214029ED /* CommandBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CCEBD3FB4CB53136318A1FC8AFB64C /* CommandBar.swift */; };
 		271D9ACDEFF8DA9BE018220CA3EE381F /* Pods-CommandBarIOS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 515BD9511ECA7252E62981CE3B475040 /* Pods-CommandBarIOS_Tests-dummy.m */; };
 		375A3570C873DC3BB5E444CC77533135 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		3AF94517A7E6ABB96453B433D45A7209 /* CommandBarIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C685463F798EDF907BA20E60214FD5 /* CommandBarIOS-dummy.m */; };
-		5200E159C9DFDA369D3690F49FA2D4D5 /* HelpHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE62A245F14A3A36E40ED62B2FB7F8A8 /* HelpHubViewController.swift */; };
+		3AF94517A7E6ABB96453B433D45A7209 /* CommandBarIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B129B385526E66FF9BBA31D743A58FCA /* CommandBarIOS-dummy.m */; };
+		4FFB478340D9A3FC7ADAF0804356D763 /* CommandBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71B239ABDC6D9920129A695A90DF3AA /* CommandBar.swift */; };
 		5E33BB68E15225681C221A7BCE83EF73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		65262CC6841FD7FBE7E9E9E474A24A5A /* CommandBarIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE185A724E4E3C3AD77C2028798AE264 /* CommandBarIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDB8AA1C4F0C8DE914CB6426D7064F51 /* HelpHubWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531A7373AAB9B39EE6FB405F1141D2E /* HelpHubWebView.swift */; };
+		65262CC6841FD7FBE7E9E9E474A24A5A /* CommandBarIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F2807E00E8D93622425C522B2452C9F /* CommandBarIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7247994703E330C9879C8ED6AA825C5E /* HelpHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87093B11E3A73237FE55084659C1634D /* HelpHubViewController.swift */; };
+		9C1F3A9B6B365EB613D4F0F4E863BB72 /* HelpHubWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D7E13211571F594D3F2A680E172E3C /* HelpHubWebView.swift */; };
 		CB7D63194963AD3D7DCF1C50EC3A89DD /* Pods-CommandBarIOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E43CB0041A0E679ADCCC403A77DC49B /* Pods-CommandBarIOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC7C2EECB6D7CEC282136BEDC5B1748E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		DE8966D9DDC32BD5E1F32594D92F0B3B /* Pods-CommandBarIOS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFE2B6A0D4157DAE9916DDB711EDDB5 /* Pods-CommandBarIOS_Example-dummy.m */; };
@@ -42,37 +42,37 @@
 		0335B849997FEDD72AD0635B88000E91 /* Pods-CommandBarIOS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CommandBarIOS_Example-umbrella.h"; sourceTree = "<group>"; };
 		05463FACEB0440DF91273FE265F92F67 /* Pods-CommandBarIOS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CommandBarIOS_Tests.modulemap"; sourceTree = "<group>"; };
 		0560156DCF68BC126399FC40E13C8CCF /* Pods-CommandBarIOS_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CommandBarIOS_Example"; path = Pods_CommandBarIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B16E85D8609073C895B149114AFBCF9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		10633049ABF6884985AD82B2E6D4B49F /* Pods-CommandBarIOS_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CommandBarIOS_Example-frameworks.sh"; sourceTree = "<group>"; };
 		24C3F0AC5FD53EE187421A98F864CD9A /* CommandBarIOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CommandBarIOS; path = CommandBarIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC933536484A6A526982634D8F81096 /* Pods-CommandBarIOS_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Example-Info.plist"; sourceTree = "<group>"; };
 		34834821C4E0424E5D67E57EE20156F7 /* Pods-CommandBarIOS_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CommandBarIOS_Tests"; path = Pods_CommandBarIOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE81AB79FEBAB0C8FC662A559E23A3E /* Pods-CommandBarIOS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CommandBarIOS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		43427389161B7862CE3EA3D609953328 /* CommandBarIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CommandBarIOS.modulemap; sourceTree = "<group>"; };
+		4A17E5B7AC481DEBCAA7733446911B74 /* CommandBarIOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CommandBarIOS-Info.plist"; sourceTree = "<group>"; };
 		4DF207E3341C6E9BE8D8E7EF8A73A7C5 /* Pods-CommandBarIOS_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CommandBarIOS_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		515BD9511ECA7252E62981CE3B475040 /* Pods-CommandBarIOS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CommandBarIOS_Tests-dummy.m"; sourceTree = "<group>"; };
-		5191754E6B0924B68578582737D09EFF /* CommandBarIOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-prefix.pch"; sourceTree = "<group>"; };
-		57D704DEEB40EDBE4B6CBFF978C70F35 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		5C3927EA1AE23CAE7644367F26683AAE /* Pods-CommandBarIOS_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		5F170084FE97ACE5207BFB36F582F74B /* CommandBarIOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CommandBarIOS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		6531A7373AAB9B39EE6FB405F1141D2E /* HelpHubWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HelpHubWebView.swift; path = CommandBarIOS/Classes/HelpHubWebView.swift; sourceTree = "<group>"; };
+		5F2807E00E8D93622425C522B2452C9F /* CommandBarIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-umbrella.h"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		74CCEBD3FB4CB53136318A1FC8AFB64C /* CommandBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CommandBar.swift; path = CommandBarIOS/Classes/CommandBar.swift; sourceTree = "<group>"; };
-		7D09B60C0FC58DA1FC8DD5F1626B5E57 /* CommandBarIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.debug.xcconfig; sourceTree = "<group>"; };
 		842D42AB8A2A2ED88FF8117E26013859 /* Pods-CommandBarIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		85D7E13211571F594D3F2A680E172E3C /* HelpHubWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HelpHubWebView.swift; path = Sources/CommandBarIOS/HelpHubWebView.swift; sourceTree = "<group>"; };
+		86A025C64FC4EF58DCE2DD3DE7EB4E8A /* CommandBarIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.release.xcconfig; sourceTree = "<group>"; };
+		87093B11E3A73237FE55084659C1634D /* HelpHubViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HelpHubViewController.swift; path = Sources/CommandBarIOS/HelpHubViewController.swift; sourceTree = "<group>"; };
 		8D6010A0F46B835115A6155B19217F7F /* Pods-CommandBarIOS_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Tests-Info.plist"; sourceTree = "<group>"; };
-		95C685463F798EDF907BA20E60214FD5 /* CommandBarIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CommandBarIOS-dummy.m"; sourceTree = "<group>"; };
 		95CC59761A02B39CD10A5754E533418E /* Pods-CommandBarIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E43CB0041A0E679ADCCC403A77DC49B /* Pods-CommandBarIOS_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CommandBarIOS_Tests-umbrella.h"; sourceTree = "<group>"; };
 		9E4E8584E88649AAFE86983BE725CD08 /* Pods-CommandBarIOS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A1BFF639C3F37F0714D100DBBD4B2971 /* Pods-CommandBarIOS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CommandBarIOS_Example.modulemap"; sourceTree = "<group>"; };
-		AC1AE202C08EC106C5783DDBEB9FDF4F /* CommandBarIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.release.xcconfig; sourceTree = "<group>"; };
 		AFFE2B6A0D4157DAE9916DDB711EDDB5 /* Pods-CommandBarIOS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CommandBarIOS_Example-dummy.m"; sourceTree = "<group>"; };
+		B129B385526E66FF9BBA31D743A58FCA /* CommandBarIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CommandBarIOS-dummy.m"; sourceTree = "<group>"; };
+		B155F753419FE1B4FF169BA45F874E0F /* CommandBarIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.debug.xcconfig; sourceTree = "<group>"; };
+		B71B239ABDC6D9920129A695A90DF3AA /* CommandBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CommandBar.swift; path = Sources/CommandBarIOS/CommandBar.swift; sourceTree = "<group>"; };
 		B88F91FB460AFB11775FE964C05AB3CF /* Pods-CommandBarIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
-		BE185A724E4E3C3AD77C2028798AE264 /* CommandBarIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-umbrella.h"; sourceTree = "<group>"; };
-		BE62A245F14A3A36E40ED62B2FB7F8A8 /* HelpHubViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HelpHubViewController.swift; path = CommandBarIOS/Classes/HelpHubViewController.swift; sourceTree = "<group>"; };
-		D438AC26B94251A6D92AD5F53E8520AF /* CommandBarIOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CommandBarIOS-Info.plist"; sourceTree = "<group>"; };
-		F62FF3DAE8126A2161D644A34A3A006B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		BED4D88E09FBEAD79E1F35110552E6A2 /* CommandBarIOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CommandBarIOS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C1E56ADFCCF59F04834A20BDE43F3A29 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		D35FADDA8AED4033DCB6A16E00099D55 /* CommandBarIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CommandBarIOS.modulemap; sourceTree = "<group>"; };
+		E7AD58C659A55F83226B979920E175A9 /* CommandBarIOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-prefix.pch"; sourceTree = "<group>"; };
 		FBA3F61958993B363D52C4934D7FF3B4 /* Pods-CommandBarIOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +104,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		021204DAE2E196C0DEAFA1F618DE1E2D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D35FADDA8AED4033DCB6A16E00099D55 /* CommandBarIOS.modulemap */,
+				B129B385526E66FF9BBA31D743A58FCA /* CommandBarIOS-dummy.m */,
+				4A17E5B7AC481DEBCAA7733446911B74 /* CommandBarIOS-Info.plist */,
+				E7AD58C659A55F83226B979920E175A9 /* CommandBarIOS-prefix.pch */,
+				5F2807E00E8D93622425C522B2452C9F /* CommandBarIOS-umbrella.h */,
+				B155F753419FE1B4FF169BA45F874E0F /* CommandBarIOS.debug.xcconfig */,
+				86A025C64FC4EF58DCE2DD3DE7EB4E8A /* CommandBarIOS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CommandBarIOS";
+			sourceTree = "<group>";
+		};
+		508A6A1E46C76BBE9BE760A5CE904A82 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				BED4D88E09FBEAD79E1F35110552E6A2 /* CommandBarIOS.podspec */,
+				0B16E85D8609073C895B149114AFBCF9 /* LICENSE */,
+				C1E56ADFCCF59F04834A20BDE43F3A29 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		537C51C83D7B3AFF6AC3238E0C1195AF /* Pods-CommandBarIOS_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,16 +152,6 @@
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		597E6B15A599AB625892FA661DB619BB /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				5F170084FE97ACE5207BFB36F582F74B /* CommandBarIOS.podspec */,
-				F62FF3DAE8126A2161D644A34A3A006B /* LICENSE */,
-				57D704DEEB40EDBE4B6CBFF978C70F35 /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		59EDB8EB103EA198433BB151018225CA /* Targets Support Files */ = {
@@ -164,14 +179,14 @@
 			path = "Target Support Files/Pods-CommandBarIOS_Tests";
 			sourceTree = "<group>";
 		};
-		6F5FF4E1F10EE37D93B7BB97B45AB712 /* CommandBarIOS */ = {
+		8C24897D8C3BBCB8080FEC789915FB5E /* CommandBarIOS */ = {
 			isa = PBXGroup;
 			children = (
-				74CCEBD3FB4CB53136318A1FC8AFB64C /* CommandBar.swift */,
-				BE62A245F14A3A36E40ED62B2FB7F8A8 /* HelpHubViewController.swift */,
-				6531A7373AAB9B39EE6FB405F1141D2E /* HelpHubWebView.swift */,
-				597E6B15A599AB625892FA661DB619BB /* Pod */,
-				EAC38B5793C47076B39385E8484B0FA0 /* Support Files */,
+				B71B239ABDC6D9920129A695A90DF3AA /* CommandBar.swift */,
+				87093B11E3A73237FE55084659C1634D /* HelpHubViewController.swift */,
+				85D7E13211571F594D3F2A680E172E3C /* HelpHubWebView.swift */,
+				508A6A1E46C76BBE9BE760A5CE904A82 /* Pod */,
+				021204DAE2E196C0DEAFA1F618DE1E2D /* Support Files */,
 			);
 			name = CommandBarIOS;
 			path = ../..;
@@ -190,7 +205,7 @@
 		9E9650EAF5B253B2DDF7D816192E68A8 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6F5FF4E1F10EE37D93B7BB97B45AB712 /* CommandBarIOS */,
+				8C24897D8C3BBCB8080FEC789915FB5E /* CommandBarIOS */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -212,21 +227,6 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EAC38B5793C47076B39385E8484B0FA0 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				43427389161B7862CE3EA3D609953328 /* CommandBarIOS.modulemap */,
-				95C685463F798EDF907BA20E60214FD5 /* CommandBarIOS-dummy.m */,
-				D438AC26B94251A6D92AD5F53E8520AF /* CommandBarIOS-Info.plist */,
-				5191754E6B0924B68578582737D09EFF /* CommandBarIOS-prefix.pch */,
-				BE185A724E4E3C3AD77C2028798AE264 /* CommandBarIOS-umbrella.h */,
-				7D09B60C0FC58DA1FC8DD5F1626B5E57 /* CommandBarIOS.debug.xcconfig */,
-				AC1AE202C08EC106C5783DDBEB9FDF4F /* CommandBarIOS.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/CommandBarIOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,10 +381,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				262A5B4D418E2E459061E4AE214029ED /* CommandBar.swift in Sources */,
+				4FFB478340D9A3FC7ADAF0804356D763 /* CommandBar.swift in Sources */,
 				3AF94517A7E6ABB96453B433D45A7209 /* CommandBarIOS-dummy.m in Sources */,
-				5200E159C9DFDA369D3690F49FA2D4D5 /* HelpHubViewController.swift in Sources */,
-				BDB8AA1C4F0C8DE914CB6426D7064F51 /* HelpHubWebView.swift in Sources */,
+				7247994703E330C9879C8ED6AA825C5E /* HelpHubViewController.swift in Sources */,
+				9C1F3A9B6B365EB613D4F0F4E863BB72 /* HelpHubWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,44 +414,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0235689F67AFE9BE7DC93FABC553A0A4 /* Release */ = {
+		4F2D7B5C21F3C6B4F70ED70707A9E6A0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBA3F61958993B363D52C4934D7FF3B4 /* Pods-CommandBarIOS_Tests.release.xcconfig */;
+			baseConfigurationReference = 86A025C64FC4EF58DCE2DD3DE7EB4E8A /* CommandBarIOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		304226B9E6188B7E1A6B068FC48880E7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC1AE202C08EC106C5783DDBEB9FDF4F /* CommandBarIOS.release.xcconfig */;
-			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -480,10 +447,11 @@
 			};
 			name = Release;
 		};
-		43AE3E5627452649CDAB0D7FBA715C01 /* Debug */ = {
+		657744DEB6ADE8CCEC5DF33952008A89 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D09B60C0FC58DA1FC8DD5F1626B5E57 /* CommandBarIOS.debug.xcconfig */;
+			baseConfigurationReference = B155F753419FE1B4FF169BA45F874E0F /* CommandBarIOS.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -511,7 +479,41 @@
 			};
 			name = Debug;
 		};
-		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
+		6AFD08F1850883A8C7E575184FE8A612 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 842D42AB8A2A2ED88FF8117E26013859 /* Pods-CommandBarIOS_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6C98B09FF5CCB107837D1A84E8F3A4F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -561,7 +563,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -573,7 +575,7 @@
 			};
 			name = Release;
 		};
-		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
+		8E6A8FF58D100B7F9B1943F455C00F02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -626,7 +628,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -639,11 +641,12 @@
 			};
 			name = Debug;
 		};
-		DCB291A4C05F9BCA2C6A1C9B14645464 /* Debug */ = {
+		904CD12D29EC11E204FD85868D3FF0E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95CC59761A02B39CD10A5754E533418E /* Pods-CommandBarIOS_Tests.debug.xcconfig */;
+			baseConfigurationReference = FBA3F61958993B363D52C4934D7FF3B4 /* Pods-CommandBarIOS_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -655,7 +658,42 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D28D1C82B896B60A308F7802E96FF6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95CC59761A02B39CD10A5754E533418E /* Pods-CommandBarIOS_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests.modulemap";
@@ -672,11 +710,12 @@
 			};
 			name = Debug;
 		};
-		E33B31A077CA055DB90F757D19AA7827 /* Release */ = {
+		F8B44AFDBFD5F461C3EB52F19157872B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B88F91FB460AFB11775FE964C05AB3CF /* Pods-CommandBarIOS_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -688,7 +727,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example.modulemap";
@@ -706,47 +745,14 @@
 			};
 			name = Release;
 		};
-		F323BDFD5E87EEBCBD4D072D49B5AEB0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 842D42AB8A2A2ED88FF8117E26013859 /* Pods-CommandBarIOS_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		1F2A00F7317381B3919D9459CBDCC0D8 /* Build configuration list for PBXNativeTarget "Pods-CommandBarIOS_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F323BDFD5E87EEBCBD4D072D49B5AEB0 /* Debug */,
-				E33B31A077CA055DB90F757D19AA7827 /* Release */,
+				6AFD08F1850883A8C7E575184FE8A612 /* Debug */,
+				F8B44AFDBFD5F461C3EB52F19157872B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -754,8 +760,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
-				7EE7A78859F657F6BEFC651185B43192 /* Release */,
+				8E6A8FF58D100B7F9B1943F455C00F02 /* Debug */,
+				6C98B09FF5CCB107837D1A84E8F3A4F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -763,8 +769,8 @@
 		502957DD10EE69D43E1C3A73BC787C4D /* Build configuration list for PBXNativeTarget "Pods-CommandBarIOS_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DCB291A4C05F9BCA2C6A1C9B14645464 /* Debug */,
-				0235689F67AFE9BE7DC93FABC553A0A4 /* Release */,
+				D28D1C82B896B60A308F7802E96FF6BC /* Debug */,
+				904CD12D29EC11E204FD85868D3FF0E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -772,8 +778,8 @@
 		943E543CF2702CDA3217970C66DB803D /* Build configuration list for PBXNativeTarget "CommandBarIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				43AE3E5627452649CDAB0D7FBA715C01 /* Debug */,
-				304226B9E6188B7E1A6B068FC48880E7 /* Release */,
+				657744DEB6ADE8CCEC5DF33952008A89 /* Debug */,
+				4F2D7B5C21F3C6B4F70ED70707A9E6A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
