@@ -18,7 +18,7 @@
   "platforms": {
     "ios": "12.4"
   },
-  "source_files": "Sources/CommandBarIOS/**/*",
+  "source_files": "Sources/CommandBarIOS/**/*.swift",
   "swift_versions": "5.0",
   "swift_version": "5.0"
 }
