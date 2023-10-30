@@ -3,11 +3,11 @@ import WebKit
 
 public class HelpHubViewController: UIViewController {
     var helpHubView: HelpHubWebView!
-    var orgId: String
+    private var options: CommandBarOptions
     public var delegate: HelpHubWebViewDelegate? // Add this property
 
-    public init(orgId: String) {
-        self.orgId = orgId
+    public init(options: CommandBarOptions) {
+        self.options = options
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -21,9 +21,8 @@ public class HelpHubViewController: UIViewController {
     }
 
     private func configureHelpHubView() {
-        helpHubView = HelpHubWebView(orgId: self.orgId, frame: CGRect.zero)
+        helpHubView = HelpHubWebView(frame: CGRect.zero, options: self.options)
         helpHubView.delegate = self
-        
         view.addSubview(helpHubView)
         helpHubView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

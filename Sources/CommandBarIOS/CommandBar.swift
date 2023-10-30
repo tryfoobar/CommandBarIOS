@@ -1,17 +1,18 @@
 import WebKit
 
 public class CommandBar {
-    private var orgId: String;
+    private var options: CommandBarOptions;
+    
     public weak var delegate: HelpHubWebViewDelegate? // Add this property
     private weak var presentedNavigationController: UINavigationController? // Add this property
     
-    public init(orgId: String) {
-        self.orgId = orgId
+    public init(options: CommandBarOptions) {
+        self.options = options
     }
 
     public func openHelpHub(resolve: ((Any?) -> Void)? = nil, reject: ((Any?) -> Void)? = nil) {
         DispatchQueue.main.async {
-            let viewController = HelpHubViewController(orgId: self.orgId)
+            let viewController = HelpHubViewController(options: self.options)
             viewController.delegate = self
 
             let navigationController = UINavigationController(rootViewController: viewController)
