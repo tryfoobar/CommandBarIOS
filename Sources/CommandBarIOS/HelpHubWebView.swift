@@ -3,7 +3,7 @@ import WebKit
 
 public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHandler {
     private var orgId: String = "foocorp"
-    private var launchCode: String = "local-dev"
+    private var launchCode: String = "prod"
     // TODO: Make these configurable
     private var userId: String = "null"
     private var debug: Bool = true
@@ -46,7 +46,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                 <div></div>
             </body>
         """
-        loadHTMLString(html, baseURL: URL(string: "http://api-labs.commandbar.com"))
+        loadHTMLString(html, baseURL: URL(string: "http://api.commandbar.com"))
     }
 
     private func loadSnippet() {
