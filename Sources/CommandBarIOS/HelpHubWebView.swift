@@ -3,7 +3,7 @@ import WebKit
 
 public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHandler {
     private var orgId: String = "foocorp"
-    private var launchCode: String = "prod"
+    private var launchCode: String = "local-dev"
     // TODO: Make these configurable
     private var userId: String = "null"
     private var debug: Bool = true
@@ -21,10 +21,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
     }
 
     func loadContent() {
-        let userContentController = WKUserContentController()
-        userContentController.add(self, name: "commandbar__onFallbackAction")
-
-        configuration.userContentController = userContentController
+        configuration.userContentController.add(self, name: "commandbar__onFallbackAction")
         configuration.websiteDataStore = WKWebsiteDataStore.default()
 
         // Before iOS 16.4, webviews are always inspectable
@@ -49,7 +46,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                 <div></div>
             </body>
         """
-        loadHTMLString(html, baseURL: URL(string: "http://api.commandbar.com"))
+        loadHTMLString(html, baseURL: URL(string: "http://api-labs.commandbar.com"))
     }
 
     private func loadSnippet() {
@@ -86,10 +83,10 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
             return
         }
 
-        delegate?.didReceiveEvent(dict)
+        self.delegate?.didReceiveFallbackAction(dict)
     }
 }
 
 public protocol HelpHubWebViewDelegate: AnyObject {
-    func didReceiveEvent(_ event: [String: Any])
+    func didReceiveFallbackAction(_ action: [String: Any])
 }

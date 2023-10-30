@@ -2,6 +2,7 @@ import UIKit
 import CommandBarIOS
 
 class ViewController: UIViewController {
+    var commandbar = CommandBar(orgId: "foocorp")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,17 @@ class ViewController: UIViewController {
     }
     
     @objc func openHelpHub() {
-        CommandBar.openHelpHub(orgId: "your_org_id")
+        commandbar.delegate = self
+        commandbar.openHelpHub()
+    }
+}
+
+extension ViewController : HelpHubWebViewDelegate {
+    func didReceiveFallbackAction(_ action: [String : Any]) {
+        commandbar.closeHelpHub()
+        let alertController = UIAlertController(title: "Fallback Received", message: "An fallback action was triggered in HelpHubWebView.", preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alertController.addAction(okayAction)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true)
     }
 }

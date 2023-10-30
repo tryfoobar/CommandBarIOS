@@ -4,7 +4,8 @@ import WebKit
 public class HelpHubViewController: UIViewController {
     var helpHubView: HelpHubWebView!
     var orgId: String
-    
+    public var delegate: HelpHubWebViewDelegate? // Add this property
+
     public init(orgId: String) {
         self.orgId = orgId
         super.init(nibName: nil, bundle: nil)
@@ -21,6 +22,8 @@ public class HelpHubViewController: UIViewController {
 
     private func configureHelpHubView() {
         helpHubView = HelpHubWebView(orgId: self.orgId, frame: CGRect.zero)
+        helpHubView.delegate = self
+        
         view.addSubview(helpHubView)
         helpHubView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -31,5 +34,11 @@ public class HelpHubViewController: UIViewController {
         ])
 
         helpHubView.loadContent()
+    }
+}
+
+extension HelpHubViewController : HelpHubWebViewDelegate {
+    public func didReceiveFallbackAction(_ action: [String : Any]) {
+        self.delegate?.didReceiveFallbackAction(action)
     }
 }
