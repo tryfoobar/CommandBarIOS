@@ -2,14 +2,17 @@ import UIKit
 import WebKit
 
 public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHandler {
-    private var options: CommandBarOptions;
+    public var options: CommandBarOptions? = nil {
+        didSet {
+            self.loadContent()
+        }
+    }
 
     private var debug: Bool = true
 
     public weak var delegate: HelpHubWebViewDelegate?
-
-    public init(frame: CGRect, options: CommandBarOptions) {
-        self.options = options
+    
+    public init(frame: CGRect) {
         super.init(frame: frame, configuration: WKWebViewConfiguration())
         navigationDelegate = self
     }
@@ -21,7 +24,11 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
     func loadContent() {
         configuration.userContentController.add(self, name: "commandbar__onFallbackAction")
         configuration.websiteDataStore = WKWebsiteDataStore.default()
-
+        
+        guard let options = self.options else {
+            return
+        }
+        
         // Before iOS 16.4, webviews are always inspectable
         if #available(iOS 16.4, *) {
             isInspectable = debug
@@ -51,10 +58,10 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                       width: 64px;
                       height: 64px;
                       margin: 8px;
-                      border: 8px solid \(self.options.spinnerColor);
+                      border: 8px solid \(options.spinnerColor);
                       border-radius: 50%;
                       animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-                      border-color: \(self.options.spinnerColor) transparent transparent transparent;
+                      border-color: \(options.spinnerColor) transparent transparent transparent;
                     }
                     .lds-ring div:nth-child(1) {
                       animation-delay: -0.45s;
@@ -91,11 +98,15 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
     }
 
     private func loadSnippet() {
-        let userId = self.options.userId == nil ? "null" : "\"\(self.options.userId!)\""
+        guard let options = self.options else {
+            return
+        }
+
+        let userId = options.userId == nil ? "null" : "\"\(options.userId!)\""
         
         let snippet = """
             (function() {
-                    var o="\(self.options.orgId)",n=["Object.assign","Symbol","Symbol.for"].join("%2C"),a=window;function t(o,n){void 0===n&&(n=!1),"complete"!==document.readyState&&window.addEventListener("load",t.bind(null,o,n),{capture:!1,once:!0});var a=document.createElement("script");a.type="text/javascript",a.async=n,a.src=o,document.head.appendChild(a)}function r(){var n;if(void 0===a.CommandBar){delete a.__CommandBarBootstrap__;var r=Symbol.for("CommandBar::configuration"),e=Symbol.for("CommandBar::orgConfig"),c=Symbol.for("CommandBar::disposed"),i=Symbol.for("CommandBar::isProxy"),m=Symbol.for("CommandBar::queue"),l=Symbol.for("CommandBar::unwrap"),d=[],s="\(self.options.launchCode)",u=s&&s.includes("local")?"http://localhost:8000":"https://api.commandbar.com",f=Object.assign(((n={})[r]={uuid:o},n[e]={},n[c]=!1,n[i]=!0,n[m]=new Array,n[l]=function(){return f},n),a.CommandBar),p=["addCommand","boot"],y=f;Object.assign(f,{shareCallbacks:function(){return{}},shareContext:function(){return{}}}),a.CommandBar=new Proxy(f,{get:function(o,n){return n in y?f[n]:p.includes(n)?function(){var o=Array.prototype.slice.call(arguments);return new Promise((function(a,t){o.unshift(n,a,t),f[m].push(o)}))}:function(){var o=Array.prototype.slice.call(arguments);o.unshift(n),f[m].push(o)}}}),null!==s&&d.push("lc=".concat(s)),d.push("version=2"),t("".concat(u,"/latest/").concat(o,"?").concat(d.join("&")),!0)}}void 0===Object.assign||"undefined"==typeof Symbol||void 0===Symbol.for?(a.__CommandBarBootstrap__=r,t("https://polyfill.io/v3/polyfill.min.js?version=3.101.0&callback=__CommandBarBootstrap__&features="+n)):r();
+                    var o="\(options.orgId)",n=["Object.assign","Symbol","Symbol.for"].join("%2C"),a=window;function t(o,n){void 0===n&&(n=!1),"complete"!==document.readyState&&window.addEventListener("load",t.bind(null,o,n),{capture:!1,once:!0});var a=document.createElement("script");a.type="text/javascript",a.async=n,a.src=o,document.head.appendChild(a)}function r(){var n;if(void 0===a.CommandBar){delete a.__CommandBarBootstrap__;var r=Symbol.for("CommandBar::configuration"),e=Symbol.for("CommandBar::orgConfig"),c=Symbol.for("CommandBar::disposed"),i=Symbol.for("CommandBar::isProxy"),m=Symbol.for("CommandBar::queue"),l=Symbol.for("CommandBar::unwrap"),d=[],s="\(options.launchCode)",u=s&&s.includes("local")?"http://localhost:8000":"https://api.commandbar.com",f=Object.assign(((n={})[r]={uuid:o},n[e]={},n[c]=!1,n[i]=!0,n[m]=new Array,n[l]=function(){return f},n),a.CommandBar),p=["addCommand","boot"],y=f;Object.assign(f,{shareCallbacks:function(){return{}},shareContext:function(){return{}}}),a.CommandBar=new Proxy(f,{get:function(o,n){return n in y?f[n]:p.includes(n)?function(){var o=Array.prototype.slice.call(arguments);return new Promise((function(a,t){o.unshift(n,a,t),f[m].push(o)}))}:function(){var o=Array.prototype.slice.call(arguments);o.unshift(n),f[m].push(o)}}}),null!==s&&d.push("lc=".concat(s)),d.push("version=2"),t("".concat(u,"/latest/").concat(o,"?").concat(d.join("&")),!0)}}void 0===Object.assign||"undefined"==typeof Symbol||void 0===Symbol.for?(a.__CommandBarBootstrap__=r,t("https://polyfill.io/v3/polyfill.min.js?version=3.101.0&callback=__CommandBarBootstrap__&features="+n)):r();
                     window.CommandBar.boot(\(userId), { products: ["help_hub"] });
                     window._cbIsWebView = true;
                     window.CommandBar.openHelpHub();

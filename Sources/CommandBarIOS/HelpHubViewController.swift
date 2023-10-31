@@ -21,8 +21,10 @@ public class HelpHubViewController: UIViewController {
     }
 
     private func configureHelpHubView() {
-        helpHubView = HelpHubWebView(frame: CGRect.zero, options: self.options)
+        helpHubView = HelpHubWebView(frame: CGRect.zero)
         helpHubView.delegate = self
+        helpHubView.options = self.options
+
         view.addSubview(helpHubView)
         helpHubView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -32,7 +34,6 @@ public class HelpHubViewController: UIViewController {
             helpHubView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        helpHubView.loadContent()
     }
 }
 
