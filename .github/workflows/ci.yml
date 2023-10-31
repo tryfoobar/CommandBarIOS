@@ -12,7 +12,7 @@ jobs:
               with:
                   spm-package: "./"
                   scheme: CommandBarIOS
-                  destination: platform=iOS
+                  destination: platform=iOS Simulator,OS=16.2,name=iPhone 14
                   action: build
             # - name: Switch XCode Version
             #   run: sudo xcode-select -s /Applications/Xcode.app
