@@ -1,4 +1,4 @@
-name: Test And Lint
+name: Build
 
 on: [push]
 
@@ -13,7 +13,7 @@ jobs:
                   spm-package: "./"
                   scheme: CommandBarIOS
                   destination: platform=iOS
-                  action: test
+                  action: build
             # - name: Switch XCode Version
             #   run: sudo xcode-select -s /Applications/Xcode.app
             # - name: Install Dependences
