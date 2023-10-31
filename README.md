@@ -25,7 +25,7 @@ To install it using Swift Package Manager, add the following to your `Package.sw
 
 ```
 dependencies: [
-    .package(url: "https://github.com/tryfoobar/CommandBarIOS.git", from: "1.0.8")
+    .package(url: "https://github.com/tryfoobar/CommandBarIOS.git", from: "1.0.9")
 ]
 ```
 
