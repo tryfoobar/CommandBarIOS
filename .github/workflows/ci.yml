@@ -8,16 +8,22 @@ jobs:
 
         steps:
             - uses: actions/checkout@master
-            - name: Switch XCode Version
-              run: sudo xcode-select -s /Applications/Xcode.app
-            - name: Install Dependences
-              run: |
-                  cd Example
-                  pod repo update
-                  pod install
-              shell: bash
-            - name: Test and Lint
-              uses: ty0x2333/cocoapods-action@master
+            - uses: sersoft-gmbh/xcodebuild-action@v3
               with:
-                  additional_build_params: -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.2'
-                  additional_lint_params: --private
+                  spm-package: "./"
+                  scheme: CommandBarIOS
+                  destination: platform=iOS
+                  action: test
+            # - name: Switch XCode Version
+            #   run: sudo xcode-select -s /Applications/Xcode.app
+            # - name: Install Dependences
+            #   run: |
+            #       cd Example
+            #       pod repo update
+            #       pod install
+            #   shell: bash
+            # - name: Test and Lint
+            #   uses: ty0x2333/cocoapods-action@master
+            #   with:
+            #       additional_build_params: -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.2'
+            #       additional_lint_params: --private
