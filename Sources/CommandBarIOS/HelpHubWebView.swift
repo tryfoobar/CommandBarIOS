@@ -94,7 +94,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                 <div class="loading-container"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
             </body>
         """
-        loadHTMLString(html, baseURL: URL(string: "http://api-labs.commandbar.com"))
+        loadHTMLString(html, baseURL: URL(string: "http://api.commandbar.com"))
     }
 
     private func loadSnippet() {
