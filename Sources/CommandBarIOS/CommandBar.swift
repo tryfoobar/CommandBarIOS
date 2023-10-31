@@ -10,7 +10,7 @@ public class CommandBar {
         self.options = options
     }
 
-    public func openHelpHub(resolve: ((Any?) -> Void)? = nil, reject: ((Any?) -> Void)? = nil) {
+    public func openHelpHub() {
         DispatchQueue.main.async {
             let viewController = HelpHubViewController(options: self.options)
             viewController.delegate = self
@@ -21,9 +21,7 @@ public class CommandBar {
             navigationController.setNavigationBarHidden(true, animated: false)
             self.presentedNavigationController = navigationController
             
-            UIApplication.shared.keyWindow?.rootViewController?.present(navigationController, animated: true) {
-                resolve?(true)
-            }
+            UIApplication.shared.keyWindow?.rootViewController?.present(navigationController, animated: true)
         }
     }
     
