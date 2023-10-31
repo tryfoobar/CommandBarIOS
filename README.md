@@ -2,6 +2,8 @@
 
 # CommandBarIOS
 
+[![Build](https://github.com/tryfoobar/CommandBarIOS/actions/workflows/ci.yml/badge.svg)](https://github.com/tryfoobar/CommandBarIOS/actions/workflows/ci.yml)
+
 Copilot & HelpHub in React Native
 
 ## Requirements
