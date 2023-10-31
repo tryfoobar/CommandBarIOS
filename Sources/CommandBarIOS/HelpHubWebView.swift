@@ -30,9 +30,11 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
         }
         
         // Before iOS 16.4, webviews are always inspectable
-        if #available(iOS 16.4, *) {
+        #if compiler(>=5.8) && os(iOS)
+          if #available(iOS 16.4, *) {
             self.isInspectable = debug
-        }
+          }
+        #endif
 
         let html = """
             <head>
