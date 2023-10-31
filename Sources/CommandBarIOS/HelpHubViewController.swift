@@ -21,7 +21,7 @@ public class HelpHubViewController: UIViewController {
     }
 
     private func configureHelpHubView() {
-        helpHubView = HelpHubWebView(frame: CGRect.zero)
+        helpHubView = HelpHubWebView(frame: self.view.frame)
         helpHubView.delegate = self
         helpHubView.options = self.options
 
