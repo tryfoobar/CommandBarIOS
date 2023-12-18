@@ -25,6 +25,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '13.0'
 
   s.source_files = 'Sources/CommandBarIOS/**/*.swift'
-  s.resources = "Sources/CommandBarIOS/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
   s.swift_versions = '5.0'
 end
