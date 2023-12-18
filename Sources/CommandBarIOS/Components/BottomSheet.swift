@@ -94,7 +94,7 @@ struct BottomSheet<Content: View>: View {
             }
         }.onAppear(perform: {
             DispatchQueue.main.async {
-                withAnimation(.spring) {
+                withAnimation(.spring()) {
                     self.showSheet = true
                 }
             }
