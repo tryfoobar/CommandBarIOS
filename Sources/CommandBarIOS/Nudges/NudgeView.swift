@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct NudgeView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     let nudge: Nudge
     let step: NudgeStep
     let stepIndex: Int
@@ -116,7 +118,7 @@ struct NudgeView: View {
                     ContentStack
                 }
                 .padding()
-                .background(Color(UIColor.systemBackground))
+                .background(colorScheme == .dark ? Color(UIColor.systemBackground.lighter(by: 10)!) : Color.white)
                 .cornerRadius(cornerRadius)
                 .scaleEffect(self.appear == 1 ? 1 : 0)
                 .onAppear {

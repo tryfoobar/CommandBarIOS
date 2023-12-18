@@ -2,6 +2,8 @@ import SwiftUI
 
 
 struct StarButtons: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     @Binding var selection: Int;
     
     let action: () -> Void;
@@ -19,6 +21,7 @@ struct StarButtons: View {
         
         ButtonGroupView(variant: .inclusive, options: stars, selection: $selection) { option, isSelected in
             ZStack {
+          
                 Image(systemName: "star")
                     .resizable()
                     .scaledToFit()
@@ -29,22 +32,22 @@ struct StarButtons: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: isSelected ? 20 : 24, height: isSelected ? 20 : 24) // Original size
-                    .foregroundColor(isSelected ? activeStarColor : starColor)
+                    .foregroundColor(isSelected ? activeStarColor : colorScheme == .dark ? .gray.opacity(0.8) : starColor)
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 8)
-            .background(isSelected ? activeBackgroundColor : backgroundColor)
-            .foregroundColor(.white)
+            .foregroundColor(colorScheme == .dark ? Color(UIColor.systemBackground.lighter(by: 15)!) : .white)
             .cornerRadius(4)
             .overlay(
                 RoundedRectangle(cornerRadius: 4)
-                    .stroke(isSelected ? activeBorderColor : borderColor, lineWidth: 1)
+                    .stroke(isSelected ? activeBorderColor : colorScheme == .dark ? .gray.opacity(0.8)  : borderColor, lineWidth: 1)
             )
         }
     }
 }
 
 struct EmojiButtons: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var selection: Int;
     
     let action: () -> Void;
@@ -62,18 +65,19 @@ struct EmojiButtons: View {
                 .shadow(color: .init(.sRGB, red: 0, green: 0, blue: 0, opacity: isSelected ? 0.35 : 0), radius: 7, x: 0, y: 4)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 8)
-                .background(isSelected ? activeBackgroundColor : backgroundColor)
-                .foregroundColor(.white)
+                .background(isSelected ? activeBackgroundColor : colorScheme == .dark ? Color(UIColor.systemBackground.lighter(by: 15)!) : .white)
+                .foregroundColor( colorScheme == .dark && !isSelected ? .white : .black)
                 .cornerRadius(4)
                 .overlay(
                     RoundedRectangle(cornerRadius: 4)
-                        .stroke(isSelected ? activeBorderColor : borderColor, lineWidth: 1)
+                        .stroke(isSelected ? activeBorderColor : colorScheme == .dark ? .gray.opacity(0.8)  : borderColor, lineWidth: 1)
                 )
         }
     }
 }
 
 struct NumberButtons: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var selection: Int;
     
     let action: () -> Void;
@@ -91,12 +95,12 @@ struct NumberButtons: View {
             Text(option)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 8)
-                .background(isSelected ? activeBackgroundColor : backgroundColor)
-                .foregroundColor(.black)
+                .background(isSelected ? activeBackgroundColor : colorScheme == .dark ? Color(UIColor.systemBackground.lighter(by: 15)!) : .white)
+                .foregroundColor( colorScheme == .dark && !isSelected ? .white : .black)
                 .cornerRadius(4)
                 .overlay(
                     RoundedRectangle(cornerRadius: 4)
-                        .stroke(isSelected ? activeBorderColor : borderColor, lineWidth: 1)
+                        .stroke(isSelected ? activeBorderColor : colorScheme == .dark ? .gray.opacity(0.8)  : borderColor, lineWidth: 1)
                 )
         }
     }

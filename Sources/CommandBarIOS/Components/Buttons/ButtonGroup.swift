@@ -8,6 +8,8 @@ enum ButtonGroupVariant {
 }
 
 struct ButtonGroupView<Option, Content: View>: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     let variant: ButtonGroupVariant
     let options: [Option]
     let content: (Option, Bool) -> Content
@@ -29,6 +31,7 @@ struct ButtonGroupView<Option, Content: View>: View {
                 }) {
                     content(options[index], isSelected)
                 }.frame(maxWidth: .infinity)
+                
             }
         }
     }

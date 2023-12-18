@@ -1,13 +1,15 @@
 import SwiftUI
 
 struct CMDButton: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var title: String
     var variant: NudgeContentButtonBlockMeta.ButtonType?
     var fullWidth: Bool = false
     var action: (() -> Void)?
     
     var backgroundColor: Color {
-        return  (variant  ?? .primary) == .primary ? Color.black : Color.white
+        return  (variant  ?? .primary) == .primary ? colorScheme == .dark ? Color(UIColor.systemBackground.lighter(by: 15)!) : Color.black : Color.white
     }
   
     var foregroundColor: Color {
@@ -15,7 +17,7 @@ struct CMDButton: View {
     }
   
     var borderColor: Color {
-        return (variant  ?? .primary) == .primary ? Color.black : Color.gray.opacity(0.5)
+        return (variant  ?? .primary) == .primary ? colorScheme == .dark ? Color(UIColor.systemBackground.lighter(by: 15)!) : Color.black : Color.gray.opacity(0.5)
     }
 
     var body: some View {
