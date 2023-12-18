@@ -1,4 +1,6 @@
 
+import Foundation
+
 // MARK: Public
 protocol CommandBarOptionsDelegate: Codable {
     var user_id: String? { get set }

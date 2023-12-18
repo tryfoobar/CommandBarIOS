@@ -1,3 +1,4 @@
+import Foundation
 
 protocol CommandBarInternalSDKDelegate: AnyObject {
     func didBootComplete(withConfig config: Config)
