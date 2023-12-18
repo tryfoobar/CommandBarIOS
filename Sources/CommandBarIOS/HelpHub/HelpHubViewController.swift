@@ -3,10 +3,10 @@ import WebKit
 
 public class HelpHubViewController: UIViewController {
     var helpHubView: HelpHubWebView!
-    private var options: CommandBarOptions
+    private var options: CommandBarOptions_Deprecated
     public var delegate: HelpHubWebViewDelegate? // Add this property
 
-    public init(options: CommandBarOptions) {
+    public init(options: CommandBarOptions_Deprecated) {
         self.options = options
         super.init(nibName: nil, bundle: nil)
     }

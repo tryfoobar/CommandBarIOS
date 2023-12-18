@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		4843AA191A2DED0CA2F52040 /* Pods_CommandBarIOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07272DC8996BCC77417C4BC6 /* Pods_CommandBarIOS_Tests.framework */; };
-		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		DA41BFB8BED6A51CE50A6D1A /* Pods_CommandBarIOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6A6D4D4FA9BF47C33B8F1B /* Pods_CommandBarIOS_Example.framework */; };
+		FF409B3D2B2F694500D2A3CD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF409B3C2B2F694500D2A3CD /* HomeView.swift */; };
+		FF409B3F2B2F69C900D2A3CD /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF409B3E2B2F69C900D2A3CD /* LogoView.swift */; };
+		FF409B412B2F6A7200D2A3CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF409B402B2F6A7200D2A3CD /* SceneDelegate.swift */; };
+		FF409B462B2F6BB400D2A3CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
+		FF409B482B2F717200D2A3CD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF409B472B2F717200D2A3CD /* Button.swift */; };
+		FF409B4A2B2F76C900D2A3CD /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF409B492B2F76C900D2A3CD /* GradientView.swift */; };
+		FF409B4C2B2F7B0800D2A3CD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF409B4B2B2F7B0800D2A3CD /* Toast.swift */; };
+		FF409B502B2FB49C00D2A3CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF409B4F2B2FB49C00D2A3CD /* LaunchScreen.storyboard */; };
+		FF409B522B30995800D2A3CD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF409B512B30995800D2A3CD /* Color.swift */; };
+		FFB6A38B2B1BC93D0036D16F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6A38A2B1BC93D0036D16F /* App.swift */; };
+		FFB6A38D2B1E27850036D16F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6A38C2B1E27850036D16F /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +42,7 @@
 		4E6A6D4D4FA9BF47C33B8F1B /* Pods_CommandBarIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommandBarIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* CommandBarIOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommandBarIOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* CommandBarIOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommandBarIOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -47,6 +50,16 @@
 		92163EE95FB1EE50D8179ED0 /* Pods-CommandBarIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommandBarIOS_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B070E6A9FC190A106848CE72 /* Pods-CommandBarIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommandBarIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-CommandBarIOS_Example/Pods-CommandBarIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F13A7F09F23D0ED81552C380 /* Pods-CommandBarIOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommandBarIOS_Tests.release.xcconfig"; path = "Target Support Files/Pods-CommandBarIOS_Tests/Pods-CommandBarIOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FF409B3C2B2F694500D2A3CD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FF409B3E2B2F69C900D2A3CD /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		FF409B402B2F6A7200D2A3CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FF409B472B2F717200D2A3CD /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		FF409B492B2F76C900D2A3CD /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		FF409B4B2B2F7B0800D2A3CD /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		FF409B4F2B2FB49C00D2A3CD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF409B512B30995800D2A3CD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FFB6A38A2B1BC93D0036D16F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		FFB6A38C2B1E27850036D16F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +126,13 @@
 		607FACD21AFB9204008FA782 /* Example for CommandBarIOS */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				FF409B452B2F6B0C00D2A3CD /* Views */,
+				FFB6A38A2B1BC93D0036D16F /* App.swift */,
+				FFB6A38C2B1E27850036D16F /* AppDelegate.swift */,
+				FF409B402B2F6A7200D2A3CD /* SceneDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				FF409B4F2B2FB49C00D2A3CD /* LaunchScreen.storyboard */,
 			);
 			name = "Example for CommandBarIOS";
 			path = CommandBarIOS;
@@ -159,6 +173,19 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		FF409B452B2F6B0C00D2A3CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF409B3C2B2F694500D2A3CD /* HomeView.swift */,
+				FF409B3E2B2F69C900D2A3CD /* LogoView.swift */,
+				FF409B472B2F717200D2A3CD /* Button.swift */,
+				FF409B492B2F76C900D2A3CD /* GradientView.swift */,
+				FF409B4B2B2F7B0800D2A3CD /* Toast.swift */,
+				FF409B512B30995800D2A3CD /* Color.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,6 +204,8 @@
 			dependencies = (
 			);
 			name = CommandBarIOS_Example;
+			packageProductDependencies = (
+			);
 			productName = CommandBarIOS;
 			productReference = 607FACD01AFB9204008FA782 /* CommandBarIOS_Example.app */;
 			productType = "com.apple.product-type.application";
@@ -212,10 +241,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 7AFRVF8235;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 7AFRVF8235;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -231,6 +262,8 @@
 				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
+			packageReferences = (
+			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -246,9 +279,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				FF409B502B2FB49C00D2A3CD /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF409B462B2F6BB400D2A3CD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,8 +364,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				FF409B482B2F717200D2A3CD /* Button.swift in Sources */,
+				FF409B3F2B2F69C900D2A3CD /* LogoView.swift in Sources */,
+				FFB6A38D2B1E27850036D16F /* AppDelegate.swift in Sources */,
+				FF409B3D2B2F694500D2A3CD /* HomeView.swift in Sources */,
+				FF409B4A2B2F76C900D2A3CD /* GradientView.swift in Sources */,
+				FF409B4C2B2F7B0800D2A3CD /* Toast.swift in Sources */,
+				FFB6A38B2B1BC93D0036D16F /* App.swift in Sources */,
+				FF409B412B2F6A7200D2A3CD /* SceneDelegate.swift in Sources */,
+				FF409B522B30995800D2A3CD /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,25 +393,6 @@
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		607FACED1AFB9204008FA782 /* Debug */ = {
@@ -478,8 +499,9 @@
 			baseConfigurationReference = 1716B1D54620EDFE703901A8 /* Pods-CommandBarIOS_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7AFRVF8235;
 				INFOPLIST_FILE = CommandBarIOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -494,8 +516,9 @@
 			baseConfigurationReference = B070E6A9FC190A106848CE72 /* Pods-CommandBarIOS_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7AFRVF8235;
 				INFOPLIST_FILE = CommandBarIOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -509,6 +532,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 92163EE95FB1EE50D8179ED0 /* Pods-CommandBarIOS_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 7AFRVF8235;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -518,7 +542,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,12 +556,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F13A7F09F23D0ED81552C380 /* Pods-CommandBarIOS_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 7AFRVF8235;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

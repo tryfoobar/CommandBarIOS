@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CommandBarIOS'
-  s.version          = '1.0.10'
+  s.version          = '1.1.0'
   s.summary          = 'HelpHub and Copilot Command Bar for iOS. '
 
 # This description is used to generate tags and improve search results.
@@ -22,17 +22,9 @@ Pod::Spec.new do |s|
   s.author           = { 'CommandBar Engineering' => 'eng@commandbar.com' }
   s.source           = { :git => 'https://github.com/tryfoobar/CommandBarIOS.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '12.4'
+  s.ios.deployment_target = '13.0'
 
   s.source_files = 'Sources/CommandBarIOS/**/*.swift'
-  
+  s.resources = "Sources/CommandBarIOS/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
   s.swift_versions = '5.0'
-
-  # s.resource_bundles = {
-  #   'CommandBarIOS' => ['CommandBarIOS/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

@@ -1,16 +1,16 @@
 import WebKit
 
-public class CommandBar {
-    private var options: CommandBarOptions;
+class CommandBar {
+    private var options: CommandBarOptions_Deprecated;
     
-    public weak var delegate: HelpHubWebViewDelegate? // Add this property
+    weak var delegate: HelpHubWebViewDelegate? // Add this property
     private weak var presentedNavigationController: UINavigationController? // Add this property
     
-    public init(options: CommandBarOptions) {
+    init(options: CommandBarOptions_Deprecated) {
         self.options = options
     }
 
-    public func openHelpHub() {
+    func openHelpHub() {
         DispatchQueue.main.async {
             let viewController = HelpHubViewController(options: self.options)
             viewController.delegate = self
@@ -25,14 +25,14 @@ public class CommandBar {
         }
     }
     
-    public func closeHelpHub() {
+    func closeHelpHub() {
         presentedNavigationController?.dismiss(animated: true, completion: nil)
         presentedNavigationController = nil
     }
 }
 
 extension CommandBar : HelpHubWebViewDelegate {
-    public func didReceiveFallbackAction(_ action: [String : Any]) {
+    func didReceiveFallbackAction(_ action: [String : Any]) {
         self.delegate?.didReceiveFallbackAction(action)
     }
 }
