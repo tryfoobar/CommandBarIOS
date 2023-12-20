@@ -102,7 +102,6 @@ struct CommandAction: Codable {
     var meta: Meta
 
     struct Meta: Codable {
-        var type: String
         var command: String
     }
 }
@@ -126,6 +125,27 @@ struct QuestlistAction: Codable {
     var value: Int
 }
 
+extension Action {
+    func isSameType(as action: String) -> Bool {
+        switch (self, action) {
+        case (.command, "execute_command"),
+             (.none, "no_action"),
+             (.click, "click"),
+             (.link, "link"),
+             (.openChat, "open_chat"),
+             (.dismiss, "dismiss"),
+             (.snooze, "snooze"),
+             (.questlist, "questlist"),
+             (.nudge, "nudge"),
+             (.goToNudgeStep, "go_to_step"),
+             (.stepBack, "step_back"),
+             (.openBar, "open_bar"): return true
+        default: return false
+        }
+    }
+}
+
+
 enum Action: Codable {
     case command(CommandAction)
     case none(NoAction)
@@ -145,7 +165,7 @@ enum Action: Codable {
     }
     
     enum ActionTypes: String, Codable {
-        case command = "command"
+        case command = "execute_command"
         case none = "no_action"
         case click = "click"
         case link = "link"
