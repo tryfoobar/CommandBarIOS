@@ -42,9 +42,9 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
         let html = """
             <!DOCTYPE html>
             <html>
-            <head>
+              <head>
                   <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-                <style>
+                  <style>
                       .loading-container {
                           display: flex;
                           justify-content: center;
@@ -88,23 +88,18 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                         }
                       }
 
-                    #helphub-close-button {
-                        display: none !important;
-                    }
-                    
-                    #copilot-container:not(:focus-within) {
-                        padding-bottom: 50px;
-                    }
-        
-                    body {
-                        background: transparent;
-                        inset: 2px;
-                    }
-                </style>
-            </head>
-            <body>
-                <div class="loading-container"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-            </body>
+                      #helphub-close-button {
+                          display: none !important;
+                      }
+                      
+                      #copilot-container:not(:focus-within) {
+                          padding-bottom: 50px;
+                      }
+                  </style>
+              </head>
+              <body>
+                  <div class="loading-container"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+              </body>
             </html>
         """
         loadHTMLString(html, baseURL: URL(string: "http://api.commandbar.com"))
@@ -116,7 +111,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
         }
 
         let userId = options.userId == nil ? "null" : "\"\(options.userId!)\""
-        
+
         let snippet = """
             (function() {
                     window._cbIsWebView = true;
@@ -139,6 +134,22 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
 
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         loadSnippet()
+    }
+    
+    // MARK: - WKUIDelegate
+    public func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if let frame = navigationAction.targetFrame,
+            frame.isMainFrame {
+            return nil
+        }
+
+        if let url = navigationAction.request.url, UIApplication.shared.canOpenURL(url) {
+            CommandBarSDK.shared.closeHelpHub()
+            UIApplication.shared.open(url)
+            
+        }
+        
+        return nil
     }
 
     // MARK: - WKScriptMessageHandler
