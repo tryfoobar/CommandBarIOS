@@ -19,7 +19,8 @@ public struct CommandBarOptions : CommandBarOptionsDelegate, Codable {
 internal enum LaunchCode: String, Codable {
     case prod = "prod"
     case labs = "labs"
-    case localDev = "local-dev"
+    case local = "local"
+    case dev = "dev"
 }
 
 internal struct CommandBarInternalOptions : CommandBarOptionsDelegate, Codable {
@@ -64,7 +65,10 @@ internal struct CommandBarInternalOptions : CommandBarOptionsDelegate, Codable {
         case .labs:
             baseURLStr = "https://api-labs.commandbar.com"
             break;
-        case .localDev:
+        case .dev:
+            baseURLStr = "https://api-dev.commandbar.com"
+            break;
+        case .local:
             baseURLStr = "http://localhost:8000"
             break
         default:

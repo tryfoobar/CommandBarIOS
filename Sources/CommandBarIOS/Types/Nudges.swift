@@ -30,7 +30,6 @@ struct NudgeContentVideoBlockMeta : Codable{
 }
 
 struct NudgeContentHelpDocBlockMeta: Codable {
-    var type = "command"
     var command: String?
 }
 
@@ -134,7 +133,6 @@ enum NudgeContentBlockMeta: Codable {
     
     init(from decoder: Decoder, type: NudgeContentBlockType) throws {
         let container = try decoder.singleValueContainer()
-        
         switch type {
         case .markdown:
             let value = try container.decode(NudgeContentMarkdownBlockMeta.self)
