@@ -23,6 +23,8 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
 
     func loadContent() {
         configuration.userContentController.add(self, name: "commandbar__onFallbackAction")
+        configuration.userContentController.add(self, name: "commandbar__log")
+
         configuration.websiteDataStore = WKWebsiteDataStore.default()
         
         guard let options = self.options else {
@@ -96,6 +98,12 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
 
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let actionStr = message.body as? String else {
+            return
+        }
+        
+        // Debug Logging for local development
+        if message.name == "commandbar__log" {
+            print(message.body)
             return
         }
         
