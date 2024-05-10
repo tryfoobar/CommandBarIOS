@@ -48,6 +48,10 @@ public final class CommandBarSDK {
         commandbar?.openHelpHub()
     }
     
+    public func closeHelpHub() {
+        guard let orgId = CommandBarSDK.shared.orgId else { return }
+        commandbar?.closeHelpHub()
+    }
 }
 
 extension CommandBarSDK : CommandBarInternalSDKDelegate {
