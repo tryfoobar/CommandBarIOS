@@ -21,7 +21,7 @@ public final class CommandBarSDK {
     var orgId: String? = nil
     var options: CommandBarOptions? = nil
     
-    weak var delegate: CommandBarSDKDelegate?
+    public weak var delegate: CommandBarSDKDelegate?
     weak var privateDelagate: CommandBarInternalSDK?
     
     public init() {
