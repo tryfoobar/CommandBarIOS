@@ -98,11 +98,11 @@
 		92D158746C522D82EE04AA9F35E094CE /* CommandBarIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CommandBarIOS.modulemap; sourceTree = "<group>"; };
 		95CC59761A02B39CD10A5754E533418E /* Pods-CommandBarIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D3F3B33DBCFB99BADD0B359D97CA0A3 /* Events.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E43CB0041A0E679ADCCC403A77DC49B /* Pods-CommandBarIOS_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CommandBarIOS_Tests-umbrella.h"; sourceTree = "<group>"; };
 		9E4E8584E88649AAFE86983BE725CD08 /* Pods-CommandBarIOS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A1BFF639C3F37F0714D100DBBD4B2971 /* Pods-CommandBarIOS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CommandBarIOS_Example.modulemap"; sourceTree = "<group>"; };
-		A408E16BCAB18CD395B3539751445809 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A408E16BCAB18CD395B3539751445809 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		A70AF0F873154ACD2FEC4FA4E521C288 /* CommandBarIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.release.xcconfig; sourceTree = "<group>"; };
 		AFFE2B6A0D4157DAE9916DDB711EDDB5 /* Pods-CommandBarIOS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CommandBarIOS_Example-dummy.m"; sourceTree = "<group>"; };
 		B80A4E2FC20C6930C00947A7E3B3CD06 /* CommandBarIOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CommandBarIOS-Info.plist"; sourceTree = "<group>"; };
@@ -112,9 +112,9 @@
 		C5EBDEBFBD6F726F8EBF4597C8608C66 /* Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		CD066775C7E795798DC1D2DCBBAD15E7 /* ContentBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentBlock.swift; sourceTree = "<group>"; };
 		CE767260FDC18E34E0DDCE0C0B75A034 /* Analytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
-		D1CB82D62C785A83172511B3556124DB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D1CB82D62C785A83172511B3556124DB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		DCA101DFC3A3C70F13B86D01500DD11E /* CommandBarIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.debug.xcconfig; sourceTree = "<group>"; };
-		E4E4437B683BA58024D225BBD44D9270 /* CommandBarIOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = CommandBarIOS.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		E4E4437B683BA58024D225BBD44D9270 /* CommandBarIOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CommandBarIOS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E60B0515E7E71905AD2E32AC6A09A57A /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E8EDB9297FE6FF616EDB873D76314ED1 /* HelpHubViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelpHubViewController.swift; sourceTree = "<group>"; };
 		F5AAF8F0395DD95E0FC4F15327D74639 /* NudgeWindowManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NudgeWindowManager.swift; sourceTree = "<group>"; };
@@ -184,6 +184,7 @@
 				CD066775C7E795798DC1D2DCBBAD15E7 /* ContentBlock.swift */,
 				6E5BCD3701DEF15FE6865CA6B331F2B3 /* SurveyRatingBlock.swift */,
 			);
+			name = Content;
 			path = Content;
 			sourceTree = "<group>";
 		};
@@ -373,6 +374,7 @@
 				4D6B9B33E50490394761EF613B4FB2C5 /* ButtonGroup.swift */,
 				4DFFE3FD3F497ACFA066B7822F19A462 /* CloseButton.swift */,
 			);
+			name = Buttons;
 			path = Buttons;
 			sourceTree = "<group>";
 		};
@@ -872,7 +874,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
