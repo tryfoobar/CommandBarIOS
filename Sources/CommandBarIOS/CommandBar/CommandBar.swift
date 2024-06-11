@@ -1,17 +1,17 @@
 import Foundation
 import WebKit
 
-class CommandBar {
+public class CommandBar_Deprecated {
     private var options: CommandBarOptions_Deprecated;
     
-    weak var delegate: HelpHubWebViewDelegate? // Add this property
+    public weak var delegate: HelpHubWebViewDelegate? // Add this property
     private weak var presentedNavigationController: UINavigationController? // Add this property
     
-    init(options: CommandBarOptions_Deprecated) {
+    public init(options: CommandBarOptions_Deprecated) {
         self.options = options
     }
 
-    func openHelpHub() {
+    public func openHelpHub() {
         DispatchQueue.main.async {
             let viewController = HelpHubViewController(options: self.options)
             viewController.delegate = self
@@ -32,8 +32,8 @@ class CommandBar {
     }
 }
 
-extension CommandBar : HelpHubWebViewDelegate {
-    func didReceiveFallbackAction(_ action: [String : Any]) {
+extension CommandBar_Deprecated : HelpHubWebViewDelegate {
+    public func didReceiveFallbackAction(_ action: [String : Any]) {
         self.delegate?.didReceiveFallbackAction(action)
     }
 }

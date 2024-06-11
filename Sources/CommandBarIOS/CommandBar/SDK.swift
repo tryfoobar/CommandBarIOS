@@ -13,7 +13,7 @@ extension CommandBarSDKDelegate {
 // MARK: Public SDK
 public final class CommandBarSDK {
     private static let sharedInternal = CommandBarInternalSDK.shared
-    private var commandbar: CommandBar? = nil
+    private var commandbar: CommandBar_Deprecated? = nil
     public static let shared = CommandBarSDK()
     
     
@@ -32,7 +32,7 @@ public final class CommandBarSDK {
     public func boot(_ orgId: String, with options: CommandBarOptions? = nil) {
         self.orgId = orgId
         self.options = options
-        self.commandbar = CommandBar(options: CommandBarOptions_Deprecated(["orgId": orgId, "launchCode": "prod" ]))
+        self.commandbar = CommandBar_Deprecated(options: CommandBarOptions_Deprecated(["orgId": orgId, "launchCode": "prod" ]))
 
         CommandBarSDK.sharedInternal.boot(orgId: orgId, with: options)
     }

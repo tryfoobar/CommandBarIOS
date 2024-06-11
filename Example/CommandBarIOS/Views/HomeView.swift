@@ -9,7 +9,7 @@ import SwiftUI
 import CommandBarIOS
 
 struct HomeView: View {
-    var ORG_ID = ""
+    var ORG_ID = "foocorp"
     
     var body: some View {
         VStack(alignment: .center) {
