@@ -11,9 +11,9 @@ public class CommandBar_Deprecated {
         self.options = options
     }
 
-    public func openHelpHub() {
+    public func openHelpHub(articleId: Int? = nil) {
         DispatchQueue.main.async {
-            let viewController = HelpHubViewController(options: self.options)
+            let viewController = HelpHubViewController(options: self.options, articleId: articleId)
             viewController.delegate = self
 
             let navigationController = UINavigationController(rootViewController: viewController)

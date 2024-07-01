@@ -5,9 +5,12 @@ public class HelpHubViewController: UIViewController {
     var helpHubView: HelpHubWebView!
     private var options: CommandBarOptions_Deprecated
     public var delegate: HelpHubWebViewDelegate? // Add this property
+    
+    private var articleId: Int?
 
-    public init(options: CommandBarOptions_Deprecated) {
+    public init(options: CommandBarOptions_Deprecated, articleId: Int? = nil) {
         self.options = options
+        self.articleId = articleId
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -23,8 +26,9 @@ public class HelpHubViewController: UIViewController {
     private func configureHelpHubView() {
         helpHubView = HelpHubWebView(frame: self.view.frame)
         helpHubView.delegate = self
+        helpHubView.articleId = self.articleId
         helpHubView.options = self.options
-
+        
         view.addSubview(helpHubView)
         helpHubView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

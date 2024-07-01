@@ -37,15 +37,10 @@ public final class CommandBarSDK {
         CommandBarSDK.sharedInternal.boot(orgId: orgId, with: options)
     }
     
-    
-    public func trackEvent(event: String) {
-        CommandBarSDK.sharedInternal.trackEvent(event: event)
-    }
-    
-    public func openHelpHub() {
+    public func openHelpHub(articleId: Int? = nil) {
         guard let orgId = CommandBarSDK.shared.orgId else { return }
         
-        commandbar?.openHelpHub()
+        commandbar?.openHelpHub(articleId: articleId)
     }
     
     public func closeHelpHub() {

@@ -26,10 +26,6 @@ struct HomeView: View {
                     }
                     Spacer()
                     VStack() {
-                        CustomButton(title: "Trigger Test Event") {
-                            // 3. Track Events
-                            CommandBarSDK.shared.trackEvent(event: "test_event")
-                        }
                         CustomButton(title: "Open HelpHub") {
                             // 4. Open HelpHub
                             CommandBarSDK.shared.openHelpHub()

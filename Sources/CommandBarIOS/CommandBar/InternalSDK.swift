@@ -60,77 +60,10 @@ final class CommandBarInternalSDK : CommandBarInternalSDKDelegate {
         task.resume()
     }
     
-    func triggerNudges() {
-        guard let config = CommandBarInternalSDK.shared.config else { return }
-        
-        // TODO: Can probably hook up some sort of background queue to enqueue to from here
-        if let nudge = filterNudges().first {
-            NudgeWindowManager.shared.renderNudge(nudge)
-        }
-    }
-    
-    
-    func triggerNudges(withEvent event: String) {
-        guard let config = CommandBarInternalSDK.shared.config else { return }
-        
-        if let nudge = filterNudges().first {
-            NudgeWindowManager.shared.renderNudge(nudge)
-        }
-    }
-    
-    
-    func filterNudges() -> [Nudge] {
-        guard let config = CommandBarInternalSDK.shared.config else { return [] }
-        
-        return config.nudges_v2.filter({ nudge in
-            if (!nudge.is_live || nudge.archived) {
-                return false
-            }
-            
-            let hasUnsupportedStep = nudge.steps.contains(where: { step in
-                if (step.form_factor.type == .pin) {
-                    return true
-                }
-                let hasUnsupportedContent = step.content.contains(where: { content in
-                    if (content.type == .button) {
-                        if let actionMeta = content.meta as? NudgeContentButtonBlockMeta {
-                            if (actionMeta.action.isSameType(as: "execute_command")) {
-                                return true
-                            } else if (actionMeta.action.isSameType(as: "click")) {
-                                return true
-                            } else if (actionMeta.action.isSameType(as: "open_bar")) {
-                                return true
-                            } else if (actionMeta.action.isSameType(as: "questlist")) {
-                                return true
-                            } else if (actionMeta.action.isSameType(as: "snooze")) {
-                                return true
-                            } else if (actionMeta.action.isSameType(as: "open_chat")) {
-                                return true
-                            } else {
-                                return false
-                            }
-                        }
-                    } else if (content.type == .contentList || content.type == .helpDoc) {
-                        return true
-                    }
-                    
-                    return true
-                })
-                return hasUnsupportedContent;
-            })
-            return hasUnsupportedStep
-        })
-    }
-    
-    public func trackEvent(event: String) {
-        CommandBarInternalSDK.shared.triggerNudges(withEvent: event)
-    }
-    
     
     func didBootComplete(withConfig config: Config) {
         CommandBarInternalSDK.shared.config = config
         
-        CommandBarInternalSDK.shared.triggerNudges()
         CommandBarInternalSDK.shared.delegate?.didBootComplete(withConfig: config)
     }
     

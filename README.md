@@ -77,17 +77,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CommandBarSDKDelegate {
 }
 ```
 
-### 4. (Optional) Track Events
+### 4. (Optional) Open HelpHub
 
-You can use the `trackEvent` method to trigger Nudges. Right now, this is all this method is used for. Configure your Nudge Targeting to trigger when some event that you define is fired. See more on our [docs](https://www.commandbar.com/docs/guides/personalization/who-when-where/#by-event).
+You can use the `openHelpHub` method to open HelpHub bottom sheet in your app.
 
-Once CommandBar is booted you can call `CommandBarSDK.shared.trackEvent("<your_event_name>")`. Please check out our Example app for usage as well as the sample below:
+Once CommandBar is booted you can call `CommandBarSDK.shared.openHelpHub()`. Please check out our Example app for usage as well as the sample below:
 
 ```
 struct MyView: View {
   var body: some View {
     Button(action: {
-      CommandBarSDK.shared.trackEvent("<your_event_name>")
+      CommandBarSDK.shared.openHelpHub()
+    }) {
+      Text("Tap me!").padding()
+    }
+  }
+}
+```
+
+Additionally, you can pass in an `articleId` to `openHelpHub` to open a specific article in HelpHub.
+
+```
+struct MyView: View {
+  var body: some View {
+    Button(action: {
+      CommandBarSDK.shared.openHelpHub(articleId: <article_id>)
     }) {
       Text("Tap me!").padding()
     }
