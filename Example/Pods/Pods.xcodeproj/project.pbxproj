@@ -7,109 +7,109 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1476DB70E8DA67490EDFC70BCEB037D9 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EBDEBFBD6F726F8EBF4597C8608C66 /* Options.swift */; };
-		1F7191CF57EDFE93F59BA6BCFAE50BA1 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D67889A306BFA0BE242BDA1423722CD /* Util.swift */; };
-		2334A2E1EEDD1DEB1A561434EDF522D4 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60807E3BF783150AAB83EEAE7B676384 /* Spinner.swift */; };
+		15772CB5712088E71EC661419745125A /* HelpHubWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63B3DFAC784276B81A297C103A2B0C /* HelpHubWebView.swift */; };
+		1B291806F07122AF3D147B2840816BEC /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464BB9DDE8499EB3E793E6E09D8AB26 /* BottomSheet.swift */; };
+		26C668F1F8D57DEBB5B4109AC64364CD /* CommandBarIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8780FB859C2884E52F8F84C0C791D62F /* CommandBarIOS-dummy.m */; };
 		271D9ACDEFF8DA9BE018220CA3EE381F /* Pods-CommandBarIOS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 515BD9511ECA7252E62981CE3B475040 /* Pods-CommandBarIOS_Tests-dummy.m */; };
+		2C15F834CA503844626AC2D56ED65F17 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624FC0E4560AF7468D5B109D4B62DE3 /* Rules.swift */; };
+		33D2533B599A649E3FE3A0C3FD21024E /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E03E9A88987DF1DF62940F6DDCFB46 /* Events.swift */; };
 		375A3570C873DC3BB5E444CC77533135 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		39F9ECB7C8F1D0D291DB6854ECC34224 /* InternalSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3173CDABAFD028DC489C96410149DD92 /* InternalSDK.swift */; };
-		3AD72E99FB9A44A4209AE8653A0C2924 /* CommandBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2BB6A3EB79EE8C0425AF20B239A3F /* CommandBar.swift */; };
-		4016542B80ED91AFE3FCB98EF548DD2B /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B544D8CA45922AB3279411740AC6D /* Actions.swift */; };
+		3B2DD47665CC4B8112FA025F2B1D6E74 /* SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CA8FC18766EF5654C641A4988A844 /* SDK.swift */; };
+		55DC6E65019FC643FE0D8CE362C9BB34 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AFB63473A407043B3679F400BE212C /* Config.swift */; };
+		58E852875D9D1CC8B96D0641F3CBDF80 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B31FF7655A683BE338DC768B8958471 /* Options.swift */; };
+		5B86D3DCA1294A8CD41A7F2C19BB343B /* CommandBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA3DD6D2922E5EAA4A0DC413E3A96F /* CommandBar.swift */; };
 		5E33BB68E15225681C221A7BCE83EF73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		617FE8F789F0B5914A5992CE092A5FA3 /* ButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B9B33E50490394761EF613B4FB2C5 /* ButtonGroup.swift */; };
-		76EBDBA8598F1EC1D2EBB5BD56EFB291 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0907E99C01A2CE39B17BCDDD7BC2609E /* Config.swift */; };
-		7A8A04B085D0D8CF487D3A290DB86820 /* SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A6A4112E276D47CC5FB7980D382CA /* SDK.swift */; };
-		8123A31D6B12CBD5801028A2EC17A622 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F3B33DBCFB99BADD0B359D97CA0A3 /* Events.swift */; };
-		8DE5C943D6C5CCA2117CF0F0DC9B0B36 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFFE3FD3F497ACFA066B7822F19A462 /* CloseButton.swift */; };
-		8F8F46E301A273B8D91D77FB67B90663 /* CommandBarIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 583F02EB2636F145BE08595A470C84D2 /* CommandBarIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A3DE18786419431EBD4C4452DC6D544E /* HelpHubWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3AAE9C1EC2822EB299EEDDCC79B86 /* HelpHubWebView.swift */; };
-		A9C7428059FEC2846FCBD57F6634D21C /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F9C72F84FAA22EFCCA80A96E3F7843 /* BottomSheet.swift */; };
-		AA24585A59FAF417CEBFF5FDE3A97254 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F5203E0A897505E2FC72351841BEAE /* Color.swift */; };
-		AB865F316991E11BB34B14E40325AE9D /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03012A70096844B1E367B8E6F737AEE0 /* Button.swift */; };
-		BDCA75ED374B8C15AEEDAA2AFC79A593 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B0515E7E71905AD2E32AC6A09A57A /* Image.swift */; };
-		C2D20D6A48A4E415A28ECFAB8DCA5D31 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765760F6145C9C21E9ECC6ED667C45CB /* Rules.swift */; };
+		6363166CE3AACE4DEE3779E56BED8CF3 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764A5C60F9589C1831B0409AE4BAE5D5 /* CloseButton.swift */; };
+		6C6F4DFC71120D8C8FFAA8A7BE2EFD26 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0195FE0361EBDBFABA146C34F4CB68 /* Image.swift */; };
+		84153ADB2CECE64FECDAE47A1D17EF45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		871F4A454FB0BD403E4D0767F291A186 /* InternalSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3975ED26BC095E28398C427E1DC4A3A8 /* InternalSDK.swift */; };
+		96C2B275697133A2221CAC5D437431EB /* HelpHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B248A814712D5EAC52FAD95144B7920 /* HelpHubViewController.swift */; };
+		9CB11DB246AF4638C11BB6C708721D76 /* CommandBarIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C18C1B38677EB3C7996747FABB580BC1 /* CommandBarIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D4E6792F1AF198B69DC89EEFD7C806B /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1410B56C259A69CEDFB6A97FFD574E08 /* Spinner.swift */; };
+		BA528A1DA64958434988E5AF7D0F3A64 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2102A60469F1E68B6550744647972F8D /* Video.swift */; };
+		BE2DAFB1D8BE480A63418FE82DFADDBA /* ButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08E27399CD7DE666F848A55BA380A4F /* ButtonGroup.swift */; };
+		C9EF32B0415DB2BA801B40ABDEE30F59 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDB992123435AF60EE08EB7BDAD2A67 /* Util.swift */; };
 		CB7D63194963AD3D7DCF1C50EC3A89DD /* Pods-CommandBarIOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E43CB0041A0E679ADCCC403A77DC49B /* Pods-CommandBarIOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D65A89EEB33FB906D267E2E00B2FE7CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		D78417CAF277564CBE73786786360248 /* HelpHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EDB9297FE6FF616EDB873D76314ED1 /* HelpHubViewController.swift */; };
-		D8B36E1EF6BAD1D05FD827BE59B90B50 /* Nudges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6549D2B34727781499A85DBEEB993454 /* Nudges.swift */; };
-		DCDC24267D2CF22E53F28CE2411707F4 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FC52B9EB8CF85A3A0C1782D417D24A /* Video.swift */; };
+		D7BAA09883C59FBB68FB5647D03565CE /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541330F35489DA19166804835147E398 /* Button.swift */; };
+		D8F43DB6F29BC1E20208D8539312F41D /* Nudges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A038D26DABA8B9AA9EB47E41B34B7F0 /* Nudges.swift */; };
+		D9EE02053FB033ECDD521917C5577D39 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D17EE1675BB4E1E9ECF6744B2A9F3C /* Color.swift */; };
 		DE8966D9DDC32BD5E1F32594D92F0B3B /* Pods-CommandBarIOS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFE2B6A0D4157DAE9916DDB711EDDB5 /* Pods-CommandBarIOS_Example-dummy.m */; };
-		E461CA29B8985E46FC904C40B2020363 /* CommandBarIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B4B40E5342EB16654738BF938EC588 /* CommandBarIOS-dummy.m */; };
 		EBD4CDE6E5BC08A713742DA9B53A5BD6 /* Pods-CommandBarIOS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0335B849997FEDD72AD0635B88000E91 /* Pods-CommandBarIOS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FFFCEB1D36A4A44580CF8F5AE3AC253A /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE767260FDC18E34E0DDCE0C0B75A034 /* Analytics.swift */; };
+		F6C1F9E4943771755586D90E4323E42B /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C306EA608CCF3665649F2F71E6FCB98 /* Actions.swift */; };
+		FB44A4D6B7AD0611A41400937C0208F9 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1915C860AF9A7161CA3C429EDA17EF75 /* Analytics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		077A2A22662D7EE329C53F2EDFEF2669 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1A5C426E3579F3BD712FDAB630F0FBA8;
-			remoteInfo = CommandBarIOS;
-		};
-		42E8D5F3AFF14ED9F40357540F713DC4 /* PBXContainerItemProxy */ = {
+		15E2E68606EC9AA07CB159D7203851AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BEF9C21ABF8843AD6FC046F2A58B2B1D;
 			remoteInfo = "Pods-CommandBarIOS_Example";
 		};
+		4F5479FACB8B729EF54A6C4C606DF947 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A5C426E3579F3BD712FDAB630F0FBA8;
+			remoteInfo = CommandBarIOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03012A70096844B1E367B8E6F737AEE0 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		0335B849997FEDD72AD0635B88000E91 /* Pods-CommandBarIOS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CommandBarIOS_Example-umbrella.h"; sourceTree = "<group>"; };
+		0464BB9DDE8499EB3E793E6E09D8AB26 /* BottomSheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		05463FACEB0440DF91273FE265F92F67 /* Pods-CommandBarIOS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CommandBarIOS_Tests.modulemap"; sourceTree = "<group>"; };
 		0560156DCF68BC126399FC40E13C8CCF /* Pods-CommandBarIOS_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CommandBarIOS_Example"; path = Pods_CommandBarIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0907E99C01A2CE39B17BCDDD7BC2609E /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		07D17EE1675BB4E1E9ECF6744B2A9F3C /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0E836AC6299EA5D3C05E74A3493E979F /* CommandBarIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.debug.xcconfig; sourceTree = "<group>"; };
 		10633049ABF6884985AD82B2E6D4B49F /* Pods-CommandBarIOS_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CommandBarIOS_Example-frameworks.sh"; sourceTree = "<group>"; };
+		1410B56C259A69CEDFB6A97FFD574E08 /* Spinner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		189CA8FC18766EF5654C641A4988A844 /* SDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SDK.swift; sourceTree = "<group>"; };
+		1915C860AF9A7161CA3C429EDA17EF75 /* Analytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		2102A60469F1E68B6550744647972F8D /* Video.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		21AFB63473A407043B3679F400BE212C /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		24C3F0AC5FD53EE187421A98F864CD9A /* CommandBarIOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CommandBarIOS; path = CommandBarIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A0195FE0361EBDBFABA146C34F4CB68 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		2B31FF7655A683BE338DC768B8958471 /* Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		2BC933536484A6A526982634D8F81096 /* Pods-CommandBarIOS_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Example-Info.plist"; sourceTree = "<group>"; };
-		3173CDABAFD028DC489C96410149DD92 /* InternalSDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InternalSDK.swift; sourceTree = "<group>"; };
 		34834821C4E0424E5D67E57EE20156F7 /* Pods-CommandBarIOS_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CommandBarIOS_Tests"; path = Pods_CommandBarIOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3975ED26BC095E28398C427E1DC4A3A8 /* InternalSDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InternalSDK.swift; sourceTree = "<group>"; };
 		3CE81AB79FEBAB0C8FC662A559E23A3E /* Pods-CommandBarIOS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CommandBarIOS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3DF3AAE9C1EC2822EB299EEDDCC79B86 /* HelpHubWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelpHubWebView.swift; sourceTree = "<group>"; };
-		40B4B40E5342EB16654738BF938EC588 /* CommandBarIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CommandBarIOS-dummy.m"; sourceTree = "<group>"; };
-		4D67889A306BFA0BE242BDA1423722CD /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		4D6B9B33E50490394761EF613B4FB2C5 /* ButtonGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonGroup.swift; sourceTree = "<group>"; };
+		4C306EA608CCF3665649F2F71E6FCB98 /* Actions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		4DF207E3341C6E9BE8D8E7EF8A73A7C5 /* Pods-CommandBarIOS_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CommandBarIOS_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4DFFE3FD3F497ACFA066B7822F19A462 /* CloseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		515BD9511ECA7252E62981CE3B475040 /* Pods-CommandBarIOS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CommandBarIOS_Tests-dummy.m"; sourceTree = "<group>"; };
-		55F5203E0A897505E2FC72351841BEAE /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		56F9C72F84FAA22EFCCA80A96E3F7843 /* BottomSheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
-		583F02EB2636F145BE08595A470C84D2 /* CommandBarIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-umbrella.h"; sourceTree = "<group>"; };
+		541330F35489DA19166804835147E398 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		5A038D26DABA8B9AA9EB47E41B34B7F0 /* Nudges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Nudges.swift; sourceTree = "<group>"; };
+		5B681968426F91AD1D387C5D9DDADAEC /* CommandBar.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CommandBar.png; path = docs/img/CommandBar.png; sourceTree = "<group>"; };
 		5C3927EA1AE23CAE7644367F26683AAE /* Pods-CommandBarIOS_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		60807E3BF783150AAB83EEAE7B676384 /* Spinner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
-		6549D2B34727781499A85DBEEB993454 /* Nudges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Nudges.swift; sourceTree = "<group>"; };
-		6DB2BB6A3EB79EE8C0425AF20B239A3F /* CommandBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommandBar.swift; sourceTree = "<group>"; };
-		71FC52B9EB8CF85A3A0C1782D417D24A /* Video.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		60E03E9A88987DF1DF62940F6DDCFB46 /* Events.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		6A63B3DFAC784276B81A297C103A2B0C /* HelpHubWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelpHubWebView.swift; sourceTree = "<group>"; };
+		6B684BE6AC030FBDDF5117ACAF3499B8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		6CDB992123435AF60EE08EB7BDAD2A67 /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		765760F6145C9C21E9ECC6ED667C45CB /* Rules.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
-		779B544D8CA45922AB3279411740AC6D /* Actions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		764A5C60F9589C1831B0409AE4BAE5D5 /* CloseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		7B248A814712D5EAC52FAD95144B7920 /* HelpHubViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelpHubViewController.swift; sourceTree = "<group>"; };
 		842D42AB8A2A2ED88FF8117E26013859 /* Pods-CommandBarIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		867A38881D4983239244F692A9493BB2 /* CommandBarIOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CommandBarIOS-Info.plist"; sourceTree = "<group>"; };
+		8780FB859C2884E52F8F84C0C791D62F /* CommandBarIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CommandBarIOS-dummy.m"; sourceTree = "<group>"; };
+		8D45173E9D72EF72769E9D571B1C8AC9 /* CommandBarIOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-prefix.pch"; sourceTree = "<group>"; };
 		8D6010A0F46B835115A6155B19217F7F /* Pods-CommandBarIOS_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Tests-Info.plist"; sourceTree = "<group>"; };
-		90610A84481FAF3ACAFBD5926368FB39 /* CommandBar.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CommandBar.png; path = docs/img/CommandBar.png; sourceTree = "<group>"; };
-		92D158746C522D82EE04AA9F35E094CE /* CommandBarIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CommandBarIOS.modulemap; sourceTree = "<group>"; };
+		904927DD9F64190F149F31EE8C9D301D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		94EFF33E7C5F402ED8D468951555DB0B /* CommandBarIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.release.xcconfig; sourceTree = "<group>"; };
 		95CC59761A02B39CD10A5754E533418E /* Pods-CommandBarIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9D3F3B33DBCFB99BADD0B359D97CA0A3 /* Events.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9624FC0E4560AF7468D5B109D4B62DE3 /* Rules.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E43CB0041A0E679ADCCC403A77DC49B /* Pods-CommandBarIOS_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CommandBarIOS_Tests-umbrella.h"; sourceTree = "<group>"; };
 		9E4E8584E88649AAFE86983BE725CD08 /* Pods-CommandBarIOS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A1BFF639C3F37F0714D100DBBD4B2971 /* Pods-CommandBarIOS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CommandBarIOS_Example.modulemap"; sourceTree = "<group>"; };
-		A408E16BCAB18CD395B3539751445809 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		A70AF0F873154ACD2FEC4FA4E521C288 /* CommandBarIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.release.xcconfig; sourceTree = "<group>"; };
 		AFFE2B6A0D4157DAE9916DDB711EDDB5 /* Pods-CommandBarIOS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CommandBarIOS_Example-dummy.m"; sourceTree = "<group>"; };
-		B80A4E2FC20C6930C00947A7E3B3CD06 /* CommandBarIOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CommandBarIOS-Info.plist"; sourceTree = "<group>"; };
+		B5F0D8E490A1E58624763C04E8145F47 /* CommandBarIOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CommandBarIOS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B88F91FB460AFB11775FE964C05AB3CF /* Pods-CommandBarIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
-		BF3DD2F30B9E4E8075DADAEAFD6006A9 /* CommandBarIOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-prefix.pch"; sourceTree = "<group>"; };
-		C33A6A4112E276D47CC5FB7980D382CA /* SDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SDK.swift; sourceTree = "<group>"; };
-		C5EBDEBFBD6F726F8EBF4597C8608C66 /* Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
-		CE767260FDC18E34E0DDCE0C0B75A034 /* Analytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
-		D1CB82D62C785A83172511B3556124DB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		DCA101DFC3A3C70F13B86D01500DD11E /* CommandBarIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.debug.xcconfig; sourceTree = "<group>"; };
-		E4E4437B683BA58024D225BBD44D9270 /* CommandBarIOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = CommandBarIOS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E60B0515E7E71905AD2E32AC6A09A57A /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		E8EDB9297FE6FF616EDB873D76314ED1 /* HelpHubViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelpHubViewController.swift; sourceTree = "<group>"; };
+		C18C1B38677EB3C7996747FABB580BC1 /* CommandBarIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-umbrella.h"; sourceTree = "<group>"; };
+		CFF86B582A5220C22CD1ED11DECF3AC7 /* CommandBarIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CommandBarIOS.modulemap; sourceTree = "<group>"; };
+		F08E27399CD7DE666F848A55BA380A4F /* ButtonGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonGroup.swift; sourceTree = "<group>"; };
+		F1FA3DD6D2922E5EAA4A0DC413E3A96F /* CommandBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommandBar.swift; sourceTree = "<group>"; };
 		FBA3F61958993B363D52C4934D7FF3B4 /* Pods-CommandBarIOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,11 +122,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4F2788DA3EF28A09ADE8CA60521CE1C /* Frameworks */ = {
+		7DCBEE5649623E1C7CFBFF7D8B5534BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D65A89EEB33FB906D267E2E00B2FE7CE /* Foundation.framework in Frameworks */,
+				84153ADB2CECE64FECDAE47A1D17EF45 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,47 +141,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0450770A5684A155963DEAEB78281A3C /* Development Pods */ = {
+		2CD409CC63A1FBBFD70CE34687F465F4 /* CommandBar */ = {
 			isa = PBXGroup;
 			children = (
-				4DFFE718A3D890A06DA23F122AEF293E /* CommandBarIOS */,
+				F1FA3DD6D2922E5EAA4A0DC413E3A96F /* CommandBar.swift */,
+				3975ED26BC095E28398C427E1DC4A3A8 /* InternalSDK.swift */,
+				2B31FF7655A683BE338DC768B8958471 /* Options.swift */,
+				189CA8FC18766EF5654C641A4988A844 /* SDK.swift */,
 			);
-			name = "Development Pods";
+			name = CommandBar;
+			path = Sources/CommandBarIOS/CommandBar;
 			sourceTree = "<group>";
 		};
-		215B74F409046960CDD7F8D1C32BC5A3 /* HelpHub */ = {
+		3B353C7C4228D5626B780C4BA2F30B5E /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E8EDB9297FE6FF616EDB873D76314ED1 /* HelpHubViewController.swift */,
-				3DF3AAE9C1EC2822EB299EEDDCC79B86 /* HelpHubWebView.swift */,
+				0464BB9DDE8499EB3E793E6E09D8AB26 /* BottomSheet.swift */,
+				2A0195FE0361EBDBFABA146C34F4CB68 /* Image.swift */,
+				1410B56C259A69CEDFB6A97FFD574E08 /* Spinner.swift */,
+				2102A60469F1E68B6550744647972F8D /* Video.swift */,
+				C3ECE328F60CB0594DB5ACAB2481DDBB /* Buttons */,
+			);
+			name = Components;
+			path = Sources/CommandBarIOS/Components;
+			sourceTree = "<group>";
+		};
+		47A038967C3B8992155AF66CCEF3B4F6 /* HelpHub */ = {
+			isa = PBXGroup;
+			children = (
+				7B248A814712D5EAC52FAD95144B7920 /* HelpHubViewController.swift */,
+				6A63B3DFAC784276B81A297C103A2B0C /* HelpHubWebView.swift */,
 			);
 			name = HelpHub;
 			path = Sources/CommandBarIOS/HelpHub;
 			sourceTree = "<group>";
 		};
-		4C903CA161F82BC5A9BDC1FAE5DC2859 /* Helpers */ = {
+		4BFB2E03EF45136F3C8C28603383835A /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				55F5203E0A897505E2FC72351841BEAE /* Color.swift */,
+				F44F690F6C07A2EC18EFEE2A44E6D216 /* CommandBarIOS */,
 			);
-			name = Helpers;
-			path = Sources/CommandBarIOS/Helpers;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		4DFFE718A3D890A06DA23F122AEF293E /* CommandBarIOS */ = {
+		4DA1D23DE7233896B25F5E39D9B122B5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D7FF65D903FFF4FD2D80862F2558A4A0 /* Analytics */,
-				DBBE1E9D5FC714EA0696AF0A9EF9CC4E /* CommandBar */,
-				57233A9DB7307EF381B5E3E293C8AE6C /* Components */,
-				4C903CA161F82BC5A9BDC1FAE5DC2859 /* Helpers */,
-				215B74F409046960CDD7F8D1C32BC5A3 /* HelpHub */,
-				A0651B63A56D5A8C4E66954576F59705 /* Pod */,
-				B3946BCD92B2DB2748C915A8222A9B40 /* Support Files */,
-				5DC71E5D6B713F727450D7DD9A8D9B14 /* Types */,
+				CFF86B582A5220C22CD1ED11DECF3AC7 /* CommandBarIOS.modulemap */,
+				8780FB859C2884E52F8F84C0C791D62F /* CommandBarIOS-dummy.m */,
+				867A38881D4983239244F692A9493BB2 /* CommandBarIOS-Info.plist */,
+				8D45173E9D72EF72769E9D571B1C8AC9 /* CommandBarIOS-prefix.pch */,
+				C18C1B38677EB3C7996747FABB580BC1 /* CommandBarIOS-umbrella.h */,
+				0E836AC6299EA5D3C05E74A3493E979F /* CommandBarIOS.debug.xcconfig */,
+				94EFF33E7C5F402ED8D468951555DB0B /* CommandBarIOS.release.xcconfig */,
 			);
-			name = CommandBarIOS;
-			path = ../..;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CommandBarIOS";
 			sourceTree = "<group>";
 		};
 		537C51C83D7B3AFF6AC3238E0C1195AF /* Pods-CommandBarIOS_Example */ = {
@@ -201,17 +216,14 @@
 			path = "Target Support Files/Pods-CommandBarIOS_Example";
 			sourceTree = "<group>";
 		};
-		57233A9DB7307EF381B5E3E293C8AE6C /* Components */ = {
+		564215AF924CC669EA6C3BF583E9FC77 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				56F9C72F84FAA22EFCCA80A96E3F7843 /* BottomSheet.swift */,
-				E60B0515E7E71905AD2E32AC6A09A57A /* Image.swift */,
-				60807E3BF783150AAB83EEAE7B676384 /* Spinner.swift */,
-				71FC52B9EB8CF85A3A0C1782D417D24A /* Video.swift */,
-				E2F4B5396F41E9A3E692E2B4A586241D /* Buttons */,
+				1915C860AF9A7161CA3C429EDA17EF75 /* Analytics.swift */,
+				60E03E9A88987DF1DF62940F6DDCFB46 /* Events.swift */,
 			);
-			name = Components;
-			path = Sources/CommandBarIOS/Components;
+			name = Analytics;
+			path = Sources/CommandBarIOS/Analytics;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -229,19 +241,6 @@
 				63B684BAB2A0BA095C0F4A63D4CB3D8C /* Pods-CommandBarIOS_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		5DC71E5D6B713F727450D7DD9A8D9B14 /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				779B544D8CA45922AB3279411740AC6D /* Actions.swift */,
-				0907E99C01A2CE39B17BCDDD7BC2609E /* Config.swift */,
-				6549D2B34727781499A85DBEEB993454 /* Nudges.swift */,
-				765760F6145C9C21E9ECC6ED667C45CB /* Rules.swift */,
-				4D67889A306BFA0BE242BDA1423722CD /* Util.swift */,
-			);
-			name = Types;
-			path = Sources/CommandBarIOS/Types;
 			sourceTree = "<group>";
 		};
 		63B684BAB2A0BA095C0F4A63D4CB3D8C /* Pods-CommandBarIOS_Tests */ = {
@@ -270,37 +269,55 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A0651B63A56D5A8C4E66954576F59705 /* Pod */ = {
+		A4F6722B390B0BB992A0980EDFA3A6C0 /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				90610A84481FAF3ACAFBD5926368FB39 /* CommandBar.png */,
-				E4E4437B683BA58024D225BBD44D9270 /* CommandBarIOS.podspec */,
-				A408E16BCAB18CD395B3539751445809 /* LICENSE */,
-				D1CB82D62C785A83172511B3556124DB /* README.md */,
+				4C306EA608CCF3665649F2F71E6FCB98 /* Actions.swift */,
+				21AFB63473A407043B3679F400BE212C /* Config.swift */,
+				5A038D26DABA8B9AA9EB47E41B34B7F0 /* Nudges.swift */,
+				9624FC0E4560AF7468D5B109D4B62DE3 /* Rules.swift */,
+				6CDB992123435AF60EE08EB7BDAD2A67 /* Util.swift */,
+			);
+			name = Types;
+			path = Sources/CommandBarIOS/Types;
+			sourceTree = "<group>";
+		};
+		AC889ABE8DBE6523F5F4ED94CED55346 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				5B681968426F91AD1D387C5D9DDADAEC /* CommandBar.png */,
+				B5F0D8E490A1E58624763C04E8145F47 /* CommandBarIOS.podspec */,
+				6B684BE6AC030FBDDF5117ACAF3499B8 /* LICENSE */,
+				904927DD9F64190F149F31EE8C9D301D /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		B3946BCD92B2DB2748C915A8222A9B40 /* Support Files */ = {
+		C0F3F2CA17C9ED998DC8E8106D81A3E9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				92D158746C522D82EE04AA9F35E094CE /* CommandBarIOS.modulemap */,
-				40B4B40E5342EB16654738BF938EC588 /* CommandBarIOS-dummy.m */,
-				B80A4E2FC20C6930C00947A7E3B3CD06 /* CommandBarIOS-Info.plist */,
-				BF3DD2F30B9E4E8075DADAEAFD6006A9 /* CommandBarIOS-prefix.pch */,
-				583F02EB2636F145BE08595A470C84D2 /* CommandBarIOS-umbrella.h */,
-				DCA101DFC3A3C70F13B86D01500DD11E /* CommandBarIOS.debug.xcconfig */,
-				A70AF0F873154ACD2FEC4FA4E521C288 /* CommandBarIOS.release.xcconfig */,
+				07D17EE1675BB4E1E9ECF6744B2A9F3C /* Color.swift */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/CommandBarIOS";
+			name = Helpers;
+			path = Sources/CommandBarIOS/Helpers;
+			sourceTree = "<group>";
+		};
+		C3ECE328F60CB0594DB5ACAB2481DDBB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				541330F35489DA19166804835147E398 /* Button.swift */,
+				F08E27399CD7DE666F848A55BA380A4F /* ButtonGroup.swift */,
+				764A5C60F9589C1831B0409AE4BAE5D5 /* CloseButton.swift */,
+			);
+			name = Buttons;
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				0450770A5684A155963DEAEB78281A3C /* Development Pods */,
+				4BFB2E03EF45136F3C8C28603383835A /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				939D723E41CDF8FE51E6A6A8595112F1 /* Products */,
 				59EDB8EB103EA198433BB151018225CA /* Targets Support Files */,
@@ -315,49 +332,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D7FF65D903FFF4FD2D80862F2558A4A0 /* Analytics */ = {
+		F44F690F6C07A2EC18EFEE2A44E6D216 /* CommandBarIOS */ = {
 			isa = PBXGroup;
 			children = (
-				CE767260FDC18E34E0DDCE0C0B75A034 /* Analytics.swift */,
-				9D3F3B33DBCFB99BADD0B359D97CA0A3 /* Events.swift */,
+				564215AF924CC669EA6C3BF583E9FC77 /* Analytics */,
+				2CD409CC63A1FBBFD70CE34687F465F4 /* CommandBar */,
+				3B353C7C4228D5626B780C4BA2F30B5E /* Components */,
+				C0F3F2CA17C9ED998DC8E8106D81A3E9 /* Helpers */,
+				47A038967C3B8992155AF66CCEF3B4F6 /* HelpHub */,
+				AC889ABE8DBE6523F5F4ED94CED55346 /* Pod */,
+				4DA1D23DE7233896B25F5E39D9B122B5 /* Support Files */,
+				A4F6722B390B0BB992A0980EDFA3A6C0 /* Types */,
 			);
-			name = Analytics;
-			path = Sources/CommandBarIOS/Analytics;
-			sourceTree = "<group>";
-		};
-		DBBE1E9D5FC714EA0696AF0A9EF9CC4E /* CommandBar */ = {
-			isa = PBXGroup;
-			children = (
-				6DB2BB6A3EB79EE8C0425AF20B239A3F /* CommandBar.swift */,
-				3173CDABAFD028DC489C96410149DD92 /* InternalSDK.swift */,
-				C5EBDEBFBD6F726F8EBF4597C8608C66 /* Options.swift */,
-				C33A6A4112E276D47CC5FB7980D382CA /* SDK.swift */,
-			);
-			name = CommandBar;
-			path = Sources/CommandBarIOS/CommandBar;
-			sourceTree = "<group>";
-		};
-		E2F4B5396F41E9A3E692E2B4A586241D /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				03012A70096844B1E367B8E6F737AEE0 /* Button.swift */,
-				4D6B9B33E50490394761EF613B4FB2C5 /* ButtonGroup.swift */,
-				4DFFE3FD3F497ACFA066B7822F19A462 /* CloseButton.swift */,
-			);
-			path = Buttons;
+			name = CommandBarIOS;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1F9D71747368A6CBCCEAE4847185E601 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8F8F46E301A273B8D91D77FB67B90663 /* CommandBarIOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3A1D4B0E6730DB63E8FA8AF3A54A73C8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,17 +367,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4F202BE3031FDC5C7AAB73B339A0B981 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CB11DB246AF4638C11BB6C708721D76 /* CommandBarIOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		1A5C426E3579F3BD712FDAB630F0FBA8 /* CommandBarIOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C5B9841815BFDC0BA3F7328313D1579 /* Build configuration list for PBXNativeTarget "CommandBarIOS" */;
+			buildConfigurationList = 006AB2DBD6C5AC9DCD7CA981A270006D /* Build configuration list for PBXNativeTarget "CommandBarIOS" */;
 			buildPhases = (
-				1F9D71747368A6CBCCEAE4847185E601 /* Headers */,
-				573769A31DD58F421C3E073BDBEECBC4 /* Sources */,
-				E4F2788DA3EF28A09ADE8CA60521CE1C /* Frameworks */,
-				7CB7487CD1FA3DC1F56F1BD23A42AB87 /* Resources */,
+				4F202BE3031FDC5C7AAB73B339A0B981 /* Headers */,
+				61C0A1D04FD780D3E904FC19C31E407E /* Sources */,
+				7DCBEE5649623E1C7CFBFF7D8B5534BE /* Frameworks */,
+				7BAF796E0CC0548CD36C0CEAA8ECD8BC /* Resources */,
 			);
 			buildRules = (
 			);
@@ -407,7 +408,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BB42077FD34445F543352A35FB9C6DDC /* PBXTargetDependency */,
+				BA38DB67996946883CF405FD638D7B96 /* PBXTargetDependency */,
 			);
 			name = "Pods-CommandBarIOS_Tests";
 			productName = Pods_CommandBarIOS_Tests;
@@ -426,7 +427,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				8B47AFA9452E78F57FBE514C323BA95D /* PBXTargetDependency */,
+				53D9E9BB04A35C09BE6C7601580AAE1C /* PBXTargetDependency */,
 			);
 			name = "Pods-CommandBarIOS_Example";
 			productName = Pods_CommandBarIOS_Example;
@@ -470,7 +471,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7CB7487CD1FA3DC1F56F1BD23A42AB87 /* Resources */ = {
+		7BAF796E0CC0548CD36C0CEAA8ECD8BC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -487,32 +488,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		573769A31DD58F421C3E073BDBEECBC4 /* Sources */ = {
+		61C0A1D04FD780D3E904FC19C31E407E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4016542B80ED91AFE3FCB98EF548DD2B /* Actions.swift in Sources */,
-				FFFCEB1D36A4A44580CF8F5AE3AC253A /* Analytics.swift in Sources */,
-				A9C7428059FEC2846FCBD57F6634D21C /* BottomSheet.swift in Sources */,
-				AB865F316991E11BB34B14E40325AE9D /* Button.swift in Sources */,
-				617FE8F789F0B5914A5992CE092A5FA3 /* ButtonGroup.swift in Sources */,
-				8DE5C943D6C5CCA2117CF0F0DC9B0B36 /* CloseButton.swift in Sources */,
-				AA24585A59FAF417CEBFF5FDE3A97254 /* Color.swift in Sources */,
-				3AD72E99FB9A44A4209AE8653A0C2924 /* CommandBar.swift in Sources */,
-				E461CA29B8985E46FC904C40B2020363 /* CommandBarIOS-dummy.m in Sources */,
-				76EBDBA8598F1EC1D2EBB5BD56EFB291 /* Config.swift in Sources */,
-				8123A31D6B12CBD5801028A2EC17A622 /* Events.swift in Sources */,
-				D78417CAF277564CBE73786786360248 /* HelpHubViewController.swift in Sources */,
-				A3DE18786419431EBD4C4452DC6D544E /* HelpHubWebView.swift in Sources */,
-				BDCA75ED374B8C15AEEDAA2AFC79A593 /* Image.swift in Sources */,
-				39F9ECB7C8F1D0D291DB6854ECC34224 /* InternalSDK.swift in Sources */,
-				D8B36E1EF6BAD1D05FD827BE59B90B50 /* Nudges.swift in Sources */,
-				1476DB70E8DA67490EDFC70BCEB037D9 /* Options.swift in Sources */,
-				C2D20D6A48A4E415A28ECFAB8DCA5D31 /* Rules.swift in Sources */,
-				7A8A04B085D0D8CF487D3A290DB86820 /* SDK.swift in Sources */,
-				2334A2E1EEDD1DEB1A561434EDF522D4 /* Spinner.swift in Sources */,
-				1F7191CF57EDFE93F59BA6BCFAE50BA1 /* Util.swift in Sources */,
-				DCDC24267D2CF22E53F28CE2411707F4 /* Video.swift in Sources */,
+				F6C1F9E4943771755586D90E4323E42B /* Actions.swift in Sources */,
+				FB44A4D6B7AD0611A41400937C0208F9 /* Analytics.swift in Sources */,
+				1B291806F07122AF3D147B2840816BEC /* BottomSheet.swift in Sources */,
+				D7BAA09883C59FBB68FB5647D03565CE /* Button.swift in Sources */,
+				BE2DAFB1D8BE480A63418FE82DFADDBA /* ButtonGroup.swift in Sources */,
+				6363166CE3AACE4DEE3779E56BED8CF3 /* CloseButton.swift in Sources */,
+				D9EE02053FB033ECDD521917C5577D39 /* Color.swift in Sources */,
+				5B86D3DCA1294A8CD41A7F2C19BB343B /* CommandBar.swift in Sources */,
+				26C668F1F8D57DEBB5B4109AC64364CD /* CommandBarIOS-dummy.m in Sources */,
+				55DC6E65019FC643FE0D8CE362C9BB34 /* Config.swift in Sources */,
+				33D2533B599A649E3FE3A0C3FD21024E /* Events.swift in Sources */,
+				96C2B275697133A2221CAC5D437431EB /* HelpHubViewController.swift in Sources */,
+				15772CB5712088E71EC661419745125A /* HelpHubWebView.swift in Sources */,
+				6C6F4DFC71120D8C8FFAA8A7BE2EFD26 /* Image.swift in Sources */,
+				871F4A454FB0BD403E4D0767F291A186 /* InternalSDK.swift in Sources */,
+				D8F43DB6F29BC1E20208D8539312F41D /* Nudges.swift in Sources */,
+				58E852875D9D1CC8B96D0641F3CBDF80 /* Options.swift in Sources */,
+				2C15F834CA503844626AC2D56ED65F17 /* Rules.swift in Sources */,
+				3B2DD47665CC4B8112FA025F2B1D6E74 /* SDK.swift in Sources */,
+				9D4E6792F1AF198B69DC89EEFD7C806B /* Spinner.swift in Sources */,
+				C9EF32B0415DB2BA801B40ABDEE30F59 /* Util.swift in Sources */,
+				BA528A1DA64958434988E5AF7D0F3A64 /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,17 +536,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8B47AFA9452E78F57FBE514C323BA95D /* PBXTargetDependency */ = {
+		53D9E9BB04A35C09BE6C7601580AAE1C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CommandBarIOS;
 			target = 1A5C426E3579F3BD712FDAB630F0FBA8 /* CommandBarIOS */;
-			targetProxy = 077A2A22662D7EE329C53F2EDFEF2669 /* PBXContainerItemProxy */;
+			targetProxy = 4F5479FACB8B729EF54A6C4C606DF947 /* PBXContainerItemProxy */;
 		};
-		BB42077FD34445F543352A35FB9C6DDC /* PBXTargetDependency */ = {
+		BA38DB67996946883CF405FD638D7B96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-CommandBarIOS_Example";
 			target = BEF9C21ABF8843AD6FC046F2A58B2B1D /* Pods-CommandBarIOS_Example */;
-			targetProxy = 42E8D5F3AFF14ED9F40357540F713DC4 /* PBXContainerItemProxy */;
+			targetProxy = 15E2E68606EC9AA07CB159D7203851AA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -618,38 +619,6 @@
 			};
 			name = Debug;
 		};
-		66C2E711556A00913B3BB833C2BAFA5B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCA101DFC3A3C70F13B86D01500DD11E /* CommandBarIOS.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CommandBarIOS/CommandBarIOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS.modulemap";
-				PRODUCT_MODULE_NAME = CommandBarIOS;
-				PRODUCT_NAME = CommandBarIOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		738E9E0DE5D04866A22923ECD5A9BB05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FBA3F61958993B363D52C4934D7FF3B4 /* Pods-CommandBarIOS_Tests.release.xcconfig */;
@@ -685,9 +654,9 @@
 			};
 			name = Release;
 		};
-		888EAB86A45051DA68E586AA7A68B1E6 /* Release */ = {
+		7A12A363AFA67D218EC9C5BF100B6D0C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A70AF0F873154ACD2FEC4FA4E521C288 /* CommandBarIOS.release.xcconfig */;
+			baseConfigurationReference = 94EFF33E7C5F402ED8D468951555DB0B /* CommandBarIOS.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -717,6 +686,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		8193FED72DC46FB2D368EBB2C533D7F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E836AC6299EA5D3C05E74A3493E979F /* CommandBarIOS.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CommandBarIOS/CommandBarIOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS.modulemap";
+				PRODUCT_MODULE_NAME = CommandBarIOS;
+				PRODUCT_NAME = CommandBarIOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -839,7 +840,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -883,6 +885,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		006AB2DBD6C5AC9DCD7CA981A270006D /* Build configuration list for PBXNativeTarget "CommandBarIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8193FED72DC46FB2D368EBB2C533D7F5 /* Debug */,
+				7A12A363AFA67D218EC9C5BF100B6D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1F2A00F7317381B3919D9459CBDCC0D8 /* Build configuration list for PBXNativeTarget "Pods-CommandBarIOS_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -906,15 +917,6 @@
 			buildConfigurations = (
 				4AD44956035A980A71C6E1E00452C829 /* Debug */,
 				738E9E0DE5D04866A22923ECD5A9BB05 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8C5B9841815BFDC0BA3F7328313D1579 /* Build configuration list for PBXNativeTarget "CommandBarIOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				66C2E711556A00913B3BB833C2BAFA5B /* Debug */,
-				888EAB86A45051DA68E586AA7A68B1E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
