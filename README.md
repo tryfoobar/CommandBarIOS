@@ -25,7 +25,7 @@ To install it using Swift Package Manager, add the following to your `Package.sw
 
 ```
 dependencies: [
-    .package(url: "https://github.com/tryfoobar/CommandBarIOS.git", from: "1.0.9")
+    .package(url: "https://github.com/tryfoobar/CommandBarIOS.git", from: "1.1.8")
 ]
 ```
 
@@ -102,6 +102,23 @@ struct MyView: View {
   var body: some View {
     Button(action: {
       CommandBarSDK.shared.openHelpHub(articleId: <article_id>)
+    }) {
+      Text("Tap me!").padding()
+    }
+  }
+}
+```
+
+Additionally, you can pass in an `fallbackAction` to `openHelpHub` to receive a callback when the user triggers an Open Chat action in HelpHub/Copilot
+
+```
+struct MyView: View {
+  var body: some View {
+    Button(action: {
+      CommandBarSDK.shared.openHelpHub(articleId: <article_id | null>, fallbackAction: {
+        print("User triggered Open Chat action")
+        CommandBarSDK.shared.closeHelpHub()
+      })
     }) {
       Text("Tap me!").padding()
     }
