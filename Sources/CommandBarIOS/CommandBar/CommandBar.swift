@@ -24,7 +24,7 @@ public class CommandBar_Deprecated {
         }
     }
     
-    func closeHelpHub() {
+    public func closeHelpHub() {
         presentedNavigationController?.dismiss(animated: true, completion: nil)
         presentedNavigationController = nil
     }
