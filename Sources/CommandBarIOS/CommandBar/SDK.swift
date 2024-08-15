@@ -1,13 +1,11 @@
 import Foundation
 import JavaScriptCore
 
-public protocol CommandBarSDKDelegate : AnyObject {
-    func didFinishBooting(withError error: Error?)
-}
-
+public protocol CommandBarSDKDelegate : AnyObject {}
 // Optional Protocol methods
 extension CommandBarSDKDelegate {
-    func didTriggerOpenChat(withType type: String) {}
+    func didTriggerCopilotFallback(withType type: String) {}
+    func didFinishBooting(withError error: Error?) {}
 }
 
 // MARK: Public SDK
@@ -24,6 +22,8 @@ public final class CommandBarSDK {
     public weak var delegate: CommandBarSDKDelegate?
     weak var privateDelagate: CommandBarInternalSDK?
     
+    private var copilotFallbackAction: ((String) -> Void)? = nil
+    
     public init() {
         self.orgId = nil
         self.options = nil
@@ -32,14 +32,15 @@ public final class CommandBarSDK {
     public func boot(_ orgId: String, with options: CommandBarOptions? = nil) {
         self.orgId = orgId
         self.options = options
-        self.commandbar = CommandBar_Deprecated(options: CommandBarOptions_Deprecated(["orgId": orgId, "launchCode": "prod" ]))
-
+        self.commandbar = CommandBar_Deprecated(options: CommandBarOptions_Deprecated(["orgId": orgId, "launchCode": "local" ]))
+        self.commandbar?.delegate = self
         CommandBarSDK.sharedInternal.boot(orgId: orgId, with: options)
     }
     
-    public func openHelpHub(articleId: Int? = nil) {
+    public func openHelpHub(articleId: Int? = nil, withCopilotFallback copilotFallbackCallback: ((String) -> Void)? = nil) {
         guard let orgId = CommandBarSDK.shared.orgId else { return }
-        
+            
+        self.copilotFallbackAction = copilotFallbackCallback
         commandbar?.openHelpHub(articleId: articleId)
     }
     
@@ -60,8 +61,18 @@ extension CommandBarSDK : CommandBarInternalSDKDelegate {
         CommandBarSDK.shared.delegate?.didFinishBooting(withError: error)
     }
     
-    func didTriggerOpenChat(withType type: String) {
-        CommandBarSDK.shared.delegate?.didTriggerOpenChat(withType: type)
+    func didTriggerCopilotFallback(withType type: String) {
+        CommandBarSDK.shared.delegate?.didTriggerCopilotFallback(withType: type)
     }
 }
 
+extension CommandBarSDK : HelpHubWebViewDelegate {
+    public func didTriggerCopilotFallback(_ action: [String : Any]) {
+        let meta = action["meta"] as? [String: Any] ?? [:]
+        let type = meta["type"] as? String ?? ""
+        
+        if (self.copilotFallbackAction != nil) {
+            self.copilotFallbackAction!(type)
+        }
+    }
+}

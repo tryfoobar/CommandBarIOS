@@ -33,7 +33,7 @@ public class CommandBar_Deprecated {
 }
 
 extension CommandBar_Deprecated : HelpHubWebViewDelegate {
-    public func didReceiveFallbackAction(_ action: [String : Any]) {
-        self.delegate?.didReceiveFallbackAction(action)
+    public func didTriggerCopilotFallback(_ action: [String : Any]) {
+        self.delegate?.didTriggerCopilotFallback(action)
     }
 }

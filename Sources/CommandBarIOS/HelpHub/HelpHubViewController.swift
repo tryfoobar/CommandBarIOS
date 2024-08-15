@@ -4,7 +4,7 @@ import WebKit
 public class HelpHubViewController: UIViewController {
     var helpHubView: HelpHubWebView!
     private var options: CommandBarOptions_Deprecated
-    public var delegate: HelpHubWebViewDelegate? // Add this property
+    public var delegate: HelpHubWebViewDelegate?
     
     private var articleId: Int?
 
@@ -42,7 +42,7 @@ public class HelpHubViewController: UIViewController {
 }
 
 extension HelpHubViewController : HelpHubWebViewDelegate {
-    public func didReceiveFallbackAction(_ action: [String : Any]) {
-        self.delegate?.didReceiveFallbackAction(action)
+    public func didTriggerCopilotFallback(_ action: [String : Any]) {
+        self.delegate?.didTriggerCopilotFallback(action)
     }
 }

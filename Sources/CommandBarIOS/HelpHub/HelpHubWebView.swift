@@ -169,7 +169,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
         if let jsonData = actionStr.data(using: .utf8) {
             do {
                 if let jsonDictionary = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
-                    self.delegate?.didReceiveFallbackAction(jsonDictionary)
+                    self.delegate?.didTriggerCopilotFallback(jsonDictionary)
                 }
             } catch {
                 print("Error: \(error.localizedDescription)")
@@ -179,5 +179,5 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
 }
 
 public protocol HelpHubWebViewDelegate: AnyObject {
-    func didReceiveFallbackAction(_ action: [String: Any])
+    func didTriggerCopilotFallback(_ action: [String: Any])
 }

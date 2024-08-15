@@ -4,7 +4,7 @@ protocol CommandBarInternalSDKDelegate: AnyObject {
     func didBootComplete(withConfig config: Config)
     func didBootFail(withError error: Error?)
     
-    func didTriggerOpenChat(withType type: String)
+    func didTriggerCopilotFallback(withType type: String)
 }
 
 // MARK: Internal SDK
@@ -30,34 +30,6 @@ final class CommandBarInternalSDK : CommandBarInternalSDKDelegate {
             print("Warning: Could not boot CommandBar")
             return
         }
-        
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else {
-                print("Warning: Could not boot CommandBar")
-                CommandBarInternalSDK.shared.didBootFail(withError: error)
-                return
-            }
-
-            do {
-                let decoder = JSONDecoder()
-                let config = try decoder.decode(Config.self, from: data)
-                
-                // Once we've decoded the condig, setup Analytics
-                Analytics.shared.setup(orgId: orgId, with: self.options)
-                
-                DispatchQueue.main.async {
-                    CommandBarInternalSDK.shared.isReady = true
-                    CommandBarInternalSDK.shared.didBootComplete(withConfig: config)
-                }
-                
-            } catch let error {
-                print("Warning: Could not boot CommandBar")
-                DispatchQueue.main.async {
-                    CommandBarInternalSDK.shared.didBootFail(withError: error)
-                }
-            }
-        }
-        task.resume()
     }
     
     
@@ -72,8 +44,8 @@ final class CommandBarInternalSDK : CommandBarInternalSDKDelegate {
         CommandBarInternalSDK.shared.delegate?.didBootFail(withError: error)
     }
     
-    func didTriggerOpenChat(withType type: String) {
-        CommandBarInternalSDK.shared.delegate?.didTriggerOpenChat(withType: type)
+    func didTriggerCopilotFallback(withType type: String) {
+        CommandBarInternalSDK.shared.delegate?.didTriggerCopilotFallback(withType: type)
     }
 
 }
