@@ -8,9 +8,18 @@ import SwiftUI
 // 1. Import CommandBar IOS SDK
 import CommandBarIOS
 
+
+
 struct HomeView: View {
-    var ORG_ID = "foocorp"
+    @State private var showingAlert = false
     
+    var ORG_ID = "foocorp"
+        
+    func onCopilotFallback(withType type: String) {
+        CommandBarSDK.shared.closeHelpHub()
+        self.showingAlert = true
+    }
+
     var body: some View {
         VStack(alignment: .center) {
             ZStack {
@@ -28,8 +37,11 @@ struct HomeView: View {
                     VStack() {
                         CustomButton(title: "Open HelpHub") {
                             // 4. Open HelpHub
-                            CommandBarSDK.shared.openHelpHub()
+                            CommandBarSDK.shared.openHelpHub(articleId: nil, withCopilotFallback: onCopilotFallback)
+                        }.alert(isPresented: $showingAlert) {
+                            Alert(title: Text("Copilot Fallback Triggered"), message: Text("You can use this to trigger opening up a third party chat provider or handle custom behavior when copilot can't find an answer or when the user triggers a fallback action!"), dismissButton: .default(Text("Got it!")))
                         }
+
                     }
                 }.padding(.horizontal)
 
