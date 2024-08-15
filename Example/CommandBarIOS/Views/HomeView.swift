@@ -13,9 +13,9 @@ import CommandBarIOS
 struct HomeView: View {
     @State private var showingAlert = false
     
-    var ORG_ID = "foocorp"
+    var ORG_ID = "<your org id>"
         
-    func onCopilotFallback(withType type: String) {
+    func onFallbackAction(withType type: String) {
         CommandBarSDK.shared.closeHelpHub()
         self.showingAlert = true
     }
@@ -37,7 +37,7 @@ struct HomeView: View {
                     VStack() {
                         CustomButton(title: "Open HelpHub") {
                             // 4. Open HelpHub
-                            CommandBarSDK.shared.openHelpHub(articleId: nil, withCopilotFallback: onCopilotFallback)
+                            CommandBarSDK.shared.openHelpHub(articleId: nil, withFallbackAction: onFallbackAction)
                         }.alert(isPresented: $showingAlert) {
                             Alert(title: Text("Copilot Fallback Triggered"), message: Text("You can use this to trigger opening up a third party chat provider or handle custom behavior when copilot can't find an answer or when the user triggers a fallback action!"), dismissButton: .default(Text("Got it!")))
                         }

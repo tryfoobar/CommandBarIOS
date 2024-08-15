@@ -3,8 +3,6 @@ import Foundation
 protocol CommandBarInternalSDKDelegate: AnyObject {
     func didBootComplete(withConfig config: Config)
     func didBootFail(withError error: Error?)
-    
-    func didTriggerCopilotFallback(withType type: String)
 }
 
 // MARK: Internal SDK
@@ -43,9 +41,4 @@ final class CommandBarInternalSDK : CommandBarInternalSDKDelegate {
         print("Failed to boot CommandBar: \(String(describing: error))")
         CommandBarInternalSDK.shared.delegate?.didBootFail(withError: error)
     }
-    
-    func didTriggerCopilotFallback(withType type: String) {
-        CommandBarInternalSDK.shared.delegate?.didTriggerCopilotFallback(withType: type)
-    }
-
 }

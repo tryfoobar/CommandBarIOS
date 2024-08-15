@@ -4,17 +4,15 @@ import WebKit
 public class CommandBar_Deprecated {
     private var options: CommandBarOptions_Deprecated;
     
-    public weak var delegate: HelpHubWebViewDelegate? // Add this property
-    private weak var presentedNavigationController: UINavigationController? // Add this property
+    private weak var presentedNavigationController: UINavigationController?
     
     public init(options: CommandBarOptions_Deprecated) {
         self.options = options
     }
 
-    public func openHelpHub(articleId: Int? = nil) {
+    public func openHelpHub(articleId: Int? = nil, fallbackAction: ((String) -> Void)? = nil) {
         DispatchQueue.main.async {
-            let viewController = HelpHubViewController(options: self.options, articleId: articleId)
-            viewController.delegate = self
+            let viewController = HelpHubViewController(options: self.options, articleId: articleId, fallbackAction: fallbackAction)
 
             let navigationController = UINavigationController(rootViewController: viewController)
             navigationController.modalPresentationStyle = .pageSheet
@@ -29,11 +27,5 @@ public class CommandBar_Deprecated {
     func closeHelpHub() {
         presentedNavigationController?.dismiss(animated: true, completion: nil)
         presentedNavigationController = nil
-    }
-}
-
-extension CommandBar_Deprecated : HelpHubWebViewDelegate {
-    public func didTriggerCopilotFallback(_ action: [String : Any]) {
-        self.delegate?.didTriggerCopilotFallback(action)
     }
 }

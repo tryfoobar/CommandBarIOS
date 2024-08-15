@@ -5,12 +5,13 @@ public class HelpHubViewController: UIViewController {
     var helpHubView: HelpHubWebView!
     private var options: CommandBarOptions_Deprecated
     public var delegate: HelpHubWebViewDelegate?
-    
+    private var fallbackAction: ((String) -> Void)?
     private var articleId: Int?
 
-    public init(options: CommandBarOptions_Deprecated, articleId: Int? = nil) {
+    public init(options: CommandBarOptions_Deprecated, articleId: Int? = nil, fallbackAction: ((String) -> Void)? = nil) {
         self.options = options
         self.articleId = articleId
+        self.fallbackAction = fallbackAction
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -43,6 +44,11 @@ public class HelpHubViewController: UIViewController {
 
 extension HelpHubViewController : HelpHubWebViewDelegate {
     public func didTriggerCopilotFallback(_ action: [String : Any]) {
-        self.delegate?.didTriggerCopilotFallback(action)
+        let meta = action["meta"] as? [String: Any] ?? [:]
+        let type = meta["type"] as? String ?? ""
+        
+        if (self.fallbackAction != nil) {
+            self.fallbackAction!(type)
+        }
     }
 }

@@ -22,8 +22,6 @@ public final class CommandBarSDK {
     public weak var delegate: CommandBarSDKDelegate?
     weak var privateDelagate: CommandBarInternalSDK?
     
-    private var copilotFallbackAction: ((String) -> Void)? = nil
-    
     public init() {
         self.orgId = nil
         self.options = nil
@@ -32,16 +30,14 @@ public final class CommandBarSDK {
     public func boot(_ orgId: String, with options: CommandBarOptions? = nil) {
         self.orgId = orgId
         self.options = options
-        self.commandbar = CommandBar_Deprecated(options: CommandBarOptions_Deprecated(["orgId": orgId, "launchCode": "local" ]))
-        self.commandbar?.delegate = self
+        self.commandbar = CommandBar_Deprecated(options: CommandBarOptions_Deprecated(["orgId": orgId, "launchCode": "prod" ]))
         CommandBarSDK.sharedInternal.boot(orgId: orgId, with: options)
     }
     
-    public func openHelpHub(articleId: Int? = nil, withCopilotFallback copilotFallbackCallback: ((String) -> Void)? = nil) {
+    public func openHelpHub(articleId: Int? = nil, withFallbackAction fallbackAction: ((String) -> Void)? = nil) {
         guard let orgId = CommandBarSDK.shared.orgId else { return }
             
-        self.copilotFallbackAction = copilotFallbackCallback
-        commandbar?.openHelpHub(articleId: articleId)
+        commandbar?.openHelpHub(articleId: articleId, fallbackAction: fallbackAction)
     }
     
     public func closeHelpHub() {
@@ -59,20 +55,5 @@ extension CommandBarSDK : CommandBarInternalSDKDelegate {
     
     func didBootFail(withError error: Error?) {
         CommandBarSDK.shared.delegate?.didFinishBooting(withError: error)
-    }
-    
-    func didTriggerCopilotFallback(withType type: String) {
-        CommandBarSDK.shared.delegate?.didTriggerCopilotFallback(withType: type)
-    }
-}
-
-extension CommandBarSDK : HelpHubWebViewDelegate {
-    public func didTriggerCopilotFallback(_ action: [String : Any]) {
-        let meta = action["meta"] as? [String: Any] ?? [:]
-        let type = meta["type"] as? String ?? ""
-        
-        if (self.copilotFallbackAction != nil) {
-            self.copilotFallbackAction!(type)
-        }
     }
 }
