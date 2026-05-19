@@ -11,6 +11,9 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
 
     private var debug: Bool = true
 
+    /// Avoid crashing when `loadContent()` runs more than once (duplicate handler names are invalid).
+    private var didInstallScriptHandlers: Bool = false
+
     public weak var delegate: HelpHubWebViewDelegate?
     
     public init(frame: CGRect) {
@@ -24,8 +27,11 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
     }
 
     func loadContent() {
-        configuration.userContentController.add(self, name: "commandbar__onFallbackAction")
-        configuration.userContentController.add(self, name: "commandbar__log")
+        if !didInstallScriptHandlers {
+            configuration.userContentController.add(self, name: "engagement__onFallbackAction")
+            configuration.userContentController.add(self, name: "engagement__log")
+            didInstallScriptHandlers = true
+        }
 
         configuration.websiteDataStore = WKWebsiteDataStore.default()
         
@@ -96,14 +102,44 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                       #copilot-container:not(:focus-within) {
                           padding-bottom: 50px;
                       }
+
+                      /* Help Hub shell for WKWebView: fill viewport and stack SDK UI above the native spinner */
+                      html, body {
+                          margin: 0;
+                          padding: 0;
+                          width: 100%;
+                          height: 100%;
+                          min-height: 100%;
+                          background-color: #ffffff;
+                      }
+                      .loading-container {
+                          position: fixed;
+                          inset: 0;
+                          z-index: 1;
+                          pointer-events: none;
+                          background-color: transparent;
+                      }
+                      #engagement-wrapper {
+                          position: relative;
+                          z-index: 2147483000;
+                          min-height: 100%;
+                      }
                   </style>
               </head>
               <body>
-                  <div class="loading-container"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+                <div class="loading-container"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
               </body>
             </html>
         """
-        loadHTMLString(html, baseURL: URL(string: "http://api.commandbar.com"))
+        loadHTMLString(html, baseURL: URL(string: "https://cdn.amplitude.com"))
+    }
+
+    private func escapeForEmbeddedJs(_ value: String) -> String {
+        value
+            .replacingOccurrences(of: "\\", with: "\\\\")
+            .replacingOccurrences(of: "\"", with: "\\\"")
+            .replacingOccurrences(of: "\n", with: "\\n")
+            .replacingOccurrences(of: "\r", with: "\\r")
     }
 
     private func loadSnippet() {
@@ -111,14 +147,164 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
             return
         }
 
-        let userId = options.userId == nil ? "null" : "\"\(options.userId!)\""
-        let executable = self.articleId == nil ? "window.CommandBar.openHelpHub()" : "window.CommandBar.openHelpHub({ articleId: \(self.articleId!) })"
+        let apiKeyJs = "\"\(escapeForEmbeddedJs(options.orgId))\""
+        let userIdJs: String
+        if let uid = options.userId {
+            userIdJs = "\"\(escapeForEmbeddedJs(uid))\""
+        } else {
+            userIdJs = "null"
+        }
+        let articleIdJs = self.articleId.map { String($0) } ?? "null"
+        let launchCodeJs = escapeForEmbeddedJs(options.launchCode)
+        let serverZoneJs = escapeForEmbeddedJs(options.serverZone.uppercased() == "EU" ? "EU" : "US")
         let snippet = """
             (function() {
-                    window._cbIsWebView = true;
-                    var o="\(options.orgId)",n=["Object.assign","Symbol","Symbol.for"].join("%2C"),a=window;function t(o,n){void 0===n&&(n=!1),"complete"!==document.readyState&&window.addEventListener("load",t.bind(null,o,n),{capture:!1,once:!0});var a=document.createElement("script");a.type="text/javascript",a.async=n,a.src=o,document.head.appendChild(a)}function r(){var n;if(void 0===a.CommandBar){delete a.__CommandBarBootstrap__;var r=Symbol.for("CommandBar::configuration"),e=Symbol.for("CommandBar::orgConfig"),c=Symbol.for("CommandBar::disposed"),i=Symbol.for("CommandBar::isProxy"),m=Symbol.for("CommandBar::queue"),l=Symbol.for("CommandBar::unwrap"),d=[],s="api=\(options.launchCode);commandbar=\(options.launchCode)",u=s&&s.includes("local")?"http://localhost:8000":"https://api.commandbar.com",f=Object.assign(((n={})[r]={uuid:o},n[e]={},n[c]=!1,n[i]=!0,n[m]=new Array,n[l]=function(){return f},n),a.CommandBar),p=["addCommand","boot"],y=f;Object.assign(f,{shareCallbacks:function(){return{}},shareContext:function(){return{}}}),a.CommandBar=new Proxy(f,{get:function(o,n){return n in y?f[n]:p.includes(n)?function(){var o=Array.prototype.slice.call(arguments);return new Promise((function(a,t){o.unshift(n,a,t),f[m].push(o)}))}:function(){var o=Array.prototype.slice.call(arguments);o.unshift(n),f[m].push(o)}}}),null!==s&&d.push("lc=".concat(s)),d.push("version=2"),t("".concat(u,"/latest/").concat(o,"?").concat(d.join("&")),!0)}}void 0===Object.assign||"undefined"==typeof Symbol||void 0===Symbol.for?(a.__CommandBarBootstrap__=r,t("https://polyfill.io/v3/polyfill.min.js?version=3.101.0&callback=__CommandBarBootstrap__&features="+n)):r();
-                    window.CommandBar.boot(\(userId), {}, { products: ["help_hub"] });
-                    \(executable)
+                window._cbIsWebView = true;
+                if (window.__ampMobileHelpHubLoaded) { return; }
+
+                function ampLog(msg) {
+                    try {
+                        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.engagement__log) {
+                            window.webkit.messageHandlers.engagement__log.postMessage(String(msg));
+                        }
+                    } catch (e) {}
+                    try { console.log(msg); } catch (e2) {}
+                }
+
+                var apiKey = \(apiKeyJs);
+                var serverZone = "\(serverZoneJs)";
+                var userIdRaw = \(userIdJs);
+                var articleId = \(articleIdJs);
+                var launchCode = "\(launchCodeJs)";
+                var localDevHost = "localhost";
+
+                function loadScript(src, async, onload, onerror) {
+                    var s = document.createElement("script");
+                    s.type = "text/javascript";
+                    s.async = !!async;
+                    s.src = src;
+                    if (onload) { s.onload = onload; }
+                    if (onerror) { s.onerror = onerror; }
+                    document.head.appendChild(s);
+                }
+
+                function withPolyfills(done) {
+                    var feats = ["Object.assign","Symbol","Symbol.for"].join("%2C");
+                    if (typeof Object.assign !== "undefined" && typeof Symbol !== "undefined" && Symbol.for) {
+                        done();
+                    } else {
+                        window.__AmpEngagementPolyDone__ = done;
+                        loadScript("https://polyfill.io/v3/polyfill.min.js?version=3.101.0&callback=__AmpEngagementPolyDone__&features=" + feats, false, null, null);
+                    }
+                }
+
+                function engagementScriptUrl() {
+                    var cdnBase = serverZone === "EU" ? "https://cdn.eu.amplitude.com" : "https://cdn.amplitude.com";
+                    return cdnBase + "/script/" + encodeURIComponent(apiKey) + ".engagement.js";
+                }
+
+                function engagementInitOptions() {
+                    var o = { serverZone: serverZone === "EU" ? "EU" : "US" };
+                    if (launchCode === "local") {
+                        o.serverUrl = "http://" + localDevHost + ":8000";
+                        o.cdnUrl = "http://" + localDevHost + ":8000";
+                    }
+                    return o;
+                }
+
+                function buildUser() {
+                    if (userIdRaw) {
+                        return { user_id: userIdRaw };
+                    }
+                    try {
+                        var k = "__amp_engagement_wv_device";
+                        var id = sessionStorage.getItem(k);
+                        if (!id) {
+                            id = (window.crypto && window.crypto.randomUUID) ? window.crypto.randomUUID() : ("wv-" + Date.now() + "-" + Math.random());
+                            sessionStorage.setItem(k, id);
+                        }
+                        return { device_id: id };
+                    } catch (e) {
+                        return { device_id: "wv-" + Date.now() + "-" + Math.random() };
+                    }
+                }
+
+                function hideNativeLoadingSpinner() {
+                    var els = document.querySelectorAll(".loading-container");
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].style.display = "none";
+                    }
+                }
+
+                function openHelpHub() {
+                    hideNativeLoadingSpinner();
+                    var opts = { initialPage: "help-hub" };
+                    if (articleId !== null && articleId !== undefined) {
+                        opts.contentItemId = articleId;
+                    }
+                    try {
+                        window.dispatchEvent(new Event("resize"));
+                    } catch (e1) {}
+                    requestAnimationFrame(function () {
+                        requestAnimationFrame(function () {
+                            try {
+                                window.engagement._showResourceCenter(true, opts);
+                                try {
+                                    window.dispatchEvent(new Event("resize"));
+                                } catch (e2) {}
+                            } catch (e3) {
+                                ampLog("[Amplitude Engagement] _showResourceCenter: " + e3);
+                            }
+                            window.__ampMobileHelpHubLoaded = true;
+                        });
+                    });
+                }
+
+                function tryBootAfterEngagementScript() {
+                    var attempts = 0;
+                    var maxAttempts = 120;
+                    function tick() {
+                        attempts++;
+                        try {
+                            if (!window.engagement || typeof window.engagement.boot !== "function") {
+                                if (attempts >= maxAttempts) {
+                                    ampLog("[Amplitude Engagement] Timed out waiting for engagement SDK after script load. URL: " + engagementScriptUrl());
+                                    return;
+                                }
+                                setTimeout(tick, 100);
+                                return;
+                            }
+                            window.engagement.init(apiKey, engagementInitOptions());
+                            var p = window.engagement.boot({
+                                user: buildUser(),
+                                integrations: [{ track: function () {} }]
+                            });
+                            if (p && typeof p.then === "function") {
+                                p.then(function () {
+                                    openHelpHub();
+                                }).catch(function (err) {
+                                    ampLog("[Amplitude Engagement] boot failed: " + err);
+                                });
+                            } else {
+                                openHelpHub();
+                            }
+                        } catch (e) {
+                            ampLog("[Amplitude Engagement] boot setup failed: " + e);
+                        }
+                    }
+                    tick();
+                }
+
+                function start() {
+                    var src = engagementScriptUrl();
+                    loadScript(src, false, function () {
+                        tryBootAfterEngagementScript();
+                    }, function () {
+                        ampLog("[Amplitude Engagement] Failed to load script: " + src);
+                    });
+                }
+
+                withPolyfills(start);
             })();
         """
 
@@ -156,16 +342,21 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
     // MARK: - WKScriptMessageHandler
 
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard let actionStr = message.body as? String else {
+        let bodyDescription: String
+        if let s = message.body as? String {
+            bodyDescription = s
+        } else {
+            bodyDescription = String(describing: message.body)
+        }
+
+        // Debug Logging for local development (also used by injected JS for Amplitude load diagnostics).
+        if message.name == "engagement__log" {
+            print("\(bodyDescription)")
             return
         }
-        
-        // Debug Logging for local development
-        if message.name == "commandbar__log" {
-            print(message.body)
-            return
-        }
-        
+
+        let actionStr = bodyDescription
+
         if let jsonData = actionStr.data(using: .utf8) {
             do {
                 if let jsonDictionary = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {

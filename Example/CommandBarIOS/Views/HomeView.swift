@@ -12,9 +12,12 @@ import CommandBarIOS
 
 struct HomeView: View {
     @State private var showingAlert = false
-    
-    var ORG_ID = "<your org id>"
-        
+    @State private var showingKeyAlert = false
+
+    /// Amplitude **Guides & Surveys** API key for your project (same key as the web snippet).
+    /// The placeholder below will not load — replace it or paste into Xcode for local testing.
+    private let amplitudeApiKey = "6dba5c25868be3716e69f525035e33b6"
+
     func onFallbackAction(withType type: String) {
         CommandBarSDK.shared.closeHelpHub()
         self.showingAlert = true
@@ -45,19 +48,19 @@ struct HomeView: View {
                     }
                 }.padding(.horizontal)
 
-                if ORG_ID == "" {
+                if amplitudeApiKey == "" {
                     VStack(alignment: .leading) {
-                        Toast(message: "Org ID not set.")
+                        Toast(message: "Set amplitudeApiKey in HomeView.swift (Amplitude API key).")
                         Spacer()
                     }
                 }
-        
+
             }
         }
         .onAppear {
-            if (ORG_ID != "") {
+            if (amplitudeApiKey != "") {
                 // 2. Boot CommandBar by using the shared instance
-                CommandBarSDK.shared.boot(ORG_ID, with: CommandBarOptions(user_id: UUID().uuidString ))
+                CommandBarSDK.shared.boot(amplitudeApiKey, with: CommandBarOptions(user_id: UUID().uuidString ))
             }
         }
     }

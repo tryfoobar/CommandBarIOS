@@ -91,12 +91,15 @@ public struct CommandBarOptions_Deprecated {
     var userId: String?
     var spinnerColor: String;
     var launchCode: String;
-    
+    /// Amplitude data residency: `"US"` (default) or `"EU"`.
+    var serverZone: String
+
     public init(_ dict: [String: Any]) {
         orgId = dict["orgId"] as! String
         userId = dict["userId"] as? String
         spinnerColor = dict["spinnerColor"] as? String ?? "#3662F1"
         launchCode = dict["launchCode"] as? String ?? "prod"
+        serverZone = dict["serverZone"] as? String ?? "US"
     }
 }
 

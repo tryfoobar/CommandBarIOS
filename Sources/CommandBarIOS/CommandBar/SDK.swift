@@ -30,7 +30,13 @@ public final class CommandBarSDK {
     public func boot(_ orgId: String, with options: CommandBarOptions? = nil) {
         self.orgId = orgId
         self.options = options
-        self.commandbar = CommandBar_Deprecated(options: CommandBarOptions_Deprecated(["orgId": orgId, "launchCode": "prod" ]))
+
+        var dict: [String: Any] = ["orgId": orgId, "launchCode": "prod"]
+        if let uid = options?.user_id {
+            dict["userId"] = uid
+        }
+
+        self.commandbar = CommandBar_Deprecated(options: CommandBarOptions_Deprecated(dict))
         CommandBarSDK.sharedInternal.boot(orgId: orgId, with: options)
     }
     
