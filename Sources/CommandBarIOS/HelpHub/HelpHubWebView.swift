@@ -29,6 +29,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
     func loadContent() {
         if !didInstallScriptHandlers {
             configuration.userContentController.add(self, name: "engagement__onFallbackAction")
+            configuration.userContentController.add(self, name: "onHelpHubClose")
             configuration.userContentController.add(self, name: "engagement__log")
             didInstallScriptHandlers = true
         }
@@ -160,7 +161,6 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
         let snippet = """
             (function() {
                 window._cbIsWebView = true;
-                if (window.__ampMobileHelpHubLoaded) { return; }
 
                 function ampLog(msg) {
                     try {
@@ -170,6 +170,64 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                     } catch (e) {}
                     try { console.log(msg); } catch (e2) {}
                 }
+
+                /** Dedicated bridge so native always dismisses the sheet (payload-less). */
+                function notifyNativeHelpHubClosed() {
+                    try {
+                        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.onHelpHubClose) {
+                            window.webkit.messageHandlers.onHelpHubClose.postMessage(null);
+                            return;
+                        }
+                    } catch (eDedicated) {}
+                    var payload = JSON.stringify({ meta: { type: "close" } });
+                    try {
+                        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.engagement__onFallbackAction) {
+                            window.webkit.messageHandlers.engagement__onFallbackAction.postMessage(payload);
+                        }
+                    } catch (eFallback) {}
+                }
+
+                function isHelpHubCloseElement(el) {
+                    if (!el || typeof el.getAttribute !== "function") { return false; }
+                    var tag = (el.tagName || "").toUpperCase();
+                    var role = (el.getAttribute("role") || "").toLowerCase();
+                    var label = el.getAttribute("aria-label") || "";
+                    if (!/^close$/i.test(label)) { return false; }
+                    return tag === "BUTTON" || role === "button";
+                }
+
+                function eventIndicatesHelpHubClose(ev) {
+                    var path = typeof ev.composedPath === "function" ? ev.composedPath() : [];
+                    var i = 0;
+                    for (i = 0; i < path.length; i++) {
+                        if (isHelpHubCloseElement(path[i])) { return true; }
+                    }
+                    var t = ev.target;
+                    if (t && typeof t.closest === "function") {
+                        if (t.closest('button[aria-label="close"], button[aria-label="Close"], [role="button"][aria-label="close"], [role="button"][aria-label="Close"]')) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+
+                /** RC header close uses aria-label="close" (StyledResourceCenterModalHeader). Install before engagement boot guard. */
+                function installNativeHelpHubCloseBridge() {
+                    if (window.__ampNativeHelpHubCloseBridge) { return; }
+                    window.__ampNativeHelpHubCloseBridge = true;
+                    var fired = false;
+                    function relay(ev) {
+                        if (fired || !eventIndicatesHelpHubClose(ev)) { return; }
+                        fired = true;
+                        notifyNativeHelpHubClosed();
+                    }
+                    document.addEventListener("pointerdown", relay, true);
+                    document.addEventListener("click", relay, true);
+                    document.addEventListener("touchend", relay, true);
+                }
+                installNativeHelpHubCloseBridge();
+
+                if (window.__ampMobileHelpHubLoaded) { return; }
 
                 var apiKey = \(apiKeyJs);
                 var serverZone = "\(serverZoneJs)";
@@ -355,11 +413,41 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
             return
         }
 
+        if message.name == "onHelpHubClose" {
+            DispatchQueue.main.async {
+                CommandBarSDK.shared.closeHelpHub()
+            }
+            return
+        }
+
+        guard message.name == "engagement__onFallbackAction" else {
+            return
+        }
+
+        if let dict = message.body as? [String: Any] {
+            if let meta = dict["meta"] as? [String: Any],
+               let typ = meta["type"] as? String,
+               typ == "close" {
+                DispatchQueue.main.async {
+                    CommandBarSDK.shared.closeHelpHub()
+                }
+            }
+            self.delegate?.didTriggerCopilotFallback(dict)
+            return
+        }
+
         let actionStr = bodyDescription
 
         if let jsonData = actionStr.data(using: .utf8) {
             do {
                 if let jsonDictionary = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
+                    if let meta = jsonDictionary["meta"] as? [String: Any],
+                       let typ = meta["type"] as? String,
+                       typ == "close" {
+                        DispatchQueue.main.async {
+                            CommandBarSDK.shared.closeHelpHub()
+                        }
+                    }
                     self.delegate?.didTriggerCopilotFallback(jsonDictionary)
                 }
             } catch {
