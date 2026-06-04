@@ -15,6 +15,7 @@ public class CommandBar_Deprecated {
             let viewController = ResourceCenterViewController(
                 options: self.options,
                 articleId: articleId,
+                engagementShell: "resource-center",
                 engagementInitialPage: "help-hub",
                 fallbackAction: fallbackAction
             )
@@ -34,7 +35,7 @@ public class CommandBar_Deprecated {
             let viewController = ResourceCenterViewController(
                 options: self.options,
                 articleId: nil,
-                engagementInitialPage: "assistant",
+                engagementShell: "assistant",
                 fallbackAction: fallbackAction
             )
 
@@ -49,6 +50,7 @@ public class CommandBar_Deprecated {
     }
 
     public func closeResourceCenter() {
+        ResourceCenterWebView.activeInstance?.closeEngagementShell()
         presentedNavigationController?.dismiss(animated: true, completion: nil)
         presentedNavigationController = nil
     }

@@ -3,6 +3,8 @@ import WebKit
 
 public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHandler, WKUIDelegate {
     public var articleId: Int? = nil
+    /// `"resource-center"` uses `_showResourceCenter`; `"assistant"` uses `engagement.assistant.show({ initialPage: "chat" })` / `close()`.
+    public var engagementShell: String = "resource-center"
     public var engagementInitialPage: String = "help-hub"
     public var options: CommandBarOptions_Deprecated? = nil {
         didSet {
@@ -19,6 +21,9 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
 
     /// Active Resource Center WebView, used to apply filter updates while the sheet is open.
     public static weak var activeInstance: ResourceCenterWebView?
+
+    /// Extra top inset for page-sheet presentation so content clears rounded sheet corners (e.g. iOS 18+).
+    public static let sheetTopContentInset: CGFloat = 20
     
     public init(frame: CGRect) {
         super.init(frame: frame, configuration: WKWebViewConfiguration())
@@ -40,6 +45,32 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
     /// Applies the latest native tag filters to a booted engagement instance.
     func applyEngagementFilters() {
         evaluateJavaScript(Self.buildApplyEngagementFiltersJavaScript(), completionHandler: nil)
+    }
+
+    /// Tears down the in-WebView engagement UI (`assistant.close()` or hide Resource Center).
+    func closeEngagementShell() {
+        evaluateJavaScript(Self.buildCloseEngagementShellJavaScript(), completionHandler: nil)
+    }
+
+    private static func buildCloseEngagementShellJavaScript() -> String {
+        """
+            (function() {
+                var shell = window.__ampEngagementShell || "resource-center";
+                if (shell === "assistant") {
+                    try {
+                        if (window.engagement && window.engagement.assistant && typeof window.engagement.assistant.close === "function") {
+                            window.engagement.assistant.close();
+                        }
+                    } catch (e1) {}
+                    return;
+                }
+                try {
+                    if (window.engagement && typeof window.engagement._showResourceCenter === "function") {
+                        window.engagement._showResourceCenter(false);
+                    }
+                } catch (e2) {}
+            })();
+            """
     }
 
     private static func buildApplyEngagementFiltersJavaScript() -> String {
@@ -82,11 +113,12 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
           }
         #endif
 
+        let topPaddingPx = Int(Self.sheetTopContentInset)
         let html = """
             <!DOCTYPE html>
             <html>
               <head>
-                  <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+                  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
                   <style>
                       .loading-container {
                           display: flex;
@@ -139,18 +171,23 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                           padding-bottom: 50px;
                       }
 
-                      /* Help Hub shell for WKWebView: fill viewport and stack SDK UI above the native spinner */
+                      /* Resource Center shell: pad below rounded page-sheet top edge */
                       html, body {
                           margin: 0;
                           padding: 0;
+                          padding-top: calc(\(topPaddingPx)px + env(safe-area-inset-top, 0px));
                           width: 100%;
                           height: 100%;
                           min-height: 100%;
                           background-color: #ffffff;
+                          box-sizing: border-box;
                       }
                       .loading-container {
                           position: fixed;
-                          inset: 0;
+                          top: calc(\(topPaddingPx)px + env(safe-area-inset-top, 0px));
+                          right: 0;
+                          bottom: 0;
+                          left: 0;
                           z-index: 1;
                           pointer-events: none;
                           background-color: transparent;
@@ -159,6 +196,7 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                           position: relative;
                           z-index: 2147483000;
                           min-height: 100%;
+                          box-sizing: border-box;
                       }
                   </style>
               </head>
@@ -193,6 +231,7 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
         let articleIdJs = self.articleId.map { String($0) } ?? "null"
         let launchCodeJs = escapeForEmbeddedJs(options.launchCode)
         let serverZoneJs = escapeForEmbeddedJs(options.serverZone.uppercased() == "EU" ? "EU" : "US")
+        let engagementShellJs = escapeForEmbeddedJs(self.engagementShell)
         let engagementInitialPageJs = escapeForEmbeddedJs(self.engagementInitialPage)
         let resourceCenterFilterJs = EngagementFilterStore.resourceCenterFilterJsonLiteral
         let assistantFilterJs = EngagementFilterStore.assistantFilterJsonLiteral
@@ -254,9 +293,10 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                     if (window.__ampNativeResourceCenterCloseBridge) { return; }
                     window.__ampNativeResourceCenterCloseBridge = true;
                     var fired = false;
-                    function relay(ev) {
+                      function relay(ev) {
                         if (fired || !eventIndicatesResourceCenterClose(ev)) { return; }
                         fired = true;
+                        closeEngagementShell();
                         notifyNativeResourceCenterClosed();
                     }
                     document.addEventListener("pointerdown", relay, true);
@@ -273,6 +313,8 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                 var articleId = \(articleIdJs);
                 var launchCode = "\(launchCodeJs)";
                 var localDevHost = "localhost";
+                var engagementShell = "\(engagementShellJs)";
+                window.__ampEngagementShell = engagementShell;
                 var engagementInitialPage = "\(engagementInitialPageJs)";
                 var nativeResourceCenterFilter = \(resourceCenterFilterJs);
                 var nativeAssistantFilter = \(assistantFilterJs);
@@ -348,6 +390,44 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                     }
                 }
 
+                function closeEngagementShell() {
+                    if (engagementShell === "assistant") {
+                        try {
+                            if (window.engagement && window.engagement.assistant && typeof window.engagement.assistant.close === "function") {
+                                window.engagement.assistant.close();
+                            }
+                        } catch (e1) {}
+                        return;
+                    }
+                    try {
+                        if (window.engagement && typeof window.engagement._showResourceCenter === "function") {
+                            window.engagement._showResourceCenter(false);
+                        }
+                    } catch (e2) {}
+                }
+
+                function openAssistant() {
+                    hideNativeLoadingSpinner();
+                    try {
+                        window.dispatchEvent(new Event("resize"));
+                    } catch (e1) {}
+                    requestAnimationFrame(function () {
+                        requestAnimationFrame(function () {
+                            try {
+                                if (window.engagement && window.engagement.assistant && typeof window.engagement.assistant.show === "function") {
+                                    window.engagement.assistant.show({ initialPage: "chat" });
+                                }
+                                try {
+                                    window.dispatchEvent(new Event("resize"));
+                                } catch (e2) {}
+                            } catch (e3) {
+                                ampLog("[Amplitude Engagement] assistant.show: " + e3);
+                            }
+                            window.__ampMobileResourceCenterLoaded = true;
+                        });
+                    });
+                }
+
                 function openResourceCenter() {
                     hideNativeLoadingSpinner();
                     var opts = { initialPage: engagementInitialPage };
@@ -372,6 +452,14 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                     });
                 }
 
+                function openEngagementShell() {
+                    if (engagementShell === "assistant") {
+                        openAssistant();
+                    } else {
+                        openResourceCenter();
+                    }
+                }
+
                 function tryBootAfterEngagementScript() {
                     var attempts = 0;
                     var maxAttempts = 120;
@@ -394,13 +482,13 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                             if (p && typeof p.then === "function") {
                                 p.then(function () {
                                     applyNativeEngagementFilters();
-                                    openResourceCenter();
+                                    openEngagementShell();
                                 }).catch(function (err) {
                                     ampLog("[Amplitude Engagement] boot failed: " + err);
                                 });
                             } else {
                                 applyNativeEngagementFilters();
-                                openResourceCenter();
+                                openEngagementShell();
                             }
                         } catch (e) {
                             ampLog("[Amplitude Engagement] boot setup failed: " + e);

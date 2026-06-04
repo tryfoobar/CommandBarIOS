@@ -16,7 +16,7 @@ struct HomeView: View {
 
     /// Amplitude **Guides & Surveys** API key for your project (same key as the web snippet).
     /// The placeholder below will not load — replace it or paste into Xcode for local testing.
-    private let amplitudeApiKey = "6dba5c25868be3716e69f525035e33b6"
+    private let amplitudeApiKey = ""
 
     func onFallbackAction(withType type: String) {
         CommandBarSDK.shared.closeResourceCenter()
@@ -38,12 +38,18 @@ struct HomeView: View {
                     }
                     Spacer()
                     VStack() {
-                        CustomButton(title: "Open Resource Center") {
-                            // 4. Open Resource Center
-                            CommandBarSDK.shared.openResourceCenter(articleId: nil, withFallbackAction: onFallbackAction)
-                        }.alert(isPresented: $showingAlert) {
-                            Alert(title: Text("Assistant Fallback Triggered"), message: Text("You can use this to trigger opening up a third party chat provider or handle custom behavior when assistant can't find an answer or when the user triggers a fallback action!"), dismissButton: .default(Text("Got it!")))
-                        }
+                            CustomButton(title: "Open Resource Center") {
+                                // 4. Open Resource Center
+                                CommandBarSDK.shared.openResourceCenter(articleId: nil, withFallbackAction: onFallbackAction)
+                            }.alert(isPresented: $showingAlert) {
+                                Alert(title: Text("Assistant Fallback Triggered"), message: Text("You can use this to trigger opening up a third party chat provider or handle custom behavior when assistant can't find an answer or when the user triggers a fallback action!"), dismissButton: .default(Text("Got it!")))
+                            }
+                            CustomButton(title: "Open Assistant") {
+                                // 4. Open Assistant
+                                CommandBarSDK.shared.openAssistant(withFallbackAction: onFallbackAction)
+                            }.alert(isPresented: $showingKeyAlert) {
+                                Alert(title: Text("Assistant Fallback Triggered"), message: Text("You can use this to trigger opening up a third party chat provider or handle custom behavior when assistant can't find an answer or when the user triggers a fallback action!"), dismissButton: .default(Text("Got it!")))
+                            }
 
                     }
                 }.padding(.horizontal)

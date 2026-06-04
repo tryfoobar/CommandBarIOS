@@ -7,16 +7,19 @@ public class ResourceCenterViewController: UIViewController {
     public var delegate: ResourceCenterWebViewDelegate?
     private var fallbackAction: ((String) -> Void)?
     private var articleId: Int?
+    private var engagementShell: String
     private var engagementInitialPage: String
 
     public init(
         options: CommandBarOptions_Deprecated,
         articleId: Int? = nil,
+        engagementShell: String = "resource-center",
         engagementInitialPage: String = "help-hub",
         fallbackAction: ((String) -> Void)? = nil
     ) {
         self.options = options
         self.articleId = articleId
+        self.engagementShell = engagementShell
         self.engagementInitialPage = engagementInitialPage
         self.fallbackAction = fallbackAction
         super.init(nibName: nil, bundle: nil)
@@ -28,6 +31,7 @@ public class ResourceCenterViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         configureResourceCenterView()
     }
 
@@ -35,18 +39,20 @@ public class ResourceCenterViewController: UIViewController {
         resourceCenterView = ResourceCenterWebView(frame: self.view.frame)
         resourceCenterView.delegate = self
         resourceCenterView.articleId = self.articleId
+        resourceCenterView.engagementShell = self.engagementShell
         resourceCenterView.engagementInitialPage = self.engagementInitialPage
         resourceCenterView.options = self.options
-        
+        resourceCenterView.backgroundColor = .systemBackground
+        resourceCenterView.scrollView.contentInsetAdjustmentBehavior = .never
+
         view.addSubview(resourceCenterView)
         resourceCenterView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             resourceCenterView.topAnchor.constraint(equalTo: view.topAnchor),
             resourceCenterView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             resourceCenterView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            resourceCenterView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            resourceCenterView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-
     }
 }
 
