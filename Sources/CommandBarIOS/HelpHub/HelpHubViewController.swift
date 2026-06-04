@@ -7,10 +7,17 @@ public class HelpHubViewController: UIViewController {
     public var delegate: HelpHubWebViewDelegate?
     private var fallbackAction: ((String) -> Void)?
     private var articleId: Int?
+    private var engagementInitialPage: String
 
-    public init(options: CommandBarOptions_Deprecated, articleId: Int? = nil, fallbackAction: ((String) -> Void)? = nil) {
+    public init(
+        options: CommandBarOptions_Deprecated,
+        articleId: Int? = nil,
+        engagementInitialPage: String = "help-hub",
+        fallbackAction: ((String) -> Void)? = nil
+    ) {
         self.options = options
         self.articleId = articleId
+        self.engagementInitialPage = engagementInitialPage
         self.fallbackAction = fallbackAction
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,6 +35,7 @@ public class HelpHubViewController: UIViewController {
         helpHubView = HelpHubWebView(frame: self.view.frame)
         helpHubView.delegate = self
         helpHubView.articleId = self.articleId
+        helpHubView.engagementInitialPage = self.engagementInitialPage
         helpHubView.options = self.options
         
         view.addSubview(helpHubView)

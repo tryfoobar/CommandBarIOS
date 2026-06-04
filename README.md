@@ -77,17 +77,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CommandBarSDKDelegate {
 }
 ```
 
-### 4. (Optional) Open HelpHub
+### 4. (Optional) Open Resource Center / Assistant
 
-You can use the `openHelpHub` method to open HelpHub bottom sheet in your app.
+Use `openResourceCenter` to open the Help Hub tab, or `openAssistant` for the Assistant tab.
 
-Once CommandBar is booted you can call `CommandBarSDK.shared.openHelpHub()`. Please check out our Example app for usage as well as the sample below:
+Once CommandBar is booted you can call `CommandBarSDK.shared.openResourceCenter()`. Please check out our Example app for usage as well as the sample below:
 
 ```
 struct MyView: View {
   var body: some View {
     Button(action: {
-      CommandBarSDK.shared.openHelpHub()
+      CommandBarSDK.shared.openResourceCenter()
     }) {
       Text("Tap me!").padding()
     }
@@ -95,13 +95,13 @@ struct MyView: View {
 }
 ```
 
-Additionally, you can pass in an `articleId` to `openHelpHub` to open a specific article in HelpHub.
+Additionally, you can pass in an `articleId` to `openResourceCenter` to open a specific article in Help Hub.
 
 ```
 struct MyView: View {
   var body: some View {
     Button(action: {
-      CommandBarSDK.shared.openHelpHub(articleId: <article_id>)
+      CommandBarSDK.shared.openResourceCenter(articleId: <article_id>)
     }) {
       Text("Tap me!").padding()
     }
@@ -109,15 +109,15 @@ struct MyView: View {
 }
 ```
 
-Additionally, you can pass in an `fallbackAction` to `openHelpHub` to receive a callback when the user triggers an Open Chat action in HelpHub/Copilot
+Additionally, you can pass in an `fallbackAction` to `openResourceCenter` or `openAssistant` to receive a callback when the user triggers an Open Chat action
 
 ```
 struct MyView: View {
   var body: some View {
     Button(action: {
-      CommandBarSDK.shared.openHelpHub(articleId: <article_id | null>, fallbackAction: {
+      CommandBarSDK.shared.openResourceCenter(articleId: <article_id | null>, fallbackAction: {
         print("User triggered Open Chat action")
-        CommandBarSDK.shared.closeHelpHub()
+        CommandBarSDK.shared.closeResourceCenter()
       })
     }) {
       Text("Tap me!").padding()

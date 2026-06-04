@@ -40,15 +40,19 @@ public final class CommandBarSDK {
         CommandBarSDK.sharedInternal.boot(orgId: orgId, with: options)
     }
     
-    public func openHelpHub(articleId: Int? = nil, withFallbackAction fallbackAction: ((String) -> Void)? = nil) {
-        guard let orgId = CommandBarSDK.shared.orgId else { return }
-            
-        commandbar?.openHelpHub(articleId: articleId, fallbackAction: fallbackAction)
+    public func openResourceCenter(articleId: Int? = nil, withFallbackAction fallbackAction: ((String) -> Void)? = nil) {
+        guard CommandBarSDK.shared.orgId != nil else { return }
+        commandbar?.openResourceCenter(articleId: articleId, fallbackAction: fallbackAction)
     }
-    
-    public func closeHelpHub() {
-        guard let orgId = CommandBarSDK.shared.orgId else { return }
-        commandbar?.closeHelpHub()
+
+    public func openAssistant(withFallbackAction fallbackAction: ((String) -> Void)? = nil) {
+        guard CommandBarSDK.shared.orgId != nil else { return }
+        commandbar?.openAssistant(fallbackAction: fallbackAction)
+    }
+
+    public func closeResourceCenter() {
+        guard CommandBarSDK.shared.orgId != nil else { return }
+        commandbar?.closeResourceCenter()
     }
 }
 

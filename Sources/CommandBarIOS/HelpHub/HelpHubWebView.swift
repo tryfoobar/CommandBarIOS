@@ -3,6 +3,7 @@ import WebKit
 
 public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHandler, WKUIDelegate {
     public var articleId: Int? = nil
+    public var engagementInitialPage: String = "help-hub"
     public var options: CommandBarOptions_Deprecated? = nil {
         didSet {
             self.loadContent()
@@ -29,7 +30,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
     func loadContent() {
         if !didInstallScriptHandlers {
             configuration.userContentController.add(self, name: "engagement__onFallbackAction")
-            configuration.userContentController.add(self, name: "onHelpHubClose")
+            configuration.userContentController.add(self, name: "onResourceCenterClose")
             configuration.userContentController.add(self, name: "engagement__log")
             didInstallScriptHandlers = true
         }
@@ -158,6 +159,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
         let articleIdJs = self.articleId.map { String($0) } ?? "null"
         let launchCodeJs = escapeForEmbeddedJs(options.launchCode)
         let serverZoneJs = escapeForEmbeddedJs(options.serverZone.uppercased() == "EU" ? "EU" : "US")
+        let engagementInitialPageJs = escapeForEmbeddedJs(self.engagementInitialPage)
         let snippet = """
             (function() {
                 window._cbIsWebView = true;
@@ -172,10 +174,10 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                 }
 
                 /** Dedicated bridge so native always dismisses the sheet (payload-less). */
-                function notifyNativeHelpHubClosed() {
+                function notifyNativeResourceCenterClosed() {
                     try {
-                        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.onHelpHubClose) {
-                            window.webkit.messageHandlers.onHelpHubClose.postMessage(null);
+                        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.onResourceCenterClose) {
+                            window.webkit.messageHandlers.onResourceCenterClose.postMessage(null);
                             return;
                         }
                     } catch (eDedicated) {}
@@ -187,7 +189,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                     } catch (eFallback) {}
                 }
 
-                function isHelpHubCloseElement(el) {
+                function isResourceCenterCloseElement(el) {
                     if (!el || typeof el.getAttribute !== "function") { return false; }
                     var tag = (el.tagName || "").toUpperCase();
                     var role = (el.getAttribute("role") || "").toLowerCase();
@@ -196,11 +198,11 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                     return tag === "BUTTON" || role === "button";
                 }
 
-                function eventIndicatesHelpHubClose(ev) {
+                function eventIndicatesResourceCenterClose(ev) {
                     var path = typeof ev.composedPath === "function" ? ev.composedPath() : [];
                     var i = 0;
                     for (i = 0; i < path.length; i++) {
-                        if (isHelpHubCloseElement(path[i])) { return true; }
+                        if (isResourceCenterCloseElement(path[i])) { return true; }
                     }
                     var t = ev.target;
                     if (t && typeof t.closest === "function") {
@@ -212,20 +214,20 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                 }
 
                 /** RC header close uses aria-label="close" (StyledResourceCenterModalHeader). Install before engagement boot guard. */
-                function installNativeHelpHubCloseBridge() {
-                    if (window.__ampNativeHelpHubCloseBridge) { return; }
-                    window.__ampNativeHelpHubCloseBridge = true;
+                function installNativeResourceCenterCloseBridge() {
+                    if (window.__ampNativeResourceCenterCloseBridge) { return; }
+                    window.__ampNativeResourceCenterCloseBridge = true;
                     var fired = false;
                     function relay(ev) {
-                        if (fired || !eventIndicatesHelpHubClose(ev)) { return; }
+                        if (fired || !eventIndicatesResourceCenterClose(ev)) { return; }
                         fired = true;
-                        notifyNativeHelpHubClosed();
+                        notifyNativeResourceCenterClosed();
                     }
                     document.addEventListener("pointerdown", relay, true);
                     document.addEventListener("click", relay, true);
                     document.addEventListener("touchend", relay, true);
                 }
-                installNativeHelpHubCloseBridge();
+                installNativeResourceCenterCloseBridge();
 
                 if (window.__ampMobileHelpHubLoaded) { return; }
 
@@ -235,6 +237,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                 var articleId = \(articleIdJs);
                 var launchCode = "\(launchCodeJs)";
                 var localDevHost = "localhost";
+                var engagementInitialPage = "\(engagementInitialPageJs)";
 
                 function loadScript(src, async, onload, onerror) {
                     var s = document.createElement("script");
@@ -294,9 +297,9 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                     }
                 }
 
-                function openHelpHub() {
+                function openResourceCenter() {
                     hideNativeLoadingSpinner();
-                    var opts = { initialPage: "help-hub" };
+                    var opts = { initialPage: engagementInitialPage };
                     if (articleId !== null && articleId !== undefined) {
                         opts.contentItemId = articleId;
                     }
@@ -339,12 +342,12 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                             });
                             if (p && typeof p.then === "function") {
                                 p.then(function () {
-                                    openHelpHub();
+                                    openResourceCenter();
                                 }).catch(function (err) {
                                     ampLog("[Amplitude Engagement] boot failed: " + err);
                                 });
                             } else {
-                                openHelpHub();
+                                openResourceCenter();
                             }
                         } catch (e) {
                             ampLog("[Amplitude Engagement] boot setup failed: " + e);
@@ -389,7 +392,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
         }
         
         if let url = navigationAction.request.url, UIApplication.shared.canOpenURL(url) {
-            CommandBarSDK.shared.closeHelpHub()
+            CommandBarSDK.shared.closeResourceCenter()
             UIApplication.shared.open(url)
             
         }
@@ -413,9 +416,9 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
             return
         }
 
-        if message.name == "onHelpHubClose" {
+        if message.name == "onResourceCenterClose" {
             DispatchQueue.main.async {
-                CommandBarSDK.shared.closeHelpHub()
+                CommandBarSDK.shared.closeResourceCenter()
             }
             return
         }
@@ -429,7 +432,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                let typ = meta["type"] as? String,
                typ == "close" {
                 DispatchQueue.main.async {
-                    CommandBarSDK.shared.closeHelpHub()
+                    CommandBarSDK.shared.closeResourceCenter()
                 }
             }
             self.delegate?.didTriggerCopilotFallback(dict)
@@ -445,7 +448,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                        let typ = meta["type"] as? String,
                        typ == "close" {
                         DispatchQueue.main.async {
-                            CommandBarSDK.shared.closeHelpHub()
+                            CommandBarSDK.shared.closeResourceCenter()
                         }
                     }
                     self.delegate?.didTriggerCopilotFallback(jsonDictionary)

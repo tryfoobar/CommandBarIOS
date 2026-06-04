@@ -19,7 +19,7 @@ struct HomeView: View {
     private let amplitudeApiKey = "6dba5c25868be3716e69f525035e33b6"
 
     func onFallbackAction(withType type: String) {
-        CommandBarSDK.shared.closeHelpHub()
+        CommandBarSDK.shared.closeResourceCenter()
         self.showingAlert = true
     }
 
@@ -40,7 +40,7 @@ struct HomeView: View {
                     VStack() {
                         CustomButton(title: "Open HelpHub") {
                             // 4. Open HelpHub
-                            CommandBarSDK.shared.openHelpHub(articleId: nil, withFallbackAction: onFallbackAction)
+                            CommandBarSDK.shared.openResourceCenter(articleId: nil, withFallbackAction: onFallbackAction)
                         }.alert(isPresented: $showingAlert) {
                             Alert(title: Text("Copilot Fallback Triggered"), message: Text("You can use this to trigger opening up a third party chat provider or handle custom behavior when copilot can't find an answer or when the user triggers a fallback action!"), dismissButton: .default(Text("Got it!")))
                         }
