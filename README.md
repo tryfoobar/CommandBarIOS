@@ -6,6 +6,9 @@
 
 Assistant & Resource Center in IOS
 
+> **Deprecation notice**  
+> CommandBar is now part of [Amplitude](https://amplitude.com). This repository has been updated to help existing CommandBar customers migrate to **Amplitude Resource Center & Assistant**, but it should be treated as **deprecated** and will not receive updates.
+
 ## Requirements
 
 ## Installation
