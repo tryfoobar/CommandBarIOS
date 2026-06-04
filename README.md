@@ -4,7 +4,7 @@
 
 [![Build](https://github.com/tryfoobar/CommandBarIOS/actions/workflows/ci.yml/badge.svg)](https://github.com/tryfoobar/CommandBarIOS/actions/workflows/ci.yml)
 
-Nudges, Copilot & HelpHub in IOS
+Assistant & Resource Center in IOS
 
 ## Requirements
 
@@ -77,7 +77,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CommandBarSDKDelegate {
 }
 ```
 
-### 4. (Optional) Open Resource Center / Assistant
+### 4. (Optional) Tag filters
+
+Set filters before or after opening the sheet; the latest values are applied on each WebView load and immediately if the sheet is already open.
+
+```swift
+CommandBarSDK.shared.setAssistantFilter(["tags": ["[Zendesk] mobile"]])
+
+let resourceCenterFilter: [String: Any] = [
+  "and": [
+    ["tags": ["[Zendesk] mobile"]] as [String: Any],
+    ["or": [
+      ["tags": ["[Zendesk] v2"]] as [String: Any],
+      ["tags": ["[Zendesk] v3"]] as [String: Any],
+    ]] as [String: Any],
+  ] as [String: Any],
+]
+CommandBarSDK.shared.setResourceCenterFilter(resourceCenterFilter)
+CommandBarSDK.shared.setAssistantFilter(nil) // clear
+```
+
+### 5. (Optional) Open Resource Center / Assistant
 
 Use `openResourceCenter` to open the Help Hub tab, or `openAssistant` for the Assistant tab.
 

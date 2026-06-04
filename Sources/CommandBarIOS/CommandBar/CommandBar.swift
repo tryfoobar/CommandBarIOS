@@ -12,7 +12,7 @@ public class CommandBar_Deprecated {
 
     public func openResourceCenter(articleId: Int? = nil, fallbackAction: ((String) -> Void)? = nil) {
         DispatchQueue.main.async {
-            let viewController = HelpHubViewController(
+            let viewController = ResourceCenterViewController(
                 options: self.options,
                 articleId: articleId,
                 engagementInitialPage: "help-hub",
@@ -31,7 +31,7 @@ public class CommandBar_Deprecated {
 
     public func openAssistant(fallbackAction: ((String) -> Void)? = nil) {
         DispatchQueue.main.async {
-            let viewController = HelpHubViewController(
+            let viewController = ResourceCenterViewController(
                 options: self.options,
                 articleId: nil,
                 engagementInitialPage: "assistant",

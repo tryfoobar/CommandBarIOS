@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'CommandBarIOS'
   s.version          = '1.1.9'
-  s.summary          = 'HelpHub and Copilot Command Bar for iOS. '
+  s.summary          = 'Resource Center and Assistant Command Bar for iOS. '
 
 # This description is used to generate tags and improve search results.
   s.description      = <<-DESC

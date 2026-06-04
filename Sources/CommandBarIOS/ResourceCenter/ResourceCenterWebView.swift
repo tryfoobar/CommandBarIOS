@@ -1,7 +1,7 @@
 import UIKit
 import WebKit
 
-public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHandler, WKUIDelegate {
+public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHandler, WKUIDelegate {
     public var articleId: Int? = nil
     public var engagementInitialPage: String = "help-hub"
     public var options: CommandBarOptions_Deprecated? = nil {
@@ -15,16 +15,50 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
     /// Avoid crashing when `loadContent()` runs more than once (duplicate handler names are invalid).
     private var didInstallScriptHandlers: Bool = false
 
-    public weak var delegate: HelpHubWebViewDelegate?
+    public weak var delegate: ResourceCenterWebViewDelegate?
+
+    /// Active Resource Center WebView, used to apply filter updates while the sheet is open.
+    public static weak var activeInstance: ResourceCenterWebView?
     
     public init(frame: CGRect) {
         super.init(frame: frame, configuration: WKWebViewConfiguration())
         navigationDelegate = self
         uiDelegate = self
+        ResourceCenterWebView.activeInstance = self
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    deinit {
+        if ResourceCenterWebView.activeInstance === self {
+            ResourceCenterWebView.activeInstance = nil
+        }
+    }
+
+    /// Applies the latest native tag filters to a booted engagement instance.
+    func applyEngagementFilters() {
+        evaluateJavaScript(Self.buildApplyEngagementFiltersJavaScript(), completionHandler: nil)
+    }
+
+    private static func buildApplyEngagementFiltersJavaScript() -> String {
+        let rc = EngagementFilterStore.resourceCenterFilterJsonLiteral
+        let assistant = EngagementFilterStore.assistantFilterJsonLiteral
+        return """
+            (function() {
+                try {
+                    if (\(rc) != null && window.engagement && typeof window.engagement.setResourceCenterFilter === 'function') {
+                        window.engagement.setResourceCenterFilter(\(rc));
+                    }
+                } catch (e1) {}
+                try {
+                    if (\(assistant) != null && window.engagement && window.engagement.assistant && typeof window.engagement.assistant.setAssistantFilter === 'function') {
+                        window.engagement.assistant.setAssistantFilter(\(assistant));
+                    }
+                } catch (e2) {}
+            })();
+            """
     }
 
     func loadContent() {
@@ -160,6 +194,8 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
         let launchCodeJs = escapeForEmbeddedJs(options.launchCode)
         let serverZoneJs = escapeForEmbeddedJs(options.serverZone.uppercased() == "EU" ? "EU" : "US")
         let engagementInitialPageJs = escapeForEmbeddedJs(self.engagementInitialPage)
+        let resourceCenterFilterJs = EngagementFilterStore.resourceCenterFilterJsonLiteral
+        let assistantFilterJs = EngagementFilterStore.assistantFilterJsonLiteral
         let snippet = """
             (function() {
                 window._cbIsWebView = true;
@@ -229,7 +265,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                 }
                 installNativeResourceCenterCloseBridge();
 
-                if (window.__ampMobileHelpHubLoaded) { return; }
+                if (window.__ampMobileResourceCenterLoaded) { return; }
 
                 var apiKey = \(apiKeyJs);
                 var serverZone = "\(serverZoneJs)";
@@ -238,6 +274,21 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                 var launchCode = "\(launchCodeJs)";
                 var localDevHost = "localhost";
                 var engagementInitialPage = "\(engagementInitialPageJs)";
+                var nativeResourceCenterFilter = \(resourceCenterFilterJs);
+                var nativeAssistantFilter = \(assistantFilterJs);
+
+                function applyNativeEngagementFilters() {
+                    try {
+                        if (nativeResourceCenterFilter != null && window.engagement && typeof window.engagement.setResourceCenterFilter === "function") {
+                            window.engagement.setResourceCenterFilter(nativeResourceCenterFilter);
+                        }
+                    } catch (eRc) {}
+                    try {
+                        if (nativeAssistantFilter != null && window.engagement && window.engagement.assistant && typeof window.engagement.assistant.setAssistantFilter === "function") {
+                            window.engagement.assistant.setAssistantFilter(nativeAssistantFilter);
+                        }
+                    } catch (eAsst) {}
+                }
 
                 function loadScript(src, async, onload, onerror) {
                     var s = document.createElement("script");
@@ -316,7 +367,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                             } catch (e3) {
                                 ampLog("[Amplitude Engagement] _showResourceCenter: " + e3);
                             }
-                            window.__ampMobileHelpHubLoaded = true;
+                            window.__ampMobileResourceCenterLoaded = true;
                         });
                     });
                 }
@@ -342,11 +393,13 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                             });
                             if (p && typeof p.then === "function") {
                                 p.then(function () {
+                                    applyNativeEngagementFilters();
                                     openResourceCenter();
                                 }).catch(function (err) {
                                     ampLog("[Amplitude Engagement] boot failed: " + err);
                                 });
                             } else {
+                                applyNativeEngagementFilters();
                                 openResourceCenter();
                             }
                         } catch (e) {
@@ -435,7 +488,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                     CommandBarSDK.shared.closeResourceCenter()
                 }
             }
-            self.delegate?.didTriggerCopilotFallback(dict)
+            self.delegate?.didTriggerAssistantFallback(dict)
             return
         }
 
@@ -451,7 +504,7 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
                             CommandBarSDK.shared.closeResourceCenter()
                         }
                     }
-                    self.delegate?.didTriggerCopilotFallback(jsonDictionary)
+                    self.delegate?.didTriggerAssistantFallback(jsonDictionary)
                 }
             } catch {
                 print("Error: \(error.localizedDescription)")
@@ -460,6 +513,6 @@ public class HelpHubWebView: WKWebView, WKNavigationDelegate, WKScriptMessageHan
     }
 }
 
-public protocol HelpHubWebViewDelegate: AnyObject {
-    func didTriggerCopilotFallback(_ action: [String: Any])
+public protocol ResourceCenterWebViewDelegate: AnyObject {
+    func didTriggerAssistantFallback(_ action: [String: Any])
 }

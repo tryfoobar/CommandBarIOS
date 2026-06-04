@@ -4,7 +4,7 @@ import JavaScriptCore
 public protocol CommandBarSDKDelegate : AnyObject {}
 // Optional Protocol methods
 extension CommandBarSDKDelegate {
-    func didTriggerCopilotFallback(withType type: String) {}
+    func didTriggerAssistantFallback(withType type: String) {}
     func didFinishBooting(withError error: Error?) {}
 }
 
@@ -53,6 +53,18 @@ public final class CommandBarSDK {
     public func closeResourceCenter() {
         guard CommandBarSDK.shared.orgId != nil else { return }
         commandbar?.closeResourceCenter()
+    }
+
+    /// Mirrors `window.engagement.assistant.setAssistantFilter`. Pass `nil` to clear.
+    public func setAssistantFilter(_ filter: [String: Any]?) {
+        EngagementFilterStore.setAssistantFilter(filter)
+        ResourceCenterWebView.activeInstance?.applyEngagementFilters()
+    }
+
+    /// Mirrors `window.engagement.setResourceCenterFilter`. Pass `nil` to clear.
+    public func setResourceCenterFilter(_ filter: [String: Any]?) {
+        EngagementFilterStore.setResourceCenterFilter(filter)
+        ResourceCenterWebView.activeInstance?.applyEngagementFilters()
     }
 }
 

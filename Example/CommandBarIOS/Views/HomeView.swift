@@ -38,11 +38,11 @@ struct HomeView: View {
                     }
                     Spacer()
                     VStack() {
-                        CustomButton(title: "Open HelpHub") {
-                            // 4. Open HelpHub
+                        CustomButton(title: "Open Resource Center") {
+                            // 4. Open Resource Center
                             CommandBarSDK.shared.openResourceCenter(articleId: nil, withFallbackAction: onFallbackAction)
                         }.alert(isPresented: $showingAlert) {
-                            Alert(title: Text("Copilot Fallback Triggered"), message: Text("You can use this to trigger opening up a third party chat provider or handle custom behavior when copilot can't find an answer or when the user triggers a fallback action!"), dismissButton: .default(Text("Got it!")))
+                            Alert(title: Text("Assistant Fallback Triggered"), message: Text("You can use this to trigger opening up a third party chat provider or handle custom behavior when assistant can't find an answer or when the user triggers a fallback action!"), dismissButton: .default(Text("Got it!")))
                         }
 
                     }
