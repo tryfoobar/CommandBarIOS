@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CommandBarIOS'
-  s.version          = '1.1.9'
+  s.version          = '2.0.0'
   s.summary          = 'Resource Center and Assistant Command Bar for iOS. '
 
 # This description is used to generate tags and improve search results.
