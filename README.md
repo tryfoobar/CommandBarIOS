@@ -2,12 +2,11 @@
 
 # CommandBarIOS
 
-[![Build](https://github.com/tryfoobar/CommandBarIOS/actions/workflows/ci.yml/badge.svg)](https://github.com/tryfoobar/CommandBarIOS/actions/workflows/ci.yml)
-
 Assistant & Resource Center in IOS
 
-> **Deprecation notice**  
+> [!WARNING]
 > CommandBar is now part of [Amplitude](https://amplitude.com). This repository has been updated to help existing CommandBar customers migrate to **Amplitude Resource Center & Assistant**, but it should be treated as **deprecated** and will not receive updates.
+> For those migrating from CommandBar/CommandAI, please see our [migration guide](./MIGRATING.md)
 
 ## Requirements
 
