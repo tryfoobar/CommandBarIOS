@@ -31,8 +31,7 @@ struct HomeView: View {
                     Spacer()
                     VStack {
                         LogoView()
-                            .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 5)
-                        Text("Welcome to CommandBar!")
+                        Text("Welcome to Amplitude!")
                             .multilineTextAlignment(.center)
                             .font(.title)
                     }
