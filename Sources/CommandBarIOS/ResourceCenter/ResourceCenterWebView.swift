@@ -6,7 +6,7 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
     /// `"resource-center"` uses `_showResourceCenter`; `"assistant"` uses `engagement.assistant.show({ initialPage: "chat" })` / `close()`.
     public var engagementShell: String = "resource-center"
     public var engagementInitialPage: String = "help-hub"
-    public var options: CommandBarOptions_Deprecated? = nil {
+    public var options: CommandBarOptions? = nil {
         didSet {
             self.loadContent()
         }
@@ -218,21 +218,43 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
             .replacingOccurrences(of: "\r", with: "\\r")
     }
 
+    /// Renders a Swift `String?` as a JS string literal or `null` so it can be embedded into the snippet.
+    private static func jsStringOrNull(_ value: String?) -> String {
+        guard let value = value else { return "null" }
+        let escaped = value
+            .replacingOccurrences(of: "\\", with: "\\\\")
+            .replacingOccurrences(of: "\"", with: "\\\"")
+            .replacingOccurrences(of: "\n", with: "\\n")
+            .replacingOccurrences(of: "\r", with: "\\r")
+        return "\"\(escaped)\""
+    }
+
+    /// Serializes a `CommandBarOptions.User` to the `{ user_id, device_id }` JSON shape the web SDK expects,
+    /// or `null` when no identity was supplied.
+    private static func buildNativeUserJsLiteral(from user: CommandBarOptions.User?) -> String {
+        guard let user = user, (user.userId != nil) || (user.deviceId != nil) else {
+            return "null"
+        }
+        var parts: [String] = []
+        if let uid = user.userId { parts.append("\"user_id\":\(jsStringOrNull(uid))") }
+        if let did = user.deviceId { parts.append("\"device_id\":\(jsStringOrNull(did))") }
+        return "{\(parts.joined(separator: ","))}"
+    }
+
     private func loadSnippet() {
         guard let options = self.options else {
             return
         }
 
-        let apiKeyJs = "\"\(escapeForEmbeddedJs(options.orgId))\""
-        let userIdJs: String
-        if let uid = options.userId {
-            userIdJs = "\"\(escapeForEmbeddedJs(uid))\""
-        } else {
-            userIdJs = "null"
-        }
+        let apiKeyJs = "\"\(escapeForEmbeddedJs(options.apiKey))\""
+        let nativeUserJs = Self.buildNativeUserJsLiteral(from: options.user)
         let articleIdJs = self.articleId.map { String($0) } ?? "null"
-        let launchCodeJs = escapeForEmbeddedJs(options.launchCode)
-        let serverZoneJs = escapeForEmbeddedJs(options.serverZone.uppercased() == "EU" ? "EU" : "US")
+        let serverZoneJs = "\"\(options.serverZone.rawValue)\""
+        let serverUrlJs = Self.jsStringOrNull(options.serverUrl)
+        let cdnUrlJs = Self.jsStringOrNull(options.cdnUrl)
+        let chatUrlJs = Self.jsStringOrNull(options.chatUrl)
+        let mediaUrlJs = Self.jsStringOrNull(options.mediaUrl)
+        let localeJs = Self.jsStringOrNull(options.locale)
         let engagementShellJs = escapeForEmbeddedJs(self.engagementShell)
         let engagementInitialPageJs = escapeForEmbeddedJs(self.engagementInitialPage)
         let resourceCenterFilterJs = EngagementFilterStore.resourceCenterFilterJsonLiteral
@@ -310,11 +332,14 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                 if (window.__ampMobileResourceCenterLoaded) { return; }
 
                 var apiKey = \(apiKeyJs);
-                var serverZone = "\(serverZoneJs)";
-                var userIdRaw = \(userIdJs);
+                var serverZone = \(serverZoneJs);
+                var nativeUser = \(nativeUserJs);
+                var nativeServerUrl = \(serverUrlJs);
+                var nativeCdnUrl = \(cdnUrlJs);
+                var nativeChatUrl = \(chatUrlJs);
+                var nativeMediaUrl = \(mediaUrlJs);
+                var nativeLocale = \(localeJs);
                 var articleId = \(articleIdJs);
-                var launchCode = "\(launchCodeJs)";
-                var localDevHost = "localhost";
                 var engagementShell = "\(engagementShellJs)";
                 window.__ampEngagementShell = engagementShell;
                 var engagementInitialPage = "\(engagementInitialPageJs)";
@@ -420,22 +445,25 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                 }
 
                 function engagementScriptUrl() {
-                    var cdnBase = serverZone === "EU" ? "https://cdn.eu.amplitude.com" : "https://cdn.amplitude.com";
+                    var cdnBase = nativeCdnUrl
+                        ? nativeCdnUrl
+                        : (serverZone === "EU" ? "https://cdn.eu.amplitude.com" : "https://cdn.amplitude.com");
                     return cdnBase + "/script/" + encodeURIComponent(apiKey) + ".engagement.js";
                 }
 
                 function engagementInitOptions() {
-                    var o = { serverZone: serverZone === "EU" ? "EU" : "US" };
-                    if (launchCode === "local") {
-                        o.serverUrl = "http://" + localDevHost + ":8000";
-                        o.cdnUrl = "http://" + localDevHost + ":8000";
-                    }
+                    var o = { serverZone: serverZone };
+                    if (nativeServerUrl) { o.serverUrl = nativeServerUrl; }
+                    if (nativeCdnUrl) { o.cdnUrl = nativeCdnUrl; }
+                    if (nativeChatUrl) { o.chatUrl = nativeChatUrl; }
+                    if (nativeMediaUrl) { o.mediaUrl = nativeMediaUrl; }
+                    if (nativeLocale) { o.locale = nativeLocale; }
                     return o;
                 }
 
                 function buildUser() {
-                    if (userIdRaw) {
-                        return { user_id: userIdRaw };
+                    if (nativeUser && (nativeUser.user_id || nativeUser.device_id)) {
+                        return nativeUser;
                     }
                     try {
                         var k = "__amp_engagement_wv_device";

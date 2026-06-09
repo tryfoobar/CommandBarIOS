@@ -3,7 +3,7 @@ import WebKit
 
 public class ResourceCenterViewController: UIViewController {
     var resourceCenterView: ResourceCenterWebView!
-    private var options: CommandBarOptions_Deprecated
+    private var options: CommandBarOptions
     public var delegate: ResourceCenterWebViewDelegate?
     private var fallbackAction: ((String) -> Void)?
     private var articleId: Int?
@@ -11,7 +11,7 @@ public class ResourceCenterViewController: UIViewController {
     private var engagementInitialPage: String
 
     public init(
-        options: CommandBarOptions_Deprecated,
+        options: CommandBarOptions,
         articleId: Int? = nil,
         engagementShell: String = "resource-center",
         engagementInitialPage: String = "help-hub",

@@ -40,47 +40,39 @@ dependencies: [
 import CommandBarIOS
 ```
 
-### 2. Initialize the SDK
+### 2. Boot the SDK
 
-Boot CommandBar as early as possible in your app with your org ID from [CommandBar](https://mobile.commandbar.com). Optionally, you can pass a user_id for your currently logged in user to boot.
+Boot once at app launch with your Amplitude **project API key**. The booted options are reused by every subsequent `openResourceCenter` / `openAssistant` call.
 
-```
+```swift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Calling `.boot` prepares the SDK for use within your app
-        CommandBarSDK.shared.boot("<your org id>")
+        // Minimal boot
+        CommandBarSDK.shared.boot(options: CommandBarOptions(apiKey: "<your api key>"))
 
-        // (Optionally) Pass in a user_id with CommandBarOptions
-        CommandBarSDK.shared.boot("<your org id>", CommandBarOptions(user_id: "<your user id>"))
+        // Boot with a known user and additional overrides (all optional)
+        CommandBarSDK.shared.boot(options: CommandBarOptions(
+            apiKey: "<your api key>",
+            user: .init(userId: "<your user id>"),
+            serverZone: .us,           // .us (default), .eu, .local
+            // serverUrl: "...",       // override Amplitude server endpoint
+            // cdnUrl: "...",          // override engagement.js CDN base
+            // chatUrl: "...",
+            // mediaUrl: "...",
+            // locale: "en-US",
+            spinnerColor: "#3662F1"
+        ))
         return true
     }
 }
 ```
 
-### 3. (Optional) Get notified of CommandBar boot status
+Call `boot(options:)` again at any time to swap in new options (e.g. after the user signs in).
 
-```
-// Inherit the CommandBarSDKDelegate protocol
-class AppDelegate: UIResponder, UIApplicationDelegate, CommandBarSDKDelegate {
-
-    var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Calling `.boot` prepares the SDK for use within your app
-        CommandBarSDK.shared.boot("<your org id>")
-    }
-
-    // Conform to the protocol
-    func didFinishBooting(withError error: Error?) {
-      // If CommandBar failed to boot for some reason, an error will be passed, otherwise it will be null
-    }
-}
-```
-
-### 4. (Optional) Tag filters
+### 3. (Optional) Tag filters
 
 Set filters before or after opening the sheet; the latest values are applied on each WebView load and immediately if the sheet is already open.
 
@@ -100,13 +92,11 @@ CommandBarSDK.shared.setResourceCenterFilter(resourceCenterFilter)
 CommandBarSDK.shared.setAssistantFilter(nil) // clear
 ```
 
-### 5. (Optional) Open Resource Center / Assistant
+### 4. Open Resource Center / Assistant
 
-Use `openResourceCenter` to open the Help Hub tab, or `openAssistant` for the Assistant tab.
+Use `openResourceCenter` to open the Help Hub tab, or `openAssistant` for the Assistant tab. Neither takes options — they use the configuration from `boot(options:)`.
 
-Once CommandBar is booted you can call `CommandBarSDK.shared.openResourceCenter()`. Please check out our Example app for usage as well as the sample below:
-
-```
+```swift
 struct MyView: View {
   var body: some View {
     Button(action: {
@@ -118,28 +108,14 @@ struct MyView: View {
 }
 ```
 
-Additionally, you can pass in an `articleId` to `openResourceCenter` to open a specific article in Help Hub.
+You can pass `articleId` to deep-link into a specific article, and `fallbackAction` to receive a callback when the user triggers an Open Chat action:
 
-```
+```swift
 struct MyView: View {
   var body: some View {
     Button(action: {
-      CommandBarSDK.shared.openResourceCenter(articleId: <article_id>)
-    }) {
-      Text("Tap me!").padding()
-    }
-  }
-}
-```
-
-Additionally, you can pass in an `fallbackAction` to `openResourceCenter` or `openAssistant` to receive a callback when the user triggers an Open Chat action
-
-```
-struct MyView: View {
-  var body: some View {
-    Button(action: {
-      CommandBarSDK.shared.openResourceCenter(articleId: <article_id | null>, fallbackAction: {
-        print("User triggered Open Chat action")
+      CommandBarSDK.shared.openResourceCenter(articleId: 123, fallbackAction: { type in
+        print("User triggered fallback: \(type)")
         CommandBarSDK.shared.closeResourceCenter()
       })
     }) {
@@ -149,7 +125,7 @@ struct MyView: View {
 }
 ```
 
-### 5.(Optional) Run the Example App
+### 5. (Optional) Run the Example App
 
 To run the example project, first clone the repo, then:
 

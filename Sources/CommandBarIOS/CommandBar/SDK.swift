@@ -1,58 +1,74 @@
 import Foundation
-import JavaScriptCore
+import UIKit
 
-public protocol CommandBarSDKDelegate : AnyObject {}
-// Optional Protocol methods
+public protocol CommandBarSDKDelegate: AnyObject {}
 extension CommandBarSDKDelegate {
-    func didTriggerAssistantFallback(withType type: String) {}
-    func didFinishBooting(withError error: Error?) {}
+    public func didTriggerAssistantFallback(withType type: String) {}
 }
 
-// MARK: Public SDK
+/// Public entry point for the Amplitude Engagement WebView SDK on iOS.
+///
+/// Lifecycle:
+/// 1. Call `boot(options:)` once at app start with your `CommandBarOptions`.
+/// 2. Call `openResourceCenter` / `openAssistant` later — they use the booted options.
 public final class CommandBarSDK {
-    private static let sharedInternal = CommandBarInternalSDK.shared
-    private var commandbar: CommandBar_Deprecated? = nil
     public static let shared = CommandBarSDK()
-    
-    
-    var isReady: Bool = false
-    var orgId: String? = nil
-    var options: CommandBarOptions? = nil
-    
+
     public weak var delegate: CommandBarSDKDelegate?
-    weak var privateDelagate: CommandBarInternalSDK?
-    
-    public init() {
-        self.orgId = nil
-        self.options = nil
-    }
-    
-    public func boot(_ orgId: String, with options: CommandBarOptions? = nil) {
-        self.orgId = orgId
-        self.options = options
 
-        var dict: [String: Any] = ["orgId": orgId, "launchCode": "prod"]
-        if let uid = options?.user_id {
-            dict["userId"] = uid
+    /// Configuration stored by the most recent `boot(options:)` call. Used by every
+    /// subsequent `openResourceCenter` / `openAssistant`.
+    public private(set) var bootOptions: CommandBarOptions?
+
+    private weak var presentedNavigationController: UINavigationController?
+
+    public init() {}
+
+    /// Stores the configuration used by subsequent `openResourceCenter` / `openAssistant` calls.
+    /// Safe to call again to swap configuration (e.g. after the user signs in).
+    public func boot(options: CommandBarOptions) {
+        self.bootOptions = options
+    }
+
+    /// Presents the Resource Center as a page sheet. Requires `boot(options:)` to have been called first.
+    public func openResourceCenter(
+        articleId: Int? = nil,
+        fallbackAction: ((String) -> Void)? = nil
+    ) {
+        guard let options = self.bootOptions else {
+            print("[CommandBarSDK] openResourceCenter called before boot(options:); no-op.")
+            return
         }
-
-        self.commandbar = CommandBar_Deprecated(options: CommandBarOptions_Deprecated(dict))
-        CommandBarSDK.sharedInternal.boot(orgId: orgId, with: options)
+        presentEngagementShell(
+            options: options,
+            articleId: articleId,
+            engagementShell: "resource-center",
+            engagementInitialPage: "help-hub",
+            fallbackAction: fallbackAction
+        )
     }
-    
-    public func openResourceCenter(articleId: Int? = nil, withFallbackAction fallbackAction: ((String) -> Void)? = nil) {
-        guard CommandBarSDK.shared.orgId != nil else { return }
-        commandbar?.openResourceCenter(articleId: articleId, fallbackAction: fallbackAction)
-    }
 
-    public func openAssistant(withFallbackAction fallbackAction: ((String) -> Void)? = nil) {
-        guard CommandBarSDK.shared.orgId != nil else { return }
-        commandbar?.openAssistant(fallbackAction: fallbackAction)
+    /// Presents the Assistant chat as a page sheet. Requires `boot(options:)` to have been called first.
+    public func openAssistant(
+        fallbackAction: ((String) -> Void)? = nil
+    ) {
+        guard let options = self.bootOptions else {
+            print("[CommandBarSDK] openAssistant called before boot(options:); no-op.")
+            return
+        }
+        presentEngagementShell(
+            options: options,
+            articleId: nil,
+            engagementShell: "assistant",
+            engagementInitialPage: "help-hub",
+            fallbackAction: fallbackAction
+        )
     }
 
     public func closeResourceCenter() {
-        guard CommandBarSDK.shared.orgId != nil else { return }
-        commandbar?.closeResourceCenter()
+        ResourceCenterWebView.activeInstance?.closeEngagementShell()
+        presentedNavigationController?.dismiss(animated: true, completion: nil)
+        presentedNavigationController = nil
     }
 
     /// Mirrors `window.engagement.assistant.setAssistantFilter`. Pass `nil` to clear.
@@ -66,16 +82,33 @@ public final class CommandBarSDK {
         EngagementFilterStore.setResourceCenterFilter(filter)
         ResourceCenterWebView.activeInstance?.applyEngagementFilters()
     }
-}
 
-extension CommandBarSDK : CommandBarInternalSDKDelegate {
-    func didBootComplete(withConfig config: Config) {
-        CommandBarSDK.shared.isReady = true
-        CommandBarSDK.shared.delegate?.didFinishBooting(withError: nil)
-        
-    }
-    
-    func didBootFail(withError error: Error?) {
-        CommandBarSDK.shared.delegate?.didFinishBooting(withError: error)
+    private func presentEngagementShell(
+        options: CommandBarOptions,
+        articleId: Int?,
+        engagementShell: String,
+        engagementInitialPage: String,
+        fallbackAction: ((String) -> Void)?
+    ) {
+        DispatchQueue.main.async {
+            let viewController = ResourceCenterViewController(
+                options: options,
+                articleId: articleId,
+                engagementShell: engagementShell,
+                engagementInitialPage: engagementInitialPage,
+                fallbackAction: fallbackAction
+            )
+
+            let navigationController = UINavigationController(rootViewController: viewController)
+            navigationController.modalPresentationStyle = .pageSheet
+            navigationController.toolbar.isHidden = true
+            navigationController.setNavigationBarHidden(true, animated: false)
+            self.presentedNavigationController = navigationController
+
+            UIApplication.shared.keyWindow?.rootViewController?.present(
+                navigationController,
+                animated: true
+            )
+        }
     }
 }

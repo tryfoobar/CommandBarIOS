@@ -7,48 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00ED90D0738BD7593F7598F89BF23826 /* EngagementFilterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16CC505630B2247A9094911BF224897 /* EngagementFilterStore.swift */; };
 		081CCA0881FDDA18AA7A40D4479FFA41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		14F5F045A5909C4E57CBCF593ACB5558 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		197310C256C8FEEE24174E766C0CCCE6 /* SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C1871049290510C381F2CF2DDE6585 /* SDK.swift */; };
 		2F8165104A28B695DBF8E98106DFA5EB /* Pods-CommandBarIOS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0335B849997FEDD72AD0635B88000E91 /* Pods-CommandBarIOS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BCA65B6E7B5ABBA1AB8E5D01CE599BB /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FFD7C115B70484114E7FBC810B7DFE /* BottomSheet.swift */; };
-		3EAC958581BE8C58EC503FF5A2531B33 /* ResourceCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7616B32DDDFC64B678095BFA54333E2 /* ResourceCenterViewController.swift */; };
-		3F947DB2318A5834B4FA2A74D0FA4A3E /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4444CC748F5661AB479E651FAA645 /* Analytics.swift */; };
-		40F514E5D5208E7E21AE0CD6FDE81FC6 /* InternalSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC02423203E69FB6314E29C80C6B6C34 /* InternalSDK.swift */; };
-		483053CDF4112A131DD3593C0976D541 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DE16C192D26C969579CDFC5694E4B /* Spinner.swift */; };
+		3576BFEDA805101E21F1F20F40B7D74D /* CommandBarIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF3F6882E2148BEA9A3E8452C2243EA /* CommandBarIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48E67D9CF2B6401D28155428FED4CB86 /* Pods-CommandBarIOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E43CB0041A0E679ADCCC403A77DC49B /* Pods-CommandBarIOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F9497A844E3942CCB7C37124C6CF799 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A536A9F2647241078BACA7871D0AA28 /* Video.swift */; };
-		4FD755C1CE642D2C61090F56A425BB68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
-		54F9E7EAD606482659BEAC1AE501F198 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7688F59FCB39439620C27FCDF76662 /* Config.swift */; };
-		5C398478173E19FE35E4842150DA5956 /* ButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5D43465E1303AC8E5D49F8A62D2B7 /* ButtonGroup.swift */; };
-		625DC1162BA8A9AC90A9A7B32D31A2B2 /* Nudges.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4FB89C27754F466375909D01DB2AEB /* Nudges.swift */; };
 		64D2F931F6D86090F13386E02FFCFC21 /* Pods-CommandBarIOS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFE2B6A0D4157DAE9916DDB711EDDB5 /* Pods-CommandBarIOS_Example-dummy.m */; };
-		64F94A909E0978A37BCBF8119786BEB8 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D6805372E4A929AA00832D80DCF8C3 /* Actions.swift */; };
-		6EBCD31D6DA57402E7E430F1D3B79B9F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E98B4DA1F9D5A9795F13E04D9BD129 /* Image.swift */; };
-		7044B6E3C3EFF8931859DF4BABD07FD6 /* CommandBarIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEF36ED75ADC6CE6D70A9A0B2CCFEA64 /* CommandBarIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		855952AFEB32609F597D1FC84E754D3A /* SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937E97F49D5AA2DD739E794C4108B9A3 /* SDK.swift */; };
-		A1784AE04F5212EE422553F4830BBBD2 /* ResourceCenterWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF78C19ED520AAC081E59A974AA19CB /* ResourceCenterWebView.swift */; };
-		B0CDB692E76C16B74B441068E49B97BE /* CommandBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B33D5192CC78568EEDDDBC41B85D048 /* CommandBar.swift */; };
-		B7B643C0B693C043A5B204420CA7AB5E /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32533B525F4FDE83973F361E813E34B1 /* Button.swift */; };
-		C59B2D4A88EC7DEFC773C860640AFC23 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19BBBD5FD9464A979C10EA549C8C6B /* Color.swift */; };
-		C6ECE2CF1D194214ECF7E00834D01B13 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327AE58C45ED46BA9D91ABF069B89E29 /* Options.swift */; };
+		6E5FBE9BEBF9DD4B8459B404E3CC3071 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		6F6CE30016E8299C385CB3C5CC250E91 /* ResourceCenterWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9BB168AF47D1EA91B861BB765F01 /* ResourceCenterWebView.swift */; };
+		718D932ABAE475F461814DFED7B9623D /* CommandBarIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF45765E1EF0674E9B5E10F75949B750 /* CommandBarIOS-dummy.m */; };
+		B03265B529C01CC1C450CC59521D14D8 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA7D56F0ED5460FDEBABC7920B1205B /* Options.swift */; };
 		D0079884F6E91AF06FE1809548D3E035 /* Pods-CommandBarIOS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 515BD9511ECA7252E62981CE3B475040 /* Pods-CommandBarIOS_Tests-dummy.m */; };
-		DECCC8031C9C200129C2C78EDB9DA708 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636438E8AA94DB5C4FB9EA816495867D /* Events.swift */; };
-		E7B89ABC9A08FDCEA2B80B1EFFCBC721 /* EngagementFilterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955835C6E9E82921047FDC6FDB4383E /* EngagementFilterStore.swift */; };
-		EAEB82989C2EF369730F60C8F65863D6 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFC8710033213FFC0677C843F3A5DE /* Util.swift */; };
-		F13F162FA93C01B7414FC91FF710E3A9 /* CommandBarIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC803EF4B69DDD7E301601E853CB64B /* CommandBarIOS-dummy.m */; };
-		F3346CEEBBADBA1B6136C3BB97B5D61D /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927E37CD01D4DF6C0EC82A3714E2A68F /* CloseButton.swift */; };
-		FD9CEC6D5C9C0945E95701CE67E9B63A /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E7ED47DBD4E00ED982BBE5D4F8793C /* Rules.swift */; };
+		DB0DAB27F00FD90CB66757A7C0F8B47F /* ResourceCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1A87AC9DB4CDDFEE8430EA75AC735F /* ResourceCenterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		372D3D7A380205BCE584028918626A46 /* PBXContainerItemProxy */ = {
+		1E1324DF3A2BBC0E68A2DCBCC29BFC3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1A5C426E3579F3BD712FDAB630F0FBA8;
 			remoteInfo = CommandBarIOS;
 		};
-		CD97BA7BB424AB0F9A59566B5412B016 /* PBXContainerItemProxy */ = {
+		CAD29ABDD4E5B62DDB0FA04F330E0294 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -58,64 +41,55 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020A6040523AE5AE1A62E30A6EC58BC7 /* CommandBarIOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CommandBarIOS-Info.plist"; sourceTree = "<group>"; };
 		0335B849997FEDD72AD0635B88000E91 /* Pods-CommandBarIOS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CommandBarIOS_Example-umbrella.h"; sourceTree = "<group>"; };
 		05463FACEB0440DF91273FE265F92F67 /* Pods-CommandBarIOS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CommandBarIOS_Tests.modulemap"; sourceTree = "<group>"; };
 		0560156DCF68BC126399FC40E13C8CCF /* Pods-CommandBarIOS_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CommandBarIOS_Example"; path = Pods_CommandBarIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B3567F6DA51E834B088DD0B3043EB54 /* CommandBarIOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-prefix.pch"; sourceTree = "<group>"; };
 		10633049ABF6884985AD82B2E6D4B49F /* Pods-CommandBarIOS_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CommandBarIOS_Example-frameworks.sh"; sourceTree = "<group>"; };
-		10D6805372E4A929AA00832D80DCF8C3 /* Actions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
-		136D5C7BA9C1B4D2B4477E4526F74BCA /* CommandBarIOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CommandBarIOS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		1D7688F59FCB39439620C27FCDF76662 /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		24C3F0AC5FD53EE187421A98F864CD9A /* CommandBarIOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CommandBarIOS; path = CommandBarIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC933536484A6A526982634D8F81096 /* Pods-CommandBarIOS_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Example-Info.plist"; sourceTree = "<group>"; };
-		32533B525F4FDE83973F361E813E34B1 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		327AE58C45ED46BA9D91ABF069B89E29 /* Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		34834821C4E0424E5D67E57EE20156F7 /* Pods-CommandBarIOS_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CommandBarIOS_Tests"; path = Pods_CommandBarIOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3AC803EF4B69DDD7E301601E853CB64B /* CommandBarIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CommandBarIOS-dummy.m"; sourceTree = "<group>"; };
-		3B33D5192CC78568EEDDDBC41B85D048 /* CommandBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CommandBar.swift; sourceTree = "<group>"; };
 		3CE81AB79FEBAB0C8FC662A559E23A3E /* Pods-CommandBarIOS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CommandBarIOS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4370E78E5D1A6E2935553359DB4FE2E0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		441F3ECF6E591E87C97ECC9B59E24D88 /* CommandBar.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CommandBar.png; path = docs/img/CommandBar.png; sourceTree = "<group>"; };
-		46F4444CC748F5661AB479E651FAA645 /* Analytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		457727F923F4F7277A49B3EAD5A281A2 /* CommandBarIOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-prefix.pch"; sourceTree = "<group>"; };
 		4DF207E3341C6E9BE8D8E7EF8A73A7C5 /* Pods-CommandBarIOS_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CommandBarIOS_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4FF3F6882E2148BEA9A3E8452C2243EA /* CommandBarIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-umbrella.h"; sourceTree = "<group>"; };
 		515BD9511ECA7252E62981CE3B475040 /* Pods-CommandBarIOS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CommandBarIOS_Tests-dummy.m"; sourceTree = "<group>"; };
+		525EEB3517604A9E6D39D3B564C19CC0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		5A0A550A14865C66E67886BBEC5852FC /* CommandBarIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.debug.xcconfig; sourceTree = "<group>"; };
 		5C3927EA1AE23CAE7644367F26683AAE /* Pods-CommandBarIOS_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		5DF78C19ED520AAC081E59A974AA19CB /* ResourceCenterWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResourceCenterWebView.swift; sourceTree = "<group>"; };
-		5EBFC8710033213FFC0677C843F3A5DE /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		636438E8AA94DB5C4FB9EA816495867D /* Events.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
-		6A536A9F2647241078BACA7871D0AA28 /* Video.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		6C19BBBD5FD9464A979C10EA549C8C6B /* Color.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		7A63B81490F887DA6BEBA4924BE85498 /* CommandBarIOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CommandBarIOS-Info.plist"; sourceTree = "<group>"; };
+		628BA27011B916F3D99D634A695EB257 /* CommandBarIOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CommandBarIOS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		832082861C7AE1C45A5C36F9FAC2965D /* CommandBarIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.release.xcconfig; sourceTree = "<group>"; };
 		842D42AB8A2A2ED88FF8117E26013859 /* Pods-CommandBarIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		8D1A87AC9DB4CDDFEE8430EA75AC735F /* ResourceCenterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResourceCenterViewController.swift; sourceTree = "<group>"; };
 		8D6010A0F46B835115A6155B19217F7F /* Pods-CommandBarIOS_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Tests-Info.plist"; sourceTree = "<group>"; };
-		90E98B4DA1F9D5A9795F13E04D9BD129 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		927E37CD01D4DF6C0EC82A3714E2A68F /* CloseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
-		937E97F49D5AA2DD739E794C4108B9A3 /* SDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SDK.swift; sourceTree = "<group>"; };
 		95CC59761A02B39CD10A5754E533418E /* Pods-CommandBarIOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		98B5D43465E1303AC8E5D49F8A62D2B7 /* ButtonGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonGroup.swift; sourceTree = "<group>"; };
-		9A2AFEEF9DD39279EC2FF4DD13349725 /* CommandBarIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.debug.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E43CB0041A0E679ADCCC403A77DC49B /* Pods-CommandBarIOS_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CommandBarIOS_Tests-umbrella.h"; sourceTree = "<group>"; };
 		9E4E8584E88649AAFE86983BE725CD08 /* Pods-CommandBarIOS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CommandBarIOS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A1BFF639C3F37F0714D100DBBD4B2971 /* Pods-CommandBarIOS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CommandBarIOS_Example.modulemap"; sourceTree = "<group>"; };
+		AF45765E1EF0674E9B5E10F75949B750 /* CommandBarIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CommandBarIOS-dummy.m"; sourceTree = "<group>"; };
 		AFFE2B6A0D4157DAE9916DDB711EDDB5 /* Pods-CommandBarIOS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CommandBarIOS_Example-dummy.m"; sourceTree = "<group>"; };
-		B7616B32DDDFC64B678095BFA54333E2 /* ResourceCenterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResourceCenterViewController.swift; sourceTree = "<group>"; };
 		B88F91FB460AFB11775FE964C05AB3CF /* Pods-CommandBarIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C3FFD7C115B70484114E7FBC810B7DFE /* BottomSheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
-		C96E35550683B85A929A1370E8ABBBD2 /* CommandBarIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CommandBarIOS.modulemap; sourceTree = "<group>"; };
-		D11DE16C192D26C969579CDFC5694E4B /* Spinner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
-		D1570DC641FDAAF413BD90E0AF14388B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		D955835C6E9E82921047FDC6FDB4383E /* EngagementFilterStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EngagementFilterStore.swift; sourceTree = "<group>"; };
-		DEA6787F08EA2FC647358AAC7981713A /* CommandBarIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CommandBarIOS.release.xcconfig; sourceTree = "<group>"; };
-		E7E7ED47DBD4E00ED982BBE5D4F8793C /* Rules.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		C29FBE6CDF5F14674BE302EFB18F2765 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C7EE9BB168AF47D1EA91B861BB765F01 /* ResourceCenterWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResourceCenterWebView.swift; sourceTree = "<group>"; };
+		DFA7D56F0ED5460FDEBABC7920B1205B /* Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		E3C1871049290510C381F2CF2DDE6585 /* SDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SDK.swift; sourceTree = "<group>"; };
+		F16CC505630B2247A9094911BF224897 /* EngagementFilterStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EngagementFilterStore.swift; sourceTree = "<group>"; };
+		F3667A2110433028A1D25336E9B47E40 /* CommandBar.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = CommandBar.png; path = docs/img/CommandBar.png; sourceTree = "<group>"; };
+		F58CB01D9B9A00BB57F1E673F3425706 /* CommandBarIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CommandBarIOS.modulemap; sourceTree = "<group>"; };
 		FBA3F61958993B363D52C4934D7FF3B4 /* Pods-CommandBarIOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CommandBarIOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		FC02423203E69FB6314E29C80C6B6C34 /* InternalSDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InternalSDK.swift; sourceTree = "<group>"; };
-		FD4FB89C27754F466375909D01DB2AEB /* Nudges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Nudges.swift; sourceTree = "<group>"; };
-		FEF36ED75ADC6CE6D70A9A0B2CCFEA64 /* CommandBarIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CommandBarIOS-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		121143075255B22A114F986016CD37F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E5FBE9BEBF9DD4B8459B404E3CC3071 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56033F36F86CAF26E7492B9BD89EE3B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -132,23 +106,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7B9DA24473C4B9A0D573C0601B5B251 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4FD755C1CE642D2C61090F56A425BB68 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4BFB2E03EF45136F3C8C28603383835A /* Development Pods */ = {
+		2AA50A843CA1098B8D280B6109F8B552 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BE432A05CAEFDAD77CBC29A4CA5AE30C /* CommandBarIOS */,
+				7EFF30695C73D2804426D6F50C3711B1 /* CommandBarIOS */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		2CDACC92E14DA46851D32BFDD46B0C04 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F58CB01D9B9A00BB57F1E673F3425706 /* CommandBarIOS.modulemap */,
+				AF45765E1EF0674E9B5E10F75949B750 /* CommandBarIOS-dummy.m */,
+				020A6040523AE5AE1A62E30A6EC58BC7 /* CommandBarIOS-Info.plist */,
+				457727F923F4F7277A49B3EAD5A281A2 /* CommandBarIOS-prefix.pch */,
+				4FF3F6882E2148BEA9A3E8452C2243EA /* CommandBarIOS-umbrella.h */,
+				5A0A550A14865C66E67886BBEC5852FC /* CommandBarIOS.debug.xcconfig */,
+				832082861C7AE1C45A5C36F9FAC2965D /* CommandBarIOS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CommandBarIOS";
 			sourceTree = "<group>";
 		};
 		537C51C83D7B3AFF6AC3238E0C1195AF /* Pods-CommandBarIOS_Example */ = {
@@ -177,19 +158,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		5F0421A70EB19050B863B5F03E0D8E1A /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				10D6805372E4A929AA00832D80DCF8C3 /* Actions.swift */,
-				1D7688F59FCB39439620C27FCDF76662 /* Config.swift */,
-				FD4FB89C27754F466375909D01DB2AEB /* Nudges.swift */,
-				E7E7ED47DBD4E00ED982BBE5D4F8793C /* Rules.swift */,
-				5EBFC8710033213FFC0677C843F3A5DE /* Util.swift */,
-			);
-			name = Types;
-			path = Sources/CommandBarIOS/Types;
-			sourceTree = "<group>";
-		};
 		63B684BAB2A0BA095C0F4A63D4CB3D8C /* Pods-CommandBarIOS_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,15 +174,27 @@
 			path = "Target Support Files/Pods-CommandBarIOS_Tests";
 			sourceTree = "<group>";
 		};
-		78AA467A0A9B47B80188C78A3AD81FBA /* Pod */ = {
+		79CC6314B717823ED5F1D19D5050F441 /* ResourceCenter */ = {
 			isa = PBXGroup;
 			children = (
-				441F3ECF6E591E87C97ECC9B59E24D88 /* CommandBar.png */,
-				136D5C7BA9C1B4D2B4477E4526F74BCA /* CommandBarIOS.podspec */,
-				D1570DC641FDAAF413BD90E0AF14388B /* LICENSE */,
-				4370E78E5D1A6E2935553359DB4FE2E0 /* README.md */,
+				F16CC505630B2247A9094911BF224897 /* EngagementFilterStore.swift */,
+				8D1A87AC9DB4CDDFEE8430EA75AC735F /* ResourceCenterViewController.swift */,
+				C7EE9BB168AF47D1EA91B861BB765F01 /* ResourceCenterWebView.swift */,
 			);
-			name = Pod;
+			name = ResourceCenter;
+			path = Sources/CommandBarIOS/ResourceCenter;
+			sourceTree = "<group>";
+		};
+		7EFF30695C73D2804426D6F50C3711B1 /* CommandBarIOS */ = {
+			isa = PBXGroup;
+			children = (
+				DC68051FE54576FECE44049025B80124 /* CommandBar */,
+				C77A93EFAC6554EBDFA5B436A1C320ED /* Pod */,
+				79CC6314B717823ED5F1D19D5050F441 /* ResourceCenter */,
+				2CDACC92E14DA46851D32BFDD46B0C04 /* Support Files */,
+			);
+			name = CommandBarIOS;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		939D723E41CDF8FE51E6A6A8595112F1 /* Products */ = {
@@ -227,82 +207,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BACE511943974E2BA4E70F7A7FC293EE /* Helpers */ = {
+		C77A93EFAC6554EBDFA5B436A1C320ED /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				6C19BBBD5FD9464A979C10EA549C8C6B /* Color.swift */,
+				F3667A2110433028A1D25336E9B47E40 /* CommandBar.png */,
+				628BA27011B916F3D99D634A695EB257 /* CommandBarIOS.podspec */,
+				525EEB3517604A9E6D39D3B564C19CC0 /* LICENSE */,
+				C29FBE6CDF5F14674BE302EFB18F2765 /* README.md */,
 			);
-			name = Helpers;
-			path = Sources/CommandBarIOS/Helpers;
-			sourceTree = "<group>";
-		};
-		BE432A05CAEFDAD77CBC29A4CA5AE30C /* CommandBarIOS */ = {
-			isa = PBXGroup;
-			children = (
-				C6AB79964B2A184FCCDDDD04C941555E /* Analytics */,
-				C3D0C1185FF5797DCDA934FC00EA60FB /* CommandBar */,
-				CC4D7AB98ECAAA34905E351F6BA2F3F1 /* Components */,
-				BACE511943974E2BA4E70F7A7FC293EE /* Helpers */,
-				78AA467A0A9B47B80188C78A3AD81FBA /* Pod */,
-				CE717E5C96B34AF4DFC8560B4337A6F7 /* ResourceCenter */,
-				D221EB80D3527FFCDC7657ED87B89F35 /* Support Files */,
-				5F0421A70EB19050B863B5F03E0D8E1A /* Types */,
-			);
-			name = CommandBarIOS;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		C3D0C1185FF5797DCDA934FC00EA60FB /* CommandBar */ = {
-			isa = PBXGroup;
-			children = (
-				3B33D5192CC78568EEDDDBC41B85D048 /* CommandBar.swift */,
-				FC02423203E69FB6314E29C80C6B6C34 /* InternalSDK.swift */,
-				327AE58C45ED46BA9D91ABF069B89E29 /* Options.swift */,
-				937E97F49D5AA2DD739E794C4108B9A3 /* SDK.swift */,
-			);
-			name = CommandBar;
-			path = Sources/CommandBarIOS/CommandBar;
-			sourceTree = "<group>";
-		};
-		C6AB79964B2A184FCCDDDD04C941555E /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				46F4444CC748F5661AB479E651FAA645 /* Analytics.swift */,
-				636438E8AA94DB5C4FB9EA816495867D /* Events.swift */,
-			);
-			name = Analytics;
-			path = Sources/CommandBarIOS/Analytics;
-			sourceTree = "<group>";
-		};
-		CC4D7AB98ECAAA34905E351F6BA2F3F1 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				C3FFD7C115B70484114E7FBC810B7DFE /* BottomSheet.swift */,
-				90E98B4DA1F9D5A9795F13E04D9BD129 /* Image.swift */,
-				D11DE16C192D26C969579CDFC5694E4B /* Spinner.swift */,
-				6A536A9F2647241078BACA7871D0AA28 /* Video.swift */,
-				FC9324242B7230FF4B7F14FA8F2E8A73 /* Buttons */,
-			);
-			name = Components;
-			path = Sources/CommandBarIOS/Components;
-			sourceTree = "<group>";
-		};
-		CE717E5C96B34AF4DFC8560B4337A6F7 /* ResourceCenter */ = {
-			isa = PBXGroup;
-			children = (
-				D955835C6E9E82921047FDC6FDB4383E /* EngagementFilterStore.swift */,
-				B7616B32DDDFC64B678095BFA54333E2 /* ResourceCenterViewController.swift */,
-				5DF78C19ED520AAC081E59A974AA19CB /* ResourceCenterWebView.swift */,
-			);
-			name = ResourceCenter;
-			path = Sources/CommandBarIOS/ResourceCenter;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				4BFB2E03EF45136F3C8C28603383835A /* Development Pods */,
+				2AA50A843CA1098B8D280B6109F8B552 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				939D723E41CDF8FE51E6A6A8595112F1 /* Products */,
 				59EDB8EB103EA198433BB151018225CA /* Targets Support Files */,
@@ -317,19 +237,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D221EB80D3527FFCDC7657ED87B89F35 /* Support Files */ = {
+		DC68051FE54576FECE44049025B80124 /* CommandBar */ = {
 			isa = PBXGroup;
 			children = (
-				C96E35550683B85A929A1370E8ABBBD2 /* CommandBarIOS.modulemap */,
-				3AC803EF4B69DDD7E301601E853CB64B /* CommandBarIOS-dummy.m */,
-				7A63B81490F887DA6BEBA4924BE85498 /* CommandBarIOS-Info.plist */,
-				0B3567F6DA51E834B088DD0B3043EB54 /* CommandBarIOS-prefix.pch */,
-				FEF36ED75ADC6CE6D70A9A0B2CCFEA64 /* CommandBarIOS-umbrella.h */,
-				9A2AFEEF9DD39279EC2FF4DD13349725 /* CommandBarIOS.debug.xcconfig */,
-				DEA6787F08EA2FC647358AAC7981713A /* CommandBarIOS.release.xcconfig */,
+				DFA7D56F0ED5460FDEBABC7920B1205B /* Options.swift */,
+				E3C1871049290510C381F2CF2DDE6585 /* SDK.swift */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/CommandBarIOS";
+			name = CommandBar;
+			path = Sources/CommandBarIOS/CommandBar;
 			sourceTree = "<group>";
 		};
 		E4801F62A6B08CD9B5410329F1A18FDE /* iOS */ = {
@@ -338,17 +253,6 @@
 				384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		FC9324242B7230FF4B7F14FA8F2E8A73 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				32533B525F4FDE83973F361E813E34B1 /* Button.swift */,
-				98B5D43465E1303AC8E5D49F8A62D2B7 /* ButtonGroup.swift */,
-				927E37CD01D4DF6C0EC82A3714E2A68F /* CloseButton.swift */,
-			);
-			name = Buttons;
-			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,11 +274,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B175D7911F2B814F3F14B71A9B96BC97 /* Headers */ = {
+		8417E943C97BA826490AB26A5AD7429F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7044B6E3C3EFF8931859DF4BABD07FD6 /* CommandBarIOS-umbrella.h in Headers */,
+				3576BFEDA805101E21F1F20F40B7D74D /* CommandBarIOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,12 +287,12 @@
 /* Begin PBXNativeTarget section */
 		1A5C426E3579F3BD712FDAB630F0FBA8 /* CommandBarIOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE588CB8212E42868D1090EABA1ECAD8 /* Build configuration list for PBXNativeTarget "CommandBarIOS" */;
+			buildConfigurationList = 220686AF1C61E60080356A89569E109E /* Build configuration list for PBXNativeTarget "CommandBarIOS" */;
 			buildPhases = (
-				B175D7911F2B814F3F14B71A9B96BC97 /* Headers */,
-				0CB705D53F32F4F42121536838FCCBD5 /* Sources */,
-				C7B9DA24473C4B9A0D573C0601B5B251 /* Frameworks */,
-				61B81BE20F582ED4AC96DE905E9160FA /* Resources */,
+				8417E943C97BA826490AB26A5AD7429F /* Headers */,
+				C9FD2351BA72B720CBDB62B7B4EFC4B0 /* Sources */,
+				121143075255B22A114F986016CD37F0 /* Frameworks */,
+				FF03439A404F046752FE8E6E44A56FD4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -411,7 +315,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				0C7D850E5EB44994D72ABD7172C6A10A /* PBXTargetDependency */,
+				3BCAA713709BAC5D37015E149F6DE96B /* PBXTargetDependency */,
 			);
 			name = "Pods-CommandBarIOS_Tests";
 			productName = Pods_CommandBarIOS_Tests;
@@ -430,7 +334,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				026B810782CC6A5A35485EAF585560F7 /* PBXTargetDependency */,
+				75CA415AE983F6B8B677222AB72F938A /* PBXTargetDependency */,
 			);
 			name = "Pods-CommandBarIOS_Example";
 			productName = Pods_CommandBarIOS_Example;
@@ -476,14 +380,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61B81BE20F582ED4AC96DE905E9160FA /* Resources */ = {
+		8F0321DF86A8623F3C27F479E3E1CD36 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F0321DF86A8623F3C27F479E3E1CD36 /* Resources */ = {
+		FF03439A404F046752FE8E6E44A56FD4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -493,41 +397,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0CB705D53F32F4F42121536838FCCBD5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64F94A909E0978A37BCBF8119786BEB8 /* Actions.swift in Sources */,
-				3F947DB2318A5834B4FA2A74D0FA4A3E /* Analytics.swift in Sources */,
-				3BCA65B6E7B5ABBA1AB8E5D01CE599BB /* BottomSheet.swift in Sources */,
-				B7B643C0B693C043A5B204420CA7AB5E /* Button.swift in Sources */,
-				5C398478173E19FE35E4842150DA5956 /* ButtonGroup.swift in Sources */,
-				F3346CEEBBADBA1B6136C3BB97B5D61D /* CloseButton.swift in Sources */,
-				C59B2D4A88EC7DEFC773C860640AFC23 /* Color.swift in Sources */,
-				B0CDB692E76C16B74B441068E49B97BE /* CommandBar.swift in Sources */,
-				F13F162FA93C01B7414FC91FF710E3A9 /* CommandBarIOS-dummy.m in Sources */,
-				54F9E7EAD606482659BEAC1AE501F198 /* Config.swift in Sources */,
-				E7B89ABC9A08FDCEA2B80B1EFFCBC721 /* EngagementFilterStore.swift in Sources */,
-				DECCC8031C9C200129C2C78EDB9DA708 /* Events.swift in Sources */,
-				6EBCD31D6DA57402E7E430F1D3B79B9F /* Image.swift in Sources */,
-				40F514E5D5208E7E21AE0CD6FDE81FC6 /* InternalSDK.swift in Sources */,
-				625DC1162BA8A9AC90A9A7B32D31A2B2 /* Nudges.swift in Sources */,
-				C6ECE2CF1D194214ECF7E00834D01B13 /* Options.swift in Sources */,
-				3EAC958581BE8C58EC503FF5A2531B33 /* ResourceCenterViewController.swift in Sources */,
-				A1784AE04F5212EE422553F4830BBBD2 /* ResourceCenterWebView.swift in Sources */,
-				FD9CEC6D5C9C0945E95701CE67E9B63A /* Rules.swift in Sources */,
-				855952AFEB32609F597D1FC84E754D3A /* SDK.swift in Sources */,
-				483053CDF4112A131DD3593C0976D541 /* Spinner.swift in Sources */,
-				EAEB82989C2EF369730F60C8F65863D6 /* Util.swift in Sources */,
-				4F9497A844E3942CCB7C37124C6CF799 /* Video.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AB7DDF2908A844F95C0E5868D6419CDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				64D2F931F6D86090F13386E02FFCFC21 /* Pods-CommandBarIOS_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9FD2351BA72B720CBDB62B7B4EFC4B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				718D932ABAE475F461814DFED7B9623D /* CommandBarIOS-dummy.m in Sources */,
+				00ED90D0738BD7593F7598F89BF23826 /* EngagementFilterStore.swift in Sources */,
+				B03265B529C01CC1C450CC59521D14D8 /* Options.swift in Sources */,
+				DB0DAB27F00FD90CB66757A7C0F8B47F /* ResourceCenterViewController.swift in Sources */,
+				6F6CE30016E8299C385CB3C5CC250E91 /* ResourceCenterWebView.swift in Sources */,
+				197310C256C8FEEE24174E766C0CCCE6 /* SDK.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,17 +429,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		026B810782CC6A5A35485EAF585560F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CommandBarIOS;
-			target = 1A5C426E3579F3BD712FDAB630F0FBA8 /* CommandBarIOS */;
-			targetProxy = 372D3D7A380205BCE584028918626A46 /* PBXContainerItemProxy */;
-		};
-		0C7D850E5EB44994D72ABD7172C6A10A /* PBXTargetDependency */ = {
+		3BCAA713709BAC5D37015E149F6DE96B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-CommandBarIOS_Example";
 			target = BEF9C21ABF8843AD6FC046F2A58B2B1D /* Pods-CommandBarIOS_Example */;
-			targetProxy = CD97BA7BB424AB0F9A59566B5412B016 /* PBXContainerItemProxy */;
+			targetProxy = CAD29ABDD4E5B62DDB0FA04F330E0294 /* PBXContainerItemProxy */;
+		};
+		75CA415AE983F6B8B677222AB72F938A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CommandBarIOS;
+			target = 1A5C426E3579F3BD712FDAB630F0FBA8 /* CommandBarIOS */;
+			targetProxy = 1E1324DF3A2BBC0E68A2DCBCC29BFC3F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -592,6 +479,43 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		6BB560EEC8DF57D67C9B0B0EEA663982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 832082861C7AE1C45A5C36F9FAC2965D /* CommandBarIOS.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/CommandBarIOS/CommandBarIOS-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS.modulemap";
+				PRODUCT_MODULE_NAME = CommandBarIOS;
+				PRODUCT_NAME = CommandBarIOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -757,43 +681,6 @@
 			};
 			name = Debug;
 		};
-		A92884CD2D7DE0A7EF4B8649E4271C8E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEA6787F08EA2FC647358AAC7981713A /* CommandBarIOS.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/CommandBarIOS/CommandBarIOS-prefix.pch";
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CommandBarIOS/CommandBarIOS.modulemap";
-				PRODUCT_MODULE_NAME = CommandBarIOS;
-				PRODUCT_NAME = CommandBarIOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		D94631E210591CFE20ADD6F174023B28 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FBA3F61958993B363D52C4934D7FF3B4 /* Pods-CommandBarIOS_Tests.release.xcconfig */;
@@ -868,9 +755,9 @@
 			};
 			name = Release;
 		};
-		F4C6C3760537A5FF34BE0BD96165243C /* Debug */ = {
+		EE5A3E5E2A5026FC32E3A16B412110F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A2AFEEF9DD39279EC2FF4DD13349725 /* CommandBarIOS.debug.xcconfig */;
+			baseConfigurationReference = 5A0A550A14865C66E67886BBEC5852FC /* CommandBarIOS.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -916,6 +803,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		220686AF1C61E60080356A89569E109E /* Build configuration list for PBXNativeTarget "CommandBarIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE5A3E5E2A5026FC32E3A16B412110F7 /* Debug */,
+				6BB560EEC8DF57D67C9B0B0EEA663982 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -930,15 +826,6 @@
 			buildConfigurations = (
 				29359E3254FD7E2B769FD3EEFBED027F /* Debug */,
 				ED616265ED7F4AFCC46B86BCE2EA4794 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EE588CB8212E42868D1090EABA1ECAD8 /* Build configuration list for PBXNativeTarget "CommandBarIOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F4C6C3760537A5FF34BE0BD96165243C /* Debug */,
-				A92884CD2D7DE0A7EF4B8649E4271C8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

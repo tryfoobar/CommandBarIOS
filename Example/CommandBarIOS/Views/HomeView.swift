@@ -40,13 +40,13 @@ struct HomeView: View {
                     VStack() {
                             CustomButton(title: "Open Resource Center") {
                                 // 4. Open Resource Center
-                                CommandBarSDK.shared.openResourceCenter(articleId: nil, withFallbackAction: onFallbackAction)
+                                CommandBarSDK.shared.openResourceCenter(articleId: nil, fallbackAction: onFallbackAction)
                             }.alert(isPresented: $showingAlert) {
                                 Alert(title: Text("Assistant Fallback Triggered"), message: Text("You can use this to trigger opening up a third party chat provider or handle custom behavior when assistant can't find an answer or when the user triggers a fallback action!"), dismissButton: .default(Text("Got it!")))
                             }
                             CustomButton(title: "Open Assistant") {
                                 // 4. Open Assistant
-                                CommandBarSDK.shared.openAssistant(withFallbackAction: onFallbackAction)
+                                CommandBarSDK.shared.openAssistant(fallbackAction: onFallbackAction)
                             }.alert(isPresented: $showingKeyAlert) {
                                 Alert(title: Text("Assistant Fallback Triggered"), message: Text("You can use this to trigger opening up a third party chat provider or handle custom behavior when assistant can't find an answer or when the user triggers a fallback action!"), dismissButton: .default(Text("Got it!")))
                             }
@@ -66,7 +66,10 @@ struct HomeView: View {
         .onAppear {
             if (amplitudeApiKey != "") {
                 // 2. Boot CommandBar by using the shared instance
-                CommandBarSDK.shared.boot(amplitudeApiKey, with: CommandBarOptions(user_id: UUID().uuidString ))
+                CommandBarSDK.shared.boot(options: CommandBarOptions(
+                    apiKey: amplitudeApiKey,
+                    userId: UUID().uuidString
+                ))
             }
         }
     }
