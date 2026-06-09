@@ -1,4 +1,5 @@
 <img src="docs/img/CommandBar.png" alt="CommandBar Logo" width="200" height="200">
+<img src="https://www.freelogovectors.net/wp-content/uploads/2023/11/amplitude_logo-freelogovectors.net_.png" alt="Amplitude Logo" width="260" height="200">
 
 # CommandBarIOS
 
