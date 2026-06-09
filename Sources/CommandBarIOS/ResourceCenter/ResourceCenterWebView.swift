@@ -119,6 +119,8 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
             <html>
               <head>
                   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+                  <link rel="preconnect" href="https://fonts.googleapis.com">
+                  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                   <style>
                       .loading-container {
                           display: flex;
@@ -332,6 +334,71 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                     } catch (eAsst) {}
                 }
 
+                /**
+                 * The host page normally loads custom fonts (see base/public/index.html). Inside a WebView there is no host
+                 * page, so any theme using a non-system family (e.g. "Inter", "IBM Plex Sans") falls back to system fonts
+                 * unless we fetch the font ourselves.
+                 */
+                var GENERIC_FONT_NAMES = {
+                    "system-ui": 1, "sans-serif": 1, "serif": 1, "monospace": 1,
+                    "cursive": 1, "fantasy": 1, "ui-serif": 1, "ui-sans-serif": 1,
+                    "ui-monospace": 1, "ui-rounded": 1, "inherit": 1, "initial": 1, "unset": 1,
+                    "-apple-system": 1, "blinkmacsystemfont": 1,
+                    "segoe ui": 1, "roboto": 1, "helvetica": 1, "arial": 1, "helvetica neue": 1,
+                    "apple color emoji": 1, "segoe ui emoji": 1, "segoe ui symbol": 1
+                };
+
+                function extractPrimaryFontFamily(value) {
+                    if (!value) { return null; }
+                    var families = String(value).split(",");
+                    for (var i = 0; i < families.length; i++) {
+                        var name = families[i].trim().replace(/^["']|["']$/g, "").trim();
+                        if (name && !GENERIC_FONT_NAMES[name.toLowerCase()]) {
+                            return name;
+                        }
+                    }
+                    return null;
+                }
+
+                function ensureGoogleFontLoaded(name) {
+                    if (!name) { return; }
+                    if (!window.__ampLoadedThemeFonts) { window.__ampLoadedThemeFonts = {}; }
+                    if (window.__ampLoadedThemeFonts[name]) { return; }
+                    window.__ampLoadedThemeFonts[name] = true;
+                    var encoded = encodeURIComponent(name).replace(/%20/g, "+");
+                    var link = document.createElement("link");
+                    link.rel = "stylesheet";
+                    link.href = "https://fonts.googleapis.com/css2?family=" + encoded +
+                        ":ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap";
+                    document.head.appendChild(link);
+                }
+
+                function detectAndLoadThemeFont() {
+                    try {
+                        var widget = document.querySelector('[class*="engagement-widget"]');
+                        if (!widget) { return false; }
+                        var value = getComputedStyle(widget).getPropertyValue("--font-font-family");
+                        var primary = extractPrimaryFontFamily(value);
+                        if (primary) { ensureGoogleFontLoaded(primary); }
+                        return true;
+                    } catch (e) {
+                        return false;
+                    }
+                }
+
+                /** Polls until widget mounts, then keeps checking so mid-session theme switches still load the new font. */
+                function startThemeFontWatcher() {
+                    var attempts = 0;
+                    var maxAttempts = 200;
+                    function tick() {
+                        attempts++;
+                        detectAndLoadThemeFont();
+                        if (attempts >= maxAttempts) { return; }
+                        setTimeout(tick, attempts < 50 ? 200 : 1000);
+                    }
+                    tick();
+                }
+
                 function loadScript(src, async, onload, onerror) {
                     var s = document.createElement("script");
                     s.type = "text/javascript";
@@ -483,12 +550,14 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                                 p.then(function () {
                                     applyNativeEngagementFilters();
                                     openEngagementShell();
+                                    startThemeFontWatcher();
                                 }).catch(function (err) {
                                     ampLog("[Amplitude Engagement] boot failed: " + err);
                                 });
                             } else {
                                 applyNativeEngagementFilters();
                                 openEngagementShell();
+                                startThemeFontWatcher();
                             }
                         } catch (e) {
                             ampLog("[Amplitude Engagement] boot setup failed: " + e);
