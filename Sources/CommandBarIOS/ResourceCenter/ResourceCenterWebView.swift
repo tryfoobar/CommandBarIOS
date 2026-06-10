@@ -168,7 +168,12 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                       #helphub-close-button {
                           display: none !important;
                       }
-                      
+
+                      /* Hide the Resource Center "Copy link" header button in the mobile WebView only. */
+                      [data-testid="resource-center-copy-link"] {
+                          display: none !important;
+                      }
+
                       #copilot-container:not(:focus-within) {
                           padding-bottom: 50px;
                       }
@@ -261,7 +266,7 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
         let assistantFilterJs = EngagementFilterStore.assistantFilterJsonLiteral
         let snippet = """
             (function() {
-                window._cbIsWebView = true;
+                window._ampIsWebView = true;
 
                 function ampLog(msg) {
                     try {
