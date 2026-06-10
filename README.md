@@ -125,7 +125,19 @@ struct MyView: View {
 }
 ```
 
-### 5. (Optional) Run the Example App
+### 5. Dismiss the Sheet Programmatically
+
+Both `closeResourceCenter()` and `closeAssistant()` dismiss whichever engagement
+sheet is currently presented — they're aliases provided for API symmetry with
+`openResourceCenter` / `openAssistant`. Both are safe to call when nothing is
+presented (no-op).
+
+```swift
+CommandBarSDK.shared.closeResourceCenter()
+CommandBarSDK.shared.closeAssistant()
+```
+
+### 6. (Optional) Run the Example App
 
 To run the example project, first clone the repo, then:
 

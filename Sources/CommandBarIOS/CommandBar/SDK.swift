@@ -65,10 +65,19 @@ public final class CommandBarSDK {
         )
     }
 
+    /// Dismisses the presented engagement sheet (Resource Center or Assistant), if any.
+    /// The injected WebView bridge picks the correct web-side teardown based on the
+    /// active shell, so this method works regardless of which `open*` was used.
     public func closeResourceCenter() {
         ResourceCenterWebView.activeInstance?.closeEngagementShell()
         presentedNavigationController?.dismiss(animated: true, completion: nil)
         presentedNavigationController = nil
+    }
+
+    /// Symmetric alias for `closeResourceCenter()`. Both methods dismiss whichever
+    /// engagement sheet (Resource Center or Assistant) is currently presented.
+    public func closeAssistant() {
+        closeResourceCenter()
     }
 
     /// Mirrors `window.engagement.assistant.setAssistantFilter`. Pass `nil` to clear.
