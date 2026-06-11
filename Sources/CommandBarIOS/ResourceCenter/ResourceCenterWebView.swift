@@ -100,6 +100,21 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
             """
     }
 
+    /// Builds `<link>` tags that preload the given Google Font families. The WebView has no host
+    /// page to load fonts, so a theme using a non-system family only renders if we fetch it here.
+    /// Returns an empty string when no families are supplied.
+    private static func buildFontPreloadLinks(_ families: [String]) -> String {
+        families
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+            .map { family in
+                let encoded = (family.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? family)
+                    .replacingOccurrences(of: "%20", with: "+")
+                return "<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=\(encoded)&display=swap\">"
+            }
+            .joined(separator: "\n                  ")
+    }
+
     func loadContent() {
         if !didInstallScriptHandlers {
             configuration.userContentController.add(self, name: "engagement__onFallbackAction")
@@ -122,6 +137,7 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
         #endif
 
         let topPaddingPx = Int(Self.sheetTopContentInset)
+        let fontLinks = Self.buildFontPreloadLinks(options.fontFamilies)
         let html = """
             <!DOCTYPE html>
             <html>
@@ -129,6 +145,7 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
                   <link rel="preconnect" href="https://fonts.googleapis.com">
                   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                  \(fontLinks)
                   <style>
                       .loading-container {
                           display: flex;

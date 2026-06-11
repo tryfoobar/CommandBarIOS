@@ -43,6 +43,9 @@ public struct CommandBarOptions {
     /// CSS color used by the loading spinner shown while the WebView boots Engagement.
     public var spinnerColor: String
 
+    /// Google Font families to preload in the WebView (e.g. `["Roboto"]`)
+    public var fontFamilies: [String]
+
     public struct User {
         public var userId: String?
         public var deviceId: String?
@@ -63,7 +66,8 @@ public struct CommandBarOptions {
         chatUrl: String? = nil,
         mediaUrl: String? = nil,
         locale: String? = nil,
-        spinnerColor: String = "#3662F1"
+        spinnerColor: String = "#3662F1",
+        fontFamilies: [String] = []
     ) {
         self.apiKey = apiKey
         self.user = userId.map { User(userId: $0) }
@@ -74,6 +78,7 @@ public struct CommandBarOptions {
         self.mediaUrl = mediaUrl
         self.locale = locale
         self.spinnerColor = spinnerColor
+        self.fontFamilies = fontFamilies
     }
 
     /// Nested-form initializer: pass a full `User` (e.g. with `deviceId`).
@@ -86,7 +91,8 @@ public struct CommandBarOptions {
         chatUrl: String? = nil,
         mediaUrl: String? = nil,
         locale: String? = nil,
-        spinnerColor: String = "#3662F1"
+        spinnerColor: String = "#3662F1",
+        fontFamilies: [String] = []
     ) {
         self.apiKey = apiKey
         self.user = user
@@ -97,6 +103,7 @@ public struct CommandBarOptions {
         self.mediaUrl = mediaUrl
         self.locale = locale
         self.spinnerColor = spinnerColor
+        self.fontFamilies = fontFamilies
     }
 
     /// Dictionary initializer used by the React Native bridge.
@@ -134,5 +141,11 @@ public struct CommandBarOptions {
         self.mediaUrl = dictionary["mediaUrl"] as? String
         self.locale = dictionary["locale"] as? String
         self.spinnerColor = dictionary["spinnerColor"] as? String ?? "#3662F1"
+
+        if let families = dictionary["fontFamilies"] as? [String] {
+            self.fontFamilies = families
+        } else {
+            self.fontFamilies = []
+        }
     }
 }

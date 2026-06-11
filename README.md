@@ -63,7 +63,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // chatUrl: "...",
             // mediaUrl: "...",
             // locale: "en-US",
-            spinnerColor: "#3662F1"
+            spinnerColor: "#3662F1",
+            // fontFamilies: ["Roboto"]  // preload custom theme fonts (see below)
         ))
         return true
     }
@@ -71,6 +72,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 Call `boot(options:)` again at any time to swap in new options (e.g. after the user signs in).
+
+#### Custom theme fonts
+
+The Resource Center / Assistant render inside a `WKWebView` that has no host page, so a theme
+that uses a non-system (Google) font only renders correctly if that font is fetched inside the
+WebView. Pass the font family names your Engagement theme uses via `fontFamilies` to ensure they're preloaded.
+
+```swift
+CommandBarSDK.shared.boot(options: CommandBarOptions(
+    apiKey: "<your api key>",
+    fontFamilies: ["Roboto"] // any Google Font(s) your theme uses
+))
+```
+
+If omitted, the WebView still attempts to auto-detect and load the theme's font at runtime.
 
 ### 3. (Optional) Tag filters
 
