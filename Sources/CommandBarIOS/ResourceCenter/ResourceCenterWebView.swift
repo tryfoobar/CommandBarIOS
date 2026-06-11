@@ -324,7 +324,11 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                     var role = (el.getAttribute("role") || "").toLowerCase();
                     var label = el.getAttribute("aria-label") || "";
                     if (!/^close$/i.test(label)) { return false; }
-                    return tag === "BUTTON" || role === "button";
+                    if (tag !== "BUTTON" && role !== "button") { return false; }
+                    // The search input's clear button shares aria-label="close" but lives inside
+                    // #resource-center-input-container. Only the header close should dismiss the widget.
+                    if (typeof el.closest === "function" && el.closest("#resource-center-input-container")) { return false; }
+                    return true;
                 }
 
                 function eventIndicatesResourceCenterClose(ev) {
@@ -335,9 +339,8 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                     }
                     var t = ev.target;
                     if (t && typeof t.closest === "function") {
-                        if (t.closest('button[aria-label="close"], button[aria-label="Close"], [role="button"][aria-label="close"], [role="button"][aria-label="Close"]')) {
-                            return true;
-                        }
+                        var btn = t.closest('button[aria-label="close"], button[aria-label="Close"], [role="button"][aria-label="close"], [role="button"][aria-label="Close"]');
+                        if (btn && isResourceCenterCloseElement(btn)) { return true; }
                     }
                     return false;
                 }
