@@ -6,18 +6,20 @@ This is a **breaking** release. Every app on 1.x needs the changes below.
 
 ## TL;DR
 
-| Area | 1.x | 2.0 |
-| --- | --- | --- |
-| Identifier | `orgId` (a CommandBar org id) | `apiKey` (your Amplitude project API key) |
-| Boot signature | `boot("<orgId>", CommandBarOptions(user_id: ...))` | `boot(options: CommandBarOptions(apiKey: ..., userId: ...))` |
-| Open methods | `openResourceCenter(articleId:, withFallbackAction:)` | `openResourceCenter(articleId:, fallbackAction:)` — no `options:` arg |
-| Open methods | `openAssistant(withFallbackAction:)` | `openAssistant(fallbackAction:)` — no `options:` arg |
-| `launchCode` | shortcut for staging/local endpoints | removed — use explicit `serverUrl` / `cdnUrl` / `chatUrl` / `mediaUrl` / `locale` / `serverZone` |
-| Deprecated types | `CommandBar_Deprecated`, `CommandBarInternalSDK`, `CommandBarInternalOptions` | removed |
+
+| Area             | 1.x                                                                           | 2.0                                                                                              |
+| ---------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Identifier       | `orgId` (a CommandBar org id)                                                 | `apiKey` (your Amplitude project API key)                                                        |
+| Boot signature   | `boot("<orgId>", CommandBarOptions(user_id: ...))`                            | `boot(options: CommandBarOptions(apiKey: ..., userId: ...))`                                     |
+| Open methods     | `openHelpHub(articleId:, withFallbackAction:)`                                | `openResourceCenter(articleId:, fallbackAction:)` — no `options:` arg                            |
+| Open methods     | -                                                                             | `openAssistant(fallbackAction:)` — no `options:` arg                                             |
+| `launchCode`     | shortcut for staging/local endpoints                                          | removed — use explicit `serverUrl` / `cdnUrl` / `chatUrl` / `mediaUrl` / `locale` / `serverZone` |
+| Deprecated types | `CommandBar_Deprecated`, `CommandBarInternalSDK`, `CommandBarInternalOptions` | removed                                                                                          |
+
 
 ## 1. Replace your `orgId` with an Amplitude `apiKey`
 
-CommandBar is now Amplitude Guides & Surveys. Get your project **API key** from the Amplitude dashboard and use it wherever you previously passed an org id.
+CommandBar is now Amplitude! Get your project **API key** from the Amplitude dashboard and use it wherever you previously passed an org id.
 
 ```diff
 - CommandBarSDK.shared.boot("YOUR_ORG_ID")
@@ -61,12 +63,9 @@ Boot now stores configuration on `CommandBarSDK.shared`. The open methods read f
 +     articleId: 123,
 +     fallbackAction: onFallback
 + )
-
-- CommandBarSDK.shared.openAssistant(withFallbackAction: onFallback)
-+ CommandBarSDK.shared.openAssistant(fallbackAction: onFallback)
 ```
 
-Calls before `boot(options:)` are now a no-op and log a warning. Call `boot` as early as possible (typically in `application(_:didFinishLaunchingWithOptions:)`).
+Calls before `boot(options:)` are now a no-op and log a warning. Call `boot` as early as possible or as soon as you have a user ID.
 
 ## 4. Remove references to deprecated types
 
@@ -77,19 +76,6 @@ The following are no longer shipped. Delete any code that touches them; the new 
 - `CommandBarInternalOptions`
 
 The old `Analytics/`, `Components/`, `Helpers/`, and `Types/` directories are also gone — they were leftovers from the pre-WebView native renderer and are unused at runtime.
-
-## 5. (Optional) Re-call `boot` after sign-in
-
-`boot(options:)` is safe to call again at any time. A common pattern is to boot anonymously at app launch and re-boot once the user authenticates:
-
-```swift
-CommandBarSDK.shared.boot(options: CommandBarOptions(apiKey: apiKey))
-// ...later...
-CommandBarSDK.shared.boot(options: CommandBarOptions(
-    apiKey: apiKey,
-    userId: signedInUser.id
-))
-```
 
 ## Reference
 
