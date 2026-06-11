@@ -76,16 +76,24 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
     private static func buildApplyEngagementFiltersJavaScript() -> String {
         let rc = EngagementFilterStore.resourceCenterFilterJsonLiteral
         let assistant = EngagementFilterStore.assistantFilterJsonLiteral
+        // We always mutate the `window.__ampNativeRCFilter` / `__ampNativeAssistantFilter`
+        // globals so the boot-time snippet picks up the latest value when it runs
+        // `applyNativeEngagementFilters()` after `engagement.boot()` resolves. This avoids
+        // a race where the native filter was updated between WebView construction and
+        // engagement boot completion. If engagement is already booted, we also push the
+        // change live. `null` (clear) propagates through both paths intentionally.
         return """
             (function() {
+                window.__ampNativeRCFilter = \(rc);
+                window.__ampNativeAssistantFilter = \(assistant);
                 try {
-                    if (\(rc) != null && window.engagement && typeof window.engagement.setResourceCenterFilter === 'function') {
-                        window.engagement.setResourceCenterFilter(\(rc));
+                    if (window.engagement && typeof window.engagement.setResourceCenterFilter === 'function') {
+                        window.engagement.setResourceCenterFilter(window.__ampNativeRCFilter);
                     }
                 } catch (e1) {}
                 try {
-                    if (\(assistant) != null && window.engagement && window.engagement.assistant && typeof window.engagement.assistant.setAssistantFilter === 'function') {
-                        window.engagement.assistant.setAssistantFilter(\(assistant));
+                    if (window.engagement && window.engagement.assistant && typeof window.engagement.assistant.setAssistantFilter === 'function') {
+                        window.engagement.assistant.setAssistantFilter(window.__ampNativeAssistantFilter);
                     }
                 } catch (e2) {}
             })();
@@ -348,18 +356,23 @@ public class ResourceCenterWebView: WKWebView, WKNavigationDelegate, WKScriptMes
                 var engagementShell = "\(engagementShellJs)";
                 window.__ampEngagementShell = engagementShell;
                 var engagementInitialPage = "\(engagementInitialPageJs)";
-                var nativeResourceCenterFilter = \(resourceCenterFilterJs);
-                var nativeAssistantFilter = \(assistantFilterJs);
+                // Initialise the native-filter globals from the latest value the native
+                // side has cached at WebView construction time. `applyEngagementFilters()`
+                // (called via `evaluateJavaScript` whenever native updates the filter) will
+                // overwrite these globals, so by the time `applyNativeEngagementFilters()`
+                // runs after `engagement.boot()` resolves, we always read the latest value.
+                window.__ampNativeRCFilter = \(resourceCenterFilterJs);
+                window.__ampNativeAssistantFilter = \(assistantFilterJs);
 
                 function applyNativeEngagementFilters() {
                     try {
-                        if (nativeResourceCenterFilter != null && window.engagement && typeof window.engagement.setResourceCenterFilter === "function") {
-                            window.engagement.setResourceCenterFilter(nativeResourceCenterFilter);
+                        if (window.engagement && typeof window.engagement.setResourceCenterFilter === "function") {
+                            window.engagement.setResourceCenterFilter(window.__ampNativeRCFilter);
                         }
                     } catch (eRc) {}
                     try {
-                        if (nativeAssistantFilter != null && window.engagement && window.engagement.assistant && typeof window.engagement.assistant.setAssistantFilter === "function") {
-                            window.engagement.assistant.setAssistantFilter(nativeAssistantFilter);
+                        if (window.engagement && window.engagement.assistant && typeof window.engagement.assistant.setAssistantFilter === "function") {
+                            window.engagement.assistant.setAssistantFilter(window.__ampNativeAssistantFilter);
                         }
                     } catch (eAsst) {}
                 }
